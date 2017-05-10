@@ -244,13 +244,6 @@ length for an abstract is 200-300 words.
 
 <p>El programa siendo ejecutado hasta el momento de la interrupción es suspendido temporalmente, para pasar a ejecutar una <b><i>subrutina de servicio de atención</i></b> de la interrupción, la cual, por lo general, pertenece al sistema operativo, al BIOS, o es una parte especial del programa en ejecución en sistemas embebidos. Una vez finalizada dicha subrutina, se reanuda la ejecución del programa.
 
-<p>[GRAFICO de flujo de ejecución]
-<!--figure class=column-top-->
-<figure>
-<a href="imagenes/interrup.jpg"><img style="width: 100%" src="imagenes/interrup.jpg"></a>
-<figcaption>Operación básica de E/S mediante interrupciones. Vista desde el punto de vista HW.</figcaption>
-</figure>
-
 
 <header> Operación básica de funcionamiento de la E/S mediante interrupciones </header>
 
@@ -270,7 +263,16 @@ finalizó.
 Es tarea de la CPU (hw) y de la subrutina de servicio de atención
 de la interrupción detectar si la transferencia fue satisfactoria (leyendo
 los registros de estado del dispositivo) y notificar al programa
-de la situación en caso de que fuses necesario.
+de la situación en caso de que fuses necesario. Un esquema de acciones
+en el tiempo desde el punto de vista del HW puede verse en la figura 1.
+
+<p>
+<!--figure class=column-top-->
+<figure>
+<a href="imagenes/interrup.jpg"><img style="width: 100%" src="imagenes/interrup.jpg"></a>
+<figcaption>Operación básica de E/S mediante interrupciones. Vista desde el punto de vista HW.</figcaption>
+</figure>
+
 <p>Las interrupciones suceden asincrónicamente, y son generadas por los dispositivos periféricos para solicitar atención de la CPU. Por ejemplo. cuando un disco rigido transfiere datos a memoria via DMA y completa una lectura, el DMA solicita atención de la CPU. Lo mismo sucede cuando se presiona una tecla o se mueve el ratón, ambos periféricos cambian de estado, interrumpen, y solician atención de la CPU para comunicar la actividad.
 (*)(definir SEÑAL: pueden ser varias lineas conectadas a la CPU, como en el motorola 68000)
 
