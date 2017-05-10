@@ -194,7 +194,7 @@ figcaption:before {
 <article>
 
 <section class=lead>
-<h1>E/S: Interrupciones</h1>
+<h1>E/S mediante Interrupciones</h1>
 
 <div class=authors>
 
@@ -238,37 +238,34 @@ length for an abstract is 200-300 words.
 </section>
 
 <section>
-<header>Introduction</header>
-
-<p>For the purposes of USENIX conference publications, the authors,
-not the USENIX staff, are solely responsible for the content and
-formatting of their paper. The purpose of this template is to help
-those authors that want to use HTML/CSS to write their papers. This
-template has been prepared by H&aring;kon Wium Lie, and is based on a
-guide to using FrameMaker for USENIX papers, written by Pekka
-Nikander with the help of Jane-Ellen Long. 
-
-<!--
-<p>One of the authors<span class=foot>H&aring;kon Wium Lie</span> 
-would also link to acknowledge FrameMaker as a source
-of inspiration for his work; he was an avid user of FrameMaker starting from
-version 1.2, and many features from FrameMaker were later recreated in
-Cascading Style Sheets (CSS).
--->
-
-<p>The rest of this paper is organized as follows. Section 2 
-gives a brief overview of related work, such as other templates and
-style manuals. Section 3 discusses the details of this template, and
-Section 4 contains our conclusions. 
 
 <header> Vision general </header>
-<p>Es una señal recibida por el procesador de una computadora, para indicarle que debe «interrumpir» el curso de ejecución actual y pasar a ejecutar código específico para tratar esta situación. Las interrupciones son originadas por los dispositivos periféricos, para indicarle a la CPU que el estado del dispositivo cambió.
+<p>Una interrupción de E/S es una <b><i>señal asincrónica</i></b> recibida por el procesador de una computadora, para indicar que debe «interrumpir» el curso de ejecución actual y pasar a ejecutar código específico para tratar esta situación. Las interrupciones son originadas por los dispositivos periféricos, para indicarle a la CPU que el estado del dispositivo cambió (por ejemplo, cuando una tecla fue presionada, o cuando la transferencia DMA desde el disco a memoria finalizó).
 
-<p>El programa siendo ejecutado hasta el momento de la interrupción es suspendido temporalmente, para pasar a ejecutar una subrutina de servicio de interrupción, la cual, por lo general, no forma parte del programa, sino que pertenece al sistema operativo, al BIOS, o como parte especial de un programa en sistemas embebidos. Una vez finalizada dicha subrutina, se reanuda la ejecución del programa.
+<p>El programa siendo ejecutado hasta el momento de la interrupción es suspendido temporalmente, para pasar a ejecutar una <b><i>subrutina de servicio de atención</i></b> de la interrupción, la cual, por lo general, pertenece al sistema operativo, al BIOS, o es una parte especial del programa en ejecución en sistemas embebidos. Una vez finalizada dicha subrutina, se reanuda la ejecución del programa.
 
 <p>[GRAFICO de flujo de ejecución]
 
-<p>Las interrupciones son generadas por los dispositivos periféricos habilitando una señal(*) del CPU (generalmente llamada IRQ del inglés "interrupt request") para solicitar atención del mismo. Por ejemplo. cuando un disco rigido transfiere datos a memoria via DMA y completa una lectura, el DMA solicita atención de la CPU. Lo mismo sucede cuando se presiona una tecla o se mueve el ratón, ambos periféricos cambian de estado, interrumpen, y solician atención de la CPU para comunicar la actividad.
+<header> Operación básica de funcionamiento de la E/S mediante interrupciones </header>
+
+Para realizar una operación de E/S mediante interrupciones el programa 
+en ejecución solicita(*) al dispositivo realizar una E/S. 
+Esta acción se realizará mediante instrucciones ejecutadas por la CPU, 
+para modificar adecuadamente los registros del control y estado del dispositivo.
+El controlador del dispositivo detecta el cambio del contenido de sus registros
+de control y estado, y determina cómo debe proceder.
+<p> Por ejemplo, si el periférico es un dispositivo de salida, la operación
+es comunmente una tranferencia y la CPU escribió un dato en el registro
+de datos del dispositivo (además de la modificación a los registros
+de estado y control).
+Una vez que se completó la transferencia del dato, el controlador del dispositivo modifica sus registros de estado para asentar la situacion, y dispara
+una interrupción para notificar a la CPU que la operación de transferencia
+finalizó.
+Es tarea de la CPU (hw) y de la subrutina de servicio de atención
+de la interrupción detectar si la transferencia fue satisfactoria (leyendo
+los registros de estado del dispositivo) y notificar al programa
+de la situación en caso de que fuses necesario.
+<p>Las interrupciones suceden asincrónicamente, y son generadas por los dispositivos periféricos para solicitar atención de la CPU. Por ejemplo. cuando un disco rigido transfiere datos a memoria via DMA y completa una lectura, el DMA solicita atención de la CPU. Lo mismo sucede cuando se presiona una tecla o se mueve el ratón, ambos periféricos cambian de estado, interrumpen, y solician atención de la CPU para comunicar la actividad.
 (*)(definir SEÑAL: pueden ser varias lineas conectadas a la CPU, como en el motorola 68000)
 
 <p>El mecanismo de interrupciones fue la solución a la E/S programada (polling) que permitió al procesador desentenderse de esta problemática, y delegar en el dispositivo periférico la responsabilidad de comunicarse con él cuando lo necesitara. 
