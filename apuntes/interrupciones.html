@@ -253,9 +253,9 @@ en ejecución solicita(*) al dispositivo realizar una E/S.
 Esta acción se realizará mediante instrucciones ejecutadas por la CPU, 
 para modificar adecuadamente los registros del control y estado del dispositivo.
 El controlador del dispositivo detecta el cambio del contenido de sus registros
-de control y estado, y determina cómo debe proceder.
+y determina cómo debe proceder.
 <p> Por ejemplo, si el periférico es un dispositivo de salida, la operación
-es comunmente una tranferencia y la CPU escribió un dato en el registro
+es comunmente una tranferencia y la CPU escribe tambien un dato en el registro
 de datos del dispositivo (además de la modificación a los registros
 de estado y control).
 Una vez que se completó la transferencia del dato, el controlador del dispositivo modifica sus registros de estado para asentar la situacion, y dispara
