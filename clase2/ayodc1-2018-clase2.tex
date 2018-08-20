@@ -67,37 +67,104 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 
 
 \begin{frame}
-	\textbf{Architecture	vs.	Microarchitecture}	
-	\textit{Architecture”/Instruc>on	Set	Architecture:}	
+	\textbf{Architecture vs. Microarchitecture} \\	
 \begin{itemize}
-	\item Programmer	visible	state	(Memory	and	Register)	
-	\item Operaons	(Instrucons	and	how	they	work)	
-	\item Execuon	Semancs	(interrupts)	
-	\item Input/Output
-	\item Data	Types/Sizes	
+	\item	\textit{Arquitectura (Instruction Set Architecture):}	
+\begin{itemize}
+	\item Estado visible al programador (memoria y registros)
+	\item Operaciones (Instrucciones, y sus acciones)
+	\item Semántica de ejecución (interrupciones)
+	\item Entrada/Salida
+	\item Tipos de datos (tamaños)
 \end{itemize}
-	\textit{Microarchitecture/Organizaon:}	
+\item	\textit{Organizacion (Microarquitectura):}	
 \begin{itemize}
-	\item Tradeoffs	on	how	to	implement	ISA	for	some	metric	
-(Speed,	Energy,	Cost)	
-\item Examples:	Pipeline	depth,	number	of	pipelines,	cache	
-size,	silicon	area,	peak	power,	execu>on	ordering,	bus	
-widths,	ALU	widths	
+	\item Compromiso en como implementar un ISA para alguna métrica (rendimiento, consumo, costo)
+\item Ejemplos: profundidad del pipeling,  número de pipelings, tamaño de caches, área del chip, potencia pico, orden de ejecución, ancho de bus, ancho de la ALU
+\end{itemize}
 \end{itemize}
 \end{frame}
+
+
+\begin{frame}
+\frametitle{Historia del concepto Arquitectura}
+	\begin{itemize}
+
+		\item	\textbf{Problema de compatibilidad de IBM} \\
+	Durante 1960's, IBM tuvo 4 líneas de computadoras incompatibles!
+	\begin{itemize}
+		\item 701 ⇒ 7094
+		\item 650 ⇒ 7074
+		\item 702 ⇒ 7080
+		\item 1401 ⇒ 7010 
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Historia del concepto Arquitectura}
+	\begin{itemize}
+		\item\textbf{Problema de compatibilidad de IBM} \\
+	Durante 1960's, IBM tuvo 4 líneas de computadoras incompatibles!
+	\begin{itemize}
+		\item 701 ⇒ 7094
+		\item 650 ⇒ 7074
+		\item 702 ⇒ 7080
+		\item 1401 ⇒ 7010
+	\end{itemize}
+\item \textit{Cada sistema tuvo su propio}
+	\begin{itemize}
+		\item Conjunto de instrucciones
+		\item Sistema de E/S y almacenamiento secundario (cintas magnetica, tambores y discos)
+		\item ensambladores, compiladores, bibliotecas
+		\item diferentes mercados: científico, comercial/bancario, tiempo real
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Historia del concepto Arquitectura}
+	\begin{itemize}
+		\item\textbf{Problema de compatibilidad de IBM} \\
+	Durante 1960's, IBM tuvo 4 líneas de computadoras incompatibles!
+	\begin{itemize}
+		\item 701 ⇒ 7094
+		\item 650 ⇒ 7074
+		\item 702 ⇒ 7080
+		\item 1401 ⇒ 7010
+	\end{itemize}
+\item \textit{Cada sistema tuvo su propio}
+	\begin{itemize}
+		\item Conjunto de instrucciones
+		\item Sistema de E/S y almacenamiento secundario (cintas magnetica, tambores y discos)
+		\item ensambladores, compiladores, bibliotecas
+		\item diferentes mercados: científico, comercial/bancario, tiempo real
+	\end{itemize}
+\item	\textbf{ Respuesta de IBM: ==⇒ IBM	360 == }
+	\end{itemize}
+\end{frame}
+
+
+
 
 
 
 \begin{frame}
-\frametitle{Programación de la máquina}
+\frametitle{IBM 360}
 \begin{figure}
-\includegraphics[scale=0.4]{componentes-CPU.jpg} 
-\caption{Componentes de la máquina}
-\label{Componentes de la máquina}
+\includegraphics[scale=0.2]{IBM-360.jpg} 
+\caption{Implementaciones iniciales del IBM 360}
+\label{Implementacione Iniciales del IBM 360}
 \end{figure}
-	\textbf{Modelo de programación (Arquitectura)}
-\textit{Para programar una computadora se debe comprender la memoria interna de la CPU (registros), su conjunto de instrucciones, y sus modos de direccionamiento.}
+
+	\begin{itemize}
+	\item Estado del procesador: 16 registros de 32-bit de propósito general, 4 de punto flotante, PC, flags
+	\item Arquitectura de 32-bits con direcciones de 24 bits
+	\item Formato de datos: bytes de 8-bits, palabra de 32-bits, half y double
+	\item \textbf{Primera familia de computadoras con un mismo ISA} 
+	\end{itemize}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Programación de la máquina}
@@ -159,6 +226,10 @@ widths,	ALU	widths
 
 \end{frame}
 
+
+
+
+
 % INDICE: HISTORIA de procesadores y arquitectura (filmina de arquitectura de david), system 360, zseries, 
 % compilacion, ensamblado, codigo maquina
 % ejemplo x86 , uso de longitud variable para instruccciones, instrucciongs con dos operandos, pocos registros, infinidad de modos de direccion2miento para cada operacion. En cada version nuevas instrucciones y compatibilidad. Cientos de instrucciones CISC
@@ -193,13 +264,11 @@ x86 assembly language is a family of backward-compatible assembly languages, whi
 \begin{itemize}
 \item Lenguaje de alto nivel
 \item Lenguaje ensamblador
+\begin{itemize}
+\item Lenguaje de alto nivel
+\item Lenguaje ensamblador
+\end{itemize}
 \item ISA
-\item CPU - Memoria - E/S - Buses (organización)
-\item circuitos secuenciales, combinacionales, MSF, IC
-\item diseño lógico
-\item compuertas (puertas). NOR, NAND, etc
-\item transistores (CMOS)
-\item física de los elementos
 \end{itemize}
 \end{frame}
 
