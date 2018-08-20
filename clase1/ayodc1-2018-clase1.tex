@@ -1,0 +1,222 @@
+\documentclass[glossy]{beamer}
+\useoutertheme{wuerzburg}
+\useinnertheme[realshadow,corners=2pt,padding=2pt]{chamfered}
+\usecolortheme{shark}
+
+\usepackage{listings}
+
+\usepackage{tikz}
+\newcommand<>{\hover}[1]{\uncover#2{%
+ \begin{tikzpicture}[remember picture,overlay]%
+ \draw[fill,opacity=0.4] (current page.south west)
+ rectangle (current page.north east);
+ \node at (current page.center) {#1};
+ \end{tikzpicture}}
+}
+
+\title{Arquitecturas y Organización de Computadoras I \\\line(1,0){320}}
+% \author{\texorpdfstring{Author\newline\url{email@email.com}}{Author}}
+%\author{Rafael Ignacio Zurita}
+\institute{Rafael Ignacio Zurita \\ Departamento de Ingenieria de Computadoras - FAI - UNCOMA 2018 \\ Clase presencial 1}
+%\date{\today}
+
+\begin{document}
+
+
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\institute{Departamento de Ingenieria de Computadoras - FAI - UNCOMA \\ 2018}
+
+\begin{frame}
+\frametitle{Programa Analítico}
+\textbf{UNIDAD I: Arquitectura y Organización de Computadoras}
+ \\~\\
+\textit{Organización  funcional. Repaso del modelo de Von Neumann. Concepto de Arquitectura y Organización de Computadoras. Representación de datos a nivel de máquina. Direccionamiento de memoria: concepto de palabra, ordenamiento de bytes. Registros.} 
+ \\~\\
+Formatos de Instrucciones. Modos de direccionamiento. Tipos de instrucciones: transferencia de datos, operaciones aritméticas y lógicas, transferencia de control. Excepciones. Lenguaje ensamblador: directivas, operaciones, pseudo-operaciones, macros.
+\end{frame}
+
+\begin{frame}
+\frametitle{Introducción}
+\textit{A hacker cannot, as they devastatingly put it “approach problem-solving like a plumber in a hardware store”; you have to know what the components actually do.}
+ \\
+\hfill \hfill How To Become A Hacker -- Eric Steven Raymond
+ \\~\\
+\textbf{Concepto de Arquitectura y Organización de una Computadora}
+\begin{itemize}
+\item ¿Qué significa Arquitectura?
+\item ¿Qué significa Organización?
+\item Pero antes: ¿Qué es una computadora?
+\item Repaso: Modelo de Von Neumann
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Computadora}
+Programa almacenado
+\begin{figure}
+\includegraphics[scale=0.5]{maq-von-neumann.jpg} 
+\caption{Modelo de Von Neumann}
+\label{Modelo de Von Neumann}
+\end{figure}
+ ¿programa-almacenado?
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Computadora ENIAC}
+Arquitectura anterior a Programa almacenado
+\begin{figure}
+\includegraphics[scale=0.4]{eniac.jpg} 
+\caption{ENIAC}
+\label{ENIAC}
+\end{figure}
+Se demoraban varias semanas en programar.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Computadora ENIAC}
+Arquitectura anterior a Programa almacenado
+\begin{figure}
+\includegraphics[scale=0.4]{eniac2.jpg} 
+\caption{ENIAC 2}
+\label{ENIAC 2}
+\end{figure}
+Se demoraban varias semanas en programar.
+\end{frame}
+ 
+ 
+\begin{frame}
+\frametitle{Organización de una computadora}
+\begin{itemize}
+\item CPU: contiene REGISTROS, ALU, Unidad de Control
+\item Memoria
+\item Dispositivos de E/S
+\item Todo interconectado mediante buses
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitectura de computadoras}
+Especifiación utilizada mayormente por el programador
+\begin{figure}
+\includegraphics[scale=0.3]{milestones.jpg} 
+%\caption{Organización de una computadora}
+%\label{Organización de una computadora}
+\end{figure}
+"Lo que el programador utilizar/ver de una computadora"
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Organización de computadora estructurada}
+Estructura por Niveles
+\begin{itemize}
+\item Es una manera de esquematizar los conceptos por niveles
+\item En los niveles mas bajos está el hardware
+\item En los mas altos el software
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Organización estructurada por niveles}
+Segun Tanenbaum
+\begin{figure}
+\includegraphics[scale=0.4]{seis-niveles.jpg} 
+\caption{Maquina multinivel}
+\label{Maquina multinivel}
+\end{figure}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Organización estructurada por niveles}
+Otra visión (Harris)
+\begin{figure}
+\includegraphics[scale=0.4]{niveles-abstraccion.jpg} 
+\caption{Maquina multinivel}
+\label{Maquina multinivel}
+\end{figure}
+\end{frame}
+ 
+
+\begin{frame}
+\frametitle{Organización de computadora estructurada}
+\begin{itemize}
+\item Lenguaje de alto nivel
+\item Lenguaje ensamblador
+\item ISA
+\item CPU - Memoria - E/S - Buses (organización)
+\item circuitos secuenciales, combinacionales, MSF, IC
+\item diseño lógico
+\item compuertas (puertas). NOR, NAND, etc
+\item transistores (CMOS)
+\item física de los elementos
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitecturas y Organización de Computadoras}
+¿Por qué estudiar todos estos conceptos?
+\begin{itemize}
+\item Tiempo de Ejecución de programas
+\item Control de riego / laboratorio
+\item Prestaciones - Multiprocesadores - Arquitecturas avanzadas - Consumo
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Arquitecturas y Organización de Computadoras}
+Clases de computadoras
+\begin{itemize}
+\item PC - workstation
+\item Servidor
+\item Cluster
+\item SuperComputadora (cientos de miles de procesadores, terabytes, petabytes)
+\item Sistemas embebidos
+\end{itemize}
+\end{frame}
+ 
+\begin{frame}
+ \frametitle{Bibliografía}
+Libros
+\begin{itemize}
+\item Andrew S. Tanenbaum (2000), ORGANIZACIÓN DE COMPUTADORAS un enfoque estructurado, Editorial Prentice Hall. (10 copias en biblioteca)
+\item David. Patterson John L. Hennessy (1995), ORGANIZACIÓN Y DISEÑO DE COMPUTADORES La interfaz hardware/software, McGraw-Hill (8 copias en biblioteca).
+\end{itemize}
+Contenido electrónico
+\begin{itemize}
+\item Apuntes elaborados por la cátedra, disponibles en PEDCO para impresión (pdf) o lectura online (html)
+\item Secciones de libros aptas para publicacion
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Otros Recursos}
+Se encuentra en PEDCO
+\begin{itemize}
+\item Foros: Novedades y Consultas
+\item Programa de la Asignatura
+\item Material extra para las prácticas
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}
+ \frametitle{Consejos y preguntas}
+\begin{center}
+\begin{itemize}
+\item  ¿Preguntas?
+\end{itemize}
+\end{center}
+\end{frame}
+\end{document}
