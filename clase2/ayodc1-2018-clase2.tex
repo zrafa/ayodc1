@@ -53,12 +53,12 @@ Formatos de Instrucciones. Modos de direccionamiento. Tipos de instrucciones: tr
 \frametitle{Arquitecturas y Organización de Computadoras}
 \textbf{Repaso de conceptos}
 \begin{itemize}
-	\item  Arquitectura: (tambien ISA: instruction set architecture) Las componentes del diseño del procesador 
+	\item  \textbf{Arquitectura}: (tambien ISA: instruction set architecture) Los componentes del diseño del procesador 
 que necesitan ser comprendidos para programar una computadora.
- Ejemplos: especificacion del conjunto de instrucciones, registros, modos de direccionamiento.
-\item  MicroarquitecturaMicroarchitecture: Implementation of the architecture.
- Examples: cache sizes and core frequency.
-\item Example ISAs (Intel): x86, IA
+Ejemplos: especificacion del conjunto de instrucciones, registros, modos de direccionamiento.
+\item  \textbf{Microarquitectura}: Implementación de la Arquitectura.
+Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de caches, frecuencia del reloj.
+\item \textbf{Ejemplos de ISAs}: x86, IA, MIPS, ARM, SPARC, SUPERH, VAX, 68000, AVR
 
 \end{itemize}
 
@@ -66,14 +66,37 @@ que necesitan ser comprendidos para programar una computadora.
 
 
 \begin{frame}
-\frametitle{Computadora ENIAC}
-Arquitectura anterior a Programa almacenado
+\frametitle{Programación de la máquina}
+	\textbf{Modelo de programación (Arquitectura)}
 \begin{figure}
-\includegraphics[scale=0.4]{assembly.jpg} 
-\caption{ENIAC}
-\label{ENIAC}
+\includegraphics[scale=0.4]{componentes-CPU.jpg} 
+\caption{Componentes de la máquina}
+\label{Componentes de la máquina}
 \end{figure}
-Se demoraban varias semanas en programar.
+\textit{Para programar una computadora se debe comprender la memoria interna de la CPU (registros), su conjunto de instrucciones, y sus modos de direccionamiento.}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Programación de la máquina}
+\textbf{Modelo de programación (Arquitectura)}
+\begin{tabular}{cl}
+
+\begin{tabular}{c}
+\includegraphics[height=5cm, width=4.5cm]{componentes-CPU.jpg} 
+
+\end{tabular}
+& \begin{tabular}{l}
+\parbox{0.5\linewidth}{
+
+\textbf{Registros} PC, propósito general, stack pointer\\
+\textbf{Memoria}: arreglo direccionable por byte. Codigo y datos de usuario. Pila y memoria dinamica.\\
+\textbf{Operandos} pero la pucha que vale la pena estar vivo \\
+\textbf{Comentarios} pero la pucha que vale la pena estar vivo 
+}
+\end{tabular} \\
+
+\end{tabular}
 \end{frame}
  
 
