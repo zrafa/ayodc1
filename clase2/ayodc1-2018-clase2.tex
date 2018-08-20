@@ -20,6 +20,8 @@
 \institute{Rafael Ignacio Zurita \\ Departamento de Ingenieria de Computadoras - FAI - UNCOMA 2018 \\ Clase presencial 2}
 %\date{\today}
 
+
+
 \begin{document}
 
 
@@ -40,14 +42,13 @@
 Formatos de Instrucciones. Modos de direccionamiento. Tipos de instrucciones: transferencia de datos, operaciones aritméticas y lógicas, transferencia de control. Excepciones. Lenguaje ensamblador: directivas, operaciones, pseudo-operaciones, macros.
 \end{frame}
 
+
 \begin{frame}
 \frametitle{Arquitecturas y Organización de Computadoras}
 \textbf{Modelo he programación}
 \textit{Para programar una computadora se debe comprender la memoria interna de la CPU (registros), su conjunto de instrucciones, y sus modos de direccionamiento.}
-% \\
-% \hfill \hfill How To Become A Hacker -- Eric Steven Raymond
-% \\~\\
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Arquitecturas y Organización de Computadoras}
@@ -61,19 +62,56 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 \item \textbf{Ejemplos de ISAs}: x86, IA, MIPS, ARM, SPARC, SUPERH, VAX, 68000, AVR
 
 \end{itemize}
-
 \end{frame}
+
+
+
+\begin{frame}
+	\textbf{Architecture	vs.	Microarchitecture}	
+	\textit{Architecture”/Instruc>on	Set	Architecture:}	
+\begin{itemize}
+	\item Programmer	visible	state	(Memory	and	Register)	
+	\item Operaons	(Instrucons	and	how	they	work)	
+	\item Execuon	Semancs	(interrupts)	
+	\item Input/Output
+	\item Data	Types/Sizes	
+\end{itemize}
+	\textit{Microarchitecture/Organizaon:}	
+\begin{itemize}
+	\item Tradeoffs	on	how	to	implement	ISA	for	some	metric	
+(Speed,	Energy,	Cost)	
+\item Examples:	Pipeline	depth,	number	of	pipelines,	cache	
+size,	silicon	area,	peak	power,	execu>on	ordering,	bus	
+widths,	ALU	widths	
+\end{itemize}
+\end{frame}
+
 
 
 \begin{frame}
 \frametitle{Programación de la máquina}
-	\textbf{Modelo de programación (Arquitectura)}
 \begin{figure}
 \includegraphics[scale=0.4]{componentes-CPU.jpg} 
 \caption{Componentes de la máquina}
 \label{Componentes de la máquina}
 \end{figure}
+	\textbf{Modelo de programación (Arquitectura)}
 \textit{Para programar una computadora se debe comprender la memoria interna de la CPU (registros), su conjunto de instrucciones, y sus modos de direccionamiento.}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programación de la máquina}
+	\textbf{Modelo de programación (Arquitectura)}
+\begin{figure}
+\includegraphics[scale=0.3]{componentes-CPU.jpg} 
+\caption{Componentes de la máquina}
+\label{Componentes de la máquina}
+\end{figure}
+	\textit{Estado visible al programador}
+	\begin{itemize}
+		\item \textbf{Registros} PC, propósito general, stack pointer\\
+		\item \textbf{Memoria}: arreglo direccionable por byte. Codigo y datos de usuario. Pila y memoria dinamica
+	\end{itemize}
 \end{frame}
 
 
@@ -90,9 +128,7 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 \parbox{0.5\linewidth}{
 
 \textbf{Registros} PC, propósito general, stack pointer\\
-\textbf{Memoria}: arreglo direccionable por byte. Codigo y datos de usuario. Pila y memoria dinamica.\\
-\textbf{Operandos} pero la pucha que vale la pena estar vivo \\
-\textbf{Comentarios} pero la pucha que vale la pena estar vivo 
+\textbf{Memoria}: arreglo direccionable por byte. Codigo y datos de usuario. Pila y memoria dinamica
 }
 \end{tabular} \\
 
@@ -148,68 +184,8 @@ x86 assembly language is a family of backward-compatible assembly languages, whi
 % ¿programa-almacenado?
 \end{frame}
  
-\begin{frame}
-\frametitle{Computadora ENIAC}
-Arquitectura anterior a Programa almacenado
-\begin{figure}
-\includegraphics[scale=0.4]{eniac2.jpg} 
-\caption{ENIAC 2}
-\label{ENIAC 2}
-\end{figure}
-Se demoraban varias semanas en programar.
-\end{frame}
  
  
-\begin{frame}
-\frametitle{Organización de una computadora}
-\begin{itemize}
-\item CPU: contiene REGISTROS, ALU, Unidad de Control
-\item Memoria
-\item Dispositivos de E/S
-\item Todo interconectado mediante buses
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Arquitectura de computadoras}
-Especifiación utilizada mayormente por el programador
-\begin{figure}
-\includegraphics[scale=0.3]{milestones.jpg} 
-%\caption{Organización de una computadora}
-%\label{Organización de una computadora}
-\end{figure}
-"Lo que el programador utilizar/ver de una computadora"
-\end{frame}
- 
-\begin{frame}
-\frametitle{Organización de computadora estructurada}
-Estructura por Niveles
-\begin{itemize}
-\item Es una manera de esquematizar los conceptos por niveles
-\item En los niveles mas bajos está el hardware
-\item En los mas altos el software
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Organización estructurada por niveles}
-Segun Tanenbaum
-\begin{figure}
-\includegraphics[scale=0.4]{seis-niveles.jpg} 
-\caption{Maquina multinivel}
-\label{Maquina multinivel}
-\end{figure}
-\end{frame}
- 
-\begin{frame}
-\frametitle{Organización estructurada por niveles}
-Otra visión (Harris)
-\begin{figure}
-\includegraphics[scale=0.4]{niveles-abstraccion.jpg} 
-\caption{Maquina multinivel}
-\label{Maquina multinivel}
-\end{figure}
-\end{frame}
  
 
 \begin{frame}
@@ -249,37 +225,6 @@ Clases de computadoras
 \end{itemize}
 \end{frame}
  
-\begin{frame}
- \frametitle{Bibliografía}
-Libros
-\begin{itemize}
-\item Andrew S. Tanenbaum (2000), ORGANIZACIÓN DE COMPUTADORAS un enfoque estructurado, Editorial Prentice Hall. (10 copias en biblioteca)
-\item David. Patterson John L. Hennessy (1995), ORGANIZACIÓN Y DISEÑO DE COMPUTADORES La interfaz hardware/software, McGraw-Hill (8 copias en biblioteca).
-\end{itemize}
-Contenido electrónico
-\begin{itemize}
-	\item \textbf{x86 assembly basis} Una introducción agradable está disponible en PEDCO en formato PDF.
-		\url{https://www.nayuki.io/page/a-fundamental-introduction-to-x86-assembly-programming}
-\item Apuntes elaborados por la cátedra, disponibles en PEDCO para impresión (pdf) o lectura online (html)
-\item Secciones de libros aptas para publicacion
-\end{itemize}
-\end{frame}
-
-\begin{frame}
- \frametitle{Otros Recursos}
-Se encuentra en PEDCO
-\begin{itemize}
-\item Foros: Novedades y Consultas
-\item Programa de la Asignatura
-\item Material extra para las prácticas
-\end{itemize}
-\end{frame}
-
-
-
-
-
-
 
 \begin{frame}
  \frametitle{Consejos y preguntas}
@@ -289,4 +234,23 @@ Se encuentra en PEDCO
 \end{itemize}
 \end{center}
 \end{frame}
+
+
+\begin{frame}
+ \frametitle{Bibliografía}
+Libros
+\begin{itemize}
+\item Andrew S. Tanenbaum (2000), ORGANIZACIÓN DE COMPUTADORAS un enfoque estructurado, Editorial Prentice Hall. (10 copias en biblioteca)
+\item David. Patterson John L. Hennessy (1995), ORGANIZACIÓN Y DISEÑO DE COMPUTADORES La interfaz hardware/software, McGraw-Hill (8 copias en biblioteca).
+\end{itemize}
+Contenido electrónico
+\begin{itemize}
+	\item \textbf{x86 assembly basis} Una introducción al lenguaje ensamblador x86. Disponible en PEDCO en formato PDF.
+		\url{https://www.nayuki.io/page/a-fundamental-introduction-to-x86-assembly-programming}
+\item Apuntes elaborados por la cátedra, disponibles en PEDCO para impresión (pdf) o lectura online (html)
+\item Secciones de libros aptas para publicacion
+\end{itemize}
+\end{frame}
+
+
 \end{document}
