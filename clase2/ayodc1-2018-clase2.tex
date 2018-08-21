@@ -47,7 +47,7 @@ Formatos de Instrucciones. Modos de direccionamiento. Tipos de instrucciones: tr
 \frametitle{Arquitecturas y Organización de Computadoras}
 \textbf{Programación de la máquina}
 \begin{itemize}
-	\item Repaso de la historia del concepto Arquitectura y Organización
+	\item Origen del concepto Arquitectura y Organización (nuevamente)
 	\item El lenguaje de la máquina
 	\item Evolucion: CISC, RISC, multiprocesadores
 \end{itemize}
@@ -58,7 +58,7 @@ Formatos de Instrucciones. Modos de direccionamiento. Tipos de instrucciones: tr
 \frametitle{Arquitecturas y Organización de Computadoras}
 \textbf{Programación de la máquina}
 \begin{itemize}
-	\item \textbf{Repaso de la historia del concepto Arquitectura y Organización}
+	\item \textbf{Origen del concepto Arquitectura y Organización (nuevamente)}
 	\item El lenguaje de la máquina
 	\item Evolucion: CISC, RISC, multiprocesadores
 \end{itemize}
@@ -70,12 +70,23 @@ Formatos de Instrucciones. Modos de direccionamiento. Tipos de instrucciones: tr
 \frametitle{Arquitecturas y Organización de Computadoras}
 \textbf{Modelo de programación}
 	\textit{Para programar una computadora se debe comprender los registros de la CPU, la organización de la memoria, su conjunto de instrucciones, y sus modos de direccionamiento.}
+	\begin{center}
+		\textbf{Clases de computadoras}
+	\end{center}
+\begin{itemize}
+\item PC - workstation
+\item Servidor
+\item Cluster
+\item SuperComputadora (cientos de miles de procesadores, terabytes, petabytes)
+\item Sistemas embebidos
+\end{itemize}
 \end{frame}
+ 
 
 
 \begin{frame}
 \frametitle{Arquitecturas y Organización de Computadoras}
-\textbf{Repaso de conceptos}
+\textbf{Terminología}
 \begin{itemize}
 	\item  \textbf{Arquitectura}: (tambien ISA: instruction set architecture) Los componentes del diseño del procesador 
 que necesitan ser comprendidos para programar una computadora.
@@ -216,7 +227,7 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 \frametitle{Arquitecturas y Organización de Computadoras}
 \textbf{Programación de la máquina}
 \begin{itemize}
-	\item Repaso de la historia del concepto Arquitectura y Organización
+	\item Origen del concepto Arquitectura y Organización (nuevamente)
 	\item \textbf{El lenguaje de la máquina}
 	\item \textbf{Evolucion: CISC, RISC, multiprocesadores}
 \end{itemize}
@@ -245,9 +256,10 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 \frametitle{Programación de la máquina}
 	\begin{center}
 \textbf{Ejemplo de lenguaje máquina: arquitectura x86}
-\includegraphics[scale=0.2]{x86-ejemplo.jpg} 
+\includegraphics[scale=0.3]{x86-ejemplo.jpg} 
 	\end{center}
-	CISC: instruccion leal, instrucciones con dos operandos, multiples modos de direccionamiento, ancho de instrucciones variable, registros ax, eax, rex
+CISC: instruccion leal, instrucciones con dos operandos, multiples modos de direccionamiento, ancho de instrucciones variable, registros ax, eax, rex \\
+% grafico inicio de RISC: quitar el interprete, hacer un set sencillo, fijo y de pocos formatos
 \end{frame}
 
 
@@ -302,7 +314,7 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 \frametitle{Programación de la máquina}
 	\begin{center}
 		\textbf{Conjunto de Instrucciones Reales (ISAs)}
-\includegraphics[scale=0.2]{real-arquitecturas.jpg} 
+\includegraphics[scale=0.3]{real-arquitecturas.jpg} 
 	\end{center}
 \end{frame}
 
@@ -310,7 +322,19 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 
 \begin{frame}
 \frametitle{Programación de la máquina}
+	\begin{center}
+		\textbf{Evolucion CISC, RISC y multiprocesadores}
+\includegraphics[scale=0.3]{performance-procesadores.jpg} 
+	\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Programación de la máquina}
+\begin{center}
 \textbf{Repaso: ISA vs Microarquitectura}
+\end{center}
 \begin{tabular}{cl}
 
 \begin{tabular}{c}
@@ -326,6 +350,7 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 		\item Tipos de datos
 		\item Cantidad de instrucciones
 		\item Modos de direccionamiento
+		\item Microarquitectura: programada (interprete, para arquitecturas CISC) o en hardware
 	\end{itemize}
 }
 \end{tabular} \\
@@ -377,41 +402,7 @@ x86 assembly language is a family of backward-compatible assembly languages, whi
  
  
 
-\begin{frame}
-\frametitle{Organización de computadora estructurada}
-\begin{itemize}
-\item Lenguaje de alto nivel
-\item Lenguaje ensamblador
-\begin{itemize}
-\item Lenguaje de alto nivel
-\item Lenguaje ensamblador
-\end{itemize}
-\item ISA
-\end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{Arquitecturas y Organización de Computadoras}
-¿Por qué estudiar todos estos conceptos?
-\begin{itemize}
-\item Tiempo de Ejecución de programas
-\item Control de riego / laboratorio
-\item Prestaciones - Multiprocesadores - Arquitecturas avanzadas - Consumo
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Arquitecturas y Organización de Computadoras}
-Clases de computadoras
-\begin{itemize}
-\item PC - workstation
-\item Servidor
-\item Cluster
-\item SuperComputadora (cientos de miles de procesadores, terabytes, petabytes)
-\item Sistemas embebidos
-\end{itemize}
-\end{frame}
- 
 
 \begin{frame}
  \frametitle{Consejos y preguntas}
