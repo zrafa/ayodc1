@@ -45,8 +45,31 @@ Formatos de Instrucciones. Modos de direccionamiento. Tipos de instrucciones: tr
 
 \begin{frame}
 \frametitle{Arquitecturas y Organización de Computadoras}
-\textbf{Modelo he programación}
-\textit{Para programar una computadora se debe comprender la memoria interna de la CPU (registros), su conjunto de instrucciones, y sus modos de direccionamiento.}
+\textbf{Programación de la máquina}
+\begin{itemize}
+	\item Repaso de la historia del concepto Arquitectura y Organización
+	\item El lenguaje de la máquina
+	\item Evolucion: CISC, RISC, multiprocesadores
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Arquitecturas y Organización de Computadoras}
+\textbf{Programación de la máquina}
+\begin{itemize}
+	\item \textbf{Repaso de la historia del concepto Arquitectura y Organización}
+	\item El lenguaje de la máquina
+	\item Evolucion: CISC, RISC, multiprocesadores
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Arquitecturas y Organización de Computadoras}
+\textbf{Modelo de programación}
+	\textit{Para programar una computadora se debe comprender los registros de la CPU, la organización de la memoria, su conjunto de instrucciones, y sus modos de direccionamiento.}
 \end{frame}
 
 
@@ -122,6 +145,7 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 	\end{itemize}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{Historia del concepto Arquitectura}
 	\begin{itemize}
@@ -166,6 +190,40 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 \end{frame}
 
 
+
+
+\begin{frame}
+
+	\begin{center}
+\includegraphics[scale=0.3]{zseries.jpg} 
+	\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Arquitecturas y Organización de Computaodoras}
+	\textbf{Ejemplo: misma Arquitectura pero diferente Microarquitectura (Organización)}
+	\begin{center}
+\includegraphics[scale=0.3]{amd-vs-intel.jpg} 
+	\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Arquitecturas y Organización de Computadoras}
+\textbf{Programación de la máquina}
+\begin{itemize}
+	\item Repaso de la historia del concepto Arquitectura y Organización
+	\item \textbf{El lenguaje de la máquina}
+	\item \textbf{Evolucion: CISC, RISC, multiprocesadores}
+\end{itemize}
+\end{frame}
+
+
+
 \begin{frame}
 \frametitle{Programación de la máquina}
 	\textbf{Modelo de programación (Arquitectura)}
@@ -182,20 +240,32 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 \end{frame}
 
 
+
 \begin{frame}
 \frametitle{Programación de la máquina}
-\textbf{Modelo de programación (Arquitectura)}
+	\begin{center}
+\textbf{Ejemplo de lenguaje máquina: arquitectura x86}
+\includegraphics[scale=0.2]{x86-ejemplo.jpg} 
+	\end{center}
+	CISC: instruccion leal, instrucciones con dos operandos, multiples modos de direccionamiento, ancho de instrucciones variable, registros ax, eax, rex
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Programación de la máquina}
+	\begin{center}
+	\textbf{Arquitectura x86 (CISC)}
+	\end{center}
 \begin{tabular}{cl}
 
 \begin{tabular}{c}
-\includegraphics[height=5cm, width=4.5cm]{componentes-CPU.jpg} 
+\includegraphics[height=5cm, width=3cm]{x86-registros.jpg} 
 
 \end{tabular}
 & \begin{tabular}{l}
 \parbox{0.5\linewidth}{
 
-\textbf{Registros} PC, propósito general, stack pointer\\
-\textbf{Memoria}: arreglo direccionable por byte. Codigo y datos de usuario. Pila y memoria dinamica
+\includegraphics[height=2cm, width=6cm]{x86-registro.jpg} 
 }
 \end{tabular} \\
 
@@ -205,24 +275,72 @@ Ejemplos: ejecución out-of-order, pipeling, ejecución especulativa, tamaño de
 
 
 \begin{frame}
-	
+\frametitle{Programación de la máquina}
+	\begin{center}
+	\textbf{Ejemplo de lenguaje máquina: arquitectura MIPS}
+	\end{center}
 \begin{tabular}{cl}
 
 \begin{tabular}{c}
-\includegraphics[height=5cm, width=4.5cm]{assembly.jpg} 
+\includegraphics[height=6cm, width=3.5cm]{compilar-MIPS.jpg} 
+
 \end{tabular}
 & \begin{tabular}{l}
 \parbox{0.5\linewidth}{
-
-\textbf{Etiqueta} pero la pucha que vale la pena estar vivo \\
-\textbf{Instruccion} pero la pucha que vale la pena estar vivo \\
-\textbf{Operandos} pero la pucha que vale la pena estar vivo \\
-\textbf{Comentarios} pero la pucha que vale la pena estar vivo 
+	\textbf{Arquitectura de 32-bits}: numeroso archivo de 32 registros de propósito general, de 32-bits, ALU de 32bits \\
+	\textbf{Instrucciones de tamaño fijo}: de 32-bits, sólo 3 formatos de instrucciones \\
+	\textbf{Operaciones de ALU de 3 registros}: Caso común (a = b + c)
 }
 \end{tabular} \\
 
 \end{tabular}
+\end{frame}
 
+
+
+\begin{frame}
+\frametitle{Programación de la máquina}
+	\begin{center}
+		\textbf{Conjunto de Instrucciones Reales (ISAs)}
+\includegraphics[scale=0.2]{real-arquitecturas.jpg} 
+	\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Programación de la máquina}
+\textbf{Repaso: ISA vs Microarquitectura}
+\begin{tabular}{cl}
+
+\begin{tabular}{c}
+\includegraphics[height=5cm, width=3cm]{org-estructurada.jpg} 
+
+\end{tabular}
+& \begin{tabular}{l}
+\parbox{0.5\linewidth}{
+
+	\begin{itemize}
+		\item Registros (cantidad, propósito)
+		\item Formato de instrucciones
+		\item Tipos de datos
+		\item Cantidad de instrucciones
+		\item Modos de direccionamiento
+	\end{itemize}
+}
+\end{tabular} \\
+
+\end{tabular}
+\end{frame}
+ 
+
+
+
+\begin{frame}
+
+	\begin{center}
+\includegraphics[scale=0.4]{compilar-mips.jpg} 
+	\end{center}
 
 \end{frame}
 
