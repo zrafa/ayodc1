@@ -58,8 +58,8 @@
 \frametitle{Representación de datos a nivel máquina}
 \textbf{Organización de la Memoria principal en MIPS}
 \begin{itemize}
-	\item 2 \^ 32 bytes, con direcciones 0, 1, 2 ... 
-	\item 2 \^ 30 4-bytes palabras, con direcciones 0, 4, 8 ... 
+	\item $2^{32}$ bytes, con direcciones 0, 1, 2 ... 
+	\item $2^{30}$ 4-bytes palabras, con direcciones 0, 4, 8 ... 
 	\item Las direcciones de las palabras deben ser múltiplos de 4
 \end{itemize}
 	\begin{center}
@@ -84,6 +84,44 @@
 % memori2, direccion, byte, palabra, alineacion, endianess, instrucciones y datos
 % directivas MIPS, etc para el practico
 
+\begin{frame}
+\frametitle{Programación de la máquina: lenguaje ensamblador MIPS}
+        \begin{center}
+        \textbf{Conjunto básico de instrucciones MIPS}
+        \end{center}
+\begin{tabular}{cl}
+
+\begin{tabular}{c}
+\includegraphics[height=5cm, width=4cm]{instrucciones-mips.jpg}
+
+\end{tabular}
+& \begin{tabular}{l}
+\parbox{0.5\linewidth}{
+
+\includegraphics[height=5.2cm, width=4cm]{pseudoinstrucciones-mips2.jpg}
+}
+\end{tabular} \\
+
+\end{tabular}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Formato de  instrucciones en MIPS}
+	\textbf{3 Formatos (fácil decodificación en hardware)}
+	\begin{center}
+\includegraphics[scale=0.5]{formato.jpg} 
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Formato de instrucciones en MIPS}
+	\textbf{Un ejemplo completo de traducción al lenguaje de la máquina}
+	\begin{center}
+\includegraphics[scale=0.4]{below2.jpg} 
+	\end{center}
+\end{frame}
 
 
 \begin{frame}
