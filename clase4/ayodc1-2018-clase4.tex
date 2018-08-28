@@ -335,6 +335,7 @@
 \frametitle{Tipos de Instrucciones}
 \begin{center}\textbf{Repaso}\end{center}
 
+\footnotesize
 \begin{verbatim}
 
 Instrucción            Significado
@@ -351,6 +352,90 @@ j Etiqueta             Próx. instr. está en Etiqueta
 \end{frame}
 
 
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Instrucciones de transferencia de Control}\end{center}
+
+\begin{itemize}
+\item Salto condicional: bne, beq
+\item ¿Qué sucede con saltar si es menor qué?
+\item Nueva instrucción:
+\begin{verbatim}
+   slt $t0, $s1, $s2
+
+Significado:      if $s1 < $s2 then
+                      $t0 = 1
+                  else
+                      $t0 = 0
+\end{verbatim}
+\item Puede ser utilizada para construir \begin{verbatim}"blt $s1, $s2, Etiqueta"\end{verbatim}
+\begin{itemize}
+\item Se pueden construir estructuras de control de ejecución generales
+\end{itemize}
+\item El ensamblador necesita utilizar un registro \textit{temporal}
+\begin{itemize}
+\item Convención de uso de registros
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Modelo de programación MIPS}
+        \begin{center}
+        \textbf{Convención de uso de registros en MIPS}
+ \\~\\
+
+\includegraphics[scale=0.4]{convencion.jpg}
+
+        \end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Modelo de programación MIPS}
+\begin{center}\textbf{Constantes}\end{center}
+
+\begin{itemize}
+\item Pequeñas constantes son utilizadas muy frecuentemente (50 por ciento de los operandos son constantes)
+\begin{verbatim}
+Ejemplo:   a = a + 5;
+           b = b + 1 ;
+           c = c * 2 + 1;
+\end{verbatim}
+\item ¿Soluciones? 
+\begin{itemize}
+\item Poner las constantes típicas (1, 2, 10) en memoria y cargarlas
+\item Crear registros cableados en hardware con un valor (hard-wired). Como el registro zero
+\item o .....
+\end{itemize}
+\item Colocar las constantes como parte de las Instrucciones (MIPS)
+\begin{verbatim}
+Ejemplo:   addi $29, $29 + 5
+           addi $8, $8, 1
+           andi $29, $29, 6
+           ori $9, $9, 4
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Modelo de programación MIPS}
+\begin{center}\textbf{¿Qué sucede con grandes Constantes?}\end{center}
+
+\begin{itemize}
+\item Las instrucciones son de 32-bits, por lo que no es posible colocar una constantes de 32-bits dentro de la instrucción.
+\ Solución: para cargar una constante de 32-bit en un registro se utilizan dos instrucciones
+\begin{verbatim}
+Ejemplo:   lui $t0, 0xAAAA
+           ori $t0, 0xAAAA
+\end{verbatim}
+\includegraphics[scale=0.4]{ori.jpg}
+\end{itemize}
+\end{frame}
 
 
 
