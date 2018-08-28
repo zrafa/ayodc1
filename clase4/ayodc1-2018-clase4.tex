@@ -428,7 +428,7 @@ Ejemplo:   addi $29, $29 + 5
 
 \begin{itemize}
 \item Las instrucciones son de 32-bits, por lo que no es posible colocar una constantes de 32-bits dentro de la instrucción.
-\ Solución: para cargar una constante de 32-bit en un registro se utilizan dos instrucciones
+\item Solución: para cargar una constante de 32-bit en un registro se utilizan dos instrucciones
 \begin{verbatim}
 Ejemplo:   lui $t0, 0xAAAA
            ori $t0, 0xAAAA
@@ -436,6 +436,31 @@ Ejemplo:   lui $t0, 0xAAAA
 \includegraphics[scale=0.4]{ori.jpg}
 \end{itemize}
 \end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Modelo de programación MIPS}
+\begin{center}\textbf{Lenguaje Ensamblador vs. Lenguaje Máquina?}\end{center}
+
+\begin{itemize}
+\item El lenguaje ensamblador provee una representación simbólica conveniente
+\begin{itemize}
+\item Es mucho más sencillo que programar escribiendo números
+\item Por ejemplo: el destino de una operación va primero
+\end{itemize}
+\item El lenguaje máquina es la verdadera realidad
+\begin{itemize}
+\item Por ejemplo: el destino ya no es lo primero que aparece en una operación va primero
+\end{itemize}
+\item El lenguaje ensamblador puede proveer \textbf{pseudoinstrucciones}
+\begin{itemize}
+\item Por ejemplo: \begin{verbatim}move $t0, $t1\end{verbatim}
+\item sería implementadao utilizando:  \begin{verbatim}add $t0, $t1, $zero\end{verbatim}
+\end{itemize}
+\item Cuando se debe considerar la performance se deben contar las instrucciones reales
+\end{itemize}
+\end{frame}
+
 
 
 
@@ -453,7 +478,7 @@ Ejemplo:   lui $t0, 0xAAAA
 & \begin{tabular}{l}
 \parbox{0.5\linewidth}{
 
-%\includegraphics[height=5.2cm, width=4cm]{pseudoinstrucciones-mips2.jpg}
+\includegraphics[height=5.2cm, width=4cm]{pseudoinstrucciones-mips2.jpg}
 }
 \end{tabular} \\
 
