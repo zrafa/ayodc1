@@ -189,8 +189,168 @@
 \item stack
 \end{itemize}
 \end{itemize}
+\item El compilador podría quedarse sin registros : \textbf{spilling}
 \end{itemize}
 \end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Instrucciones de transferencia de datos}\end{center}
+
+\begin{itemize}
+\item Instrucciones de \textbf{Carga} y \textbf{Almacenamiento}
+\item Ejemplo:
+\end{itemize}
+\begin{verbatim}
+
+  Código C:        a[8] = h + a[8];
+
+  Código MIPS:     lw  $t0, 32($s3)
+                   add $t0, $s2, $t0
+                   sw  $t0, 32($s3)
+\end{verbatim}
+\begin{itemize}
+\item Las operaciones de carga y almacenamiento no tienen operandos destino (registro)
+\item Recuerde: las operaciones aritméticas y lógicas operan sobre registros, no sobre elementos en la memoria!
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Formato de instrucciones en MIPS}
+\begin{center}\textbf{Un ejemplo completo de traducción de C al lenguaje de la máquina}\end{center}
+\begin{itemize}
+\item ¿Puede interpretar la asignación de variables y el por qué del código en lenguaje ensamblador?
+\end{itemize}
+	\begin{center}
+\includegraphics[scale=0.4]{below2.jpg} 
+	\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Repaso}\end{center}
+
+\begin{itemize}
+\item MIPS
+\begin{itemize}
+\item Cargamos palabras (words) pero utilizamos direccionamiento del primer byte
+\item Las instrucciones aritméticas y lógicas operan unicamente con registros
+\end{itemize}
+\end{itemize}
+\begin{verbatim}
+
+  Instrucción            Significado
+
+  add $s1, $s2, $s3      $s1 = $s2 + $s3
+  sub $s1, $s2, $s3      $s1 = $s2 - $s3
+  lw $s1, 100($s2)       $s1 = MEMORIA[$s2+100]
+  sw $s1, 100($s2)       MEMORIA[$s2+100] = $s1
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Lenguaje Máquina}
+\begin{center}\textbf{Formato de Instrucciones en MIPS}\end{center}
+\begin{itemize}
+\item Las instruccciones, como los registros y la palabra, son de 32-bits
+\begin{itemize}
+\item Los registros están numerados en el código máquina: del 0 al 31
+\end{itemize}
+\end{itemize}
+	\begin{center}
+\includegraphics[scale=0.7]{formato.jpg} 
+	\end{center}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Instrucciones de transferencia de Control}\end{center}
+
+\begin{itemize}
+\item Instrucciones para realizar decisiones
+\begin{itemize}
+\item Alterar el flujo de control de ejecución
+\item y por lo tanto, cambiar la "próxima" instrucción a ser ejecutada
+\end{itemize}
+\item Instrucciones de bifurcación condicional en MIPS
+\begin{verbatim}
+                bne $t0, $t1, label
+                beq $t0, $t1, label
+\end{verbatim}
+\item Ejemplo:
+\begin{verbatim}
+   Código en C:      if (i == j)  h = i + j;
+
+   Código en MIPS:         bne $s0, $s1, label
+                           add $s3, $s0, $s1
+                     label: ...
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Instrucciones de transferencia de Control}\end{center}
+
+\begin{itemize}
+\item Instrucciones de salto incondicional
+\begin{itemize}
+\item j  label
+\end{itemize}
+\item Ejemplo:
+\begin{verbatim}
+   Código en C:      if (i != j)  
+                           h = i + j;
+                     else
+                           h = i - j;
+
+
+   Código en MIPS:         beq $s4, $s5, lab1
+                           add $s3, $s4, $s5
+                           j lab2
+                     lab1: sub $s3, $s4, $s5
+                     lab2:
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Repaso}\end{center}
+
+\begin{verbatim}
+
+Instrucción            Significado
+
+add $s1, $s2, $s3      $s1 = $s2 + $s3
+sub $s1, $s2, $s3      $s1 = $s2 - $s3
+lw $s1, 100($s2)       $s1 = MEMORIA[$s2+100]
+sw $s1, 100($s2)       MEMORIA[$s2+100] = $s1
+bne $s4, $s5, Etiq     Próx. instr. está en Etiq si $s4 es distinto a $s5
+beq $s4, $s5, Etiq     Próx. instr. está en Etiq si $s4 es igual a $s5
+j Etiqueta             Próx. instr. está en Etiqueta
+
+\end{verbatim}
+\end{frame}
+
+
 
 
 
