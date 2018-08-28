@@ -1,0 +1,154 @@
+\documentclass[glossy]{beamer}
+\useoutertheme{wuerzburg}
+\useinnertheme[realshadow,corners=2pt,padding=2pt]{chamfered}
+\usecolortheme{shark}
+
+\usepackage{listings}
+
+\usepackage{tikz}
+\newcommand<>{\hover}[1]{\uncover#2{%
+ \begin{tikzpicture}[remember picture,overlay]%
+ \draw[fill,opacity=0.4] (current page.south west)
+ rectangle (current page.north east);
+ \node at (current page.center) {#1};
+ \end{tikzpicture}}
+}
+
+\title{Arquitecturas y Organización de Computadoras I \\\line(1,0){320}}
+% \author{\texorpdfstring{Author\newline\url{email@email.com}}{Author}}
+%\author{Rafael Ignacio Zurita}
+\institute{Rafael Ignacio Zurita \\ Departamento de Ingenieria de Computadoras - FAI - UNCOMA 2018 \\ Clase presencial 4}
+%\date{\today}
+
+
+
+\begin{document}
+
+
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\institute{Departamento de Ingenieria de Computadoras - FAI - UNCOMA \\ 2018}
+
+\begin{frame}
+\frametitle{Programa Analítico}
+\textbf{UNIDAD I: Arquitectura y Organización de Computadoras}
+ \\~\\
+\textit{Introducción al lenguaje ensamblador MIPS. Representación de datos a nivel de máquina. Direccionamiento de memoria: concepto de palabra, ordenamiento de bytes. Registros.} 
+ \\~\\
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Introducción a MIPS}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.4]{organizacion-mips.jpg} 
+\caption{Diagrama de Bloques de una computadoroa MIPS}
+\label{Diagrama de Bloques de una computadoroa MIPS}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Representación de datos a nivel máquina}
+\textbf{Organización de la Memoria principal en MIPS}
+\begin{itemize}
+	\item $2^{32}$ bytes, con direcciones 0, 1, 2 ... 
+	\item $2^{30}$ 4-bytes palabras, con direcciones 0, 4, 8 ... 
+	\item Las direcciones de las palabras deben ser múltiplos de 4
+\end{itemize}
+	\begin{center}
+\includegraphics[scale=0.5]{memoria-mips.jpg} 
+	\end{center}
+\end{frame}
+
+
+
+
+
+% INDICE: HISTORIA de procesadores y arquitectura (filmina de arquitectura de david), system 360, zseries, 
+% compilacion, ensamblado, codigo maquina
+% ejemplo x86 , uso de longitud variable para instruccciones, instrucciongs con dos operandos, pocos registros, infinidad de modos de direccion2miento para cada operacion. En cada version nuevas instrucciones y compatibilidad. Cientos de instrucciones CISC
+% Microarquitectura : programada (interprete), en hardware
+% grafico inicio de RISC: quitar el interprete, hacer un set sencillo, fijo y de pocos formatos
+% limite de energia, nacimiento de arquitecturas avanzadas 
+%
+% lenguaje ensamblador, figura de compilacion, ejemplo de ensamblador x86, figura de dos arquitecturas x86, system 360, zseries,X , filmina de diferencia entre arquitectura y organizacion, estructura por capas y resumen de los temas a ver en la materia,  memoria, 
+% segunda parte: antes de ver lenguaje ensamblador veremos terminologia importante sobre la organizacion  de la memoria
+% Representación de datos a nivel de máquina. Direccionamiento de memoria: concepto de palabra, ordenamiento de bytes. Registros.} 
+% memori2, direccion, byte, palabra, alineacion, endianess, instrucciones y datos
+% directivas MIPS, etc para el practico
+
+\begin{frame}
+\frametitle{Programación de la máquina: lenguaje ensamblador MIPS}
+        \begin{center}
+        \textbf{Conjunto básico de instrucciones MIPS}
+        \end{center}
+\begin{tabular}{cl}
+
+\begin{tabular}{c}
+\includegraphics[height=5cm, width=4cm]{instrucciones-mips.jpg}
+
+\end{tabular}
+& \begin{tabular}{l}
+\parbox{0.5\linewidth}{
+
+\includegraphics[height=5.2cm, width=4cm]{pseudoinstrucciones-mips2.jpg}
+}
+\end{tabular} \\
+
+\end{tabular}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Formato de  instrucciones en MIPS}
+	\textbf{3 Formatos (fácil decodificación en hardware)}
+	\begin{center}
+\includegraphics[scale=0.5]{formato.jpg} 
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Formato de instrucciones en MIPS}
+	\textbf{Un ejemplo completo de traducción al lenguaje de la máquina}
+	\begin{center}
+\includegraphics[scale=0.4]{below2.jpg} 
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Consejos y preguntas}
+\begin{center}
+\begin{itemize}
+\item  ¿Preguntas?
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Bibliografía}
+Libros
+\begin{itemize}
+\item Andrew S. Tanenbaum (2000), ORGANIZACIÓN DE COMPUTADORAS un enfoque estructurado, Editorial Prentice Hall. (10 copias en biblioteca)
+\item David. Patterson John L. Hennessy (1995), ORGANIZACIÓN Y DISEÑO DE COMPUTADORES La interfaz hardware/software, McGraw-Hill (8 copias en biblioteca).
+\end{itemize}
+Contenido electrónico
+\begin{itemize}
+	\item \textbf{x86 assembly basis} Una introducción al lenguaje ensamblador x86. Disponible en PEDCO en formato PDF.
+		\url{https://www.nayuki.io/page/a-fundamental-introduction-to-x86-assembly-programming}
+\item Apuntes elaborados por la cátedra, disponibles en PEDCO para impresión (pdf) o lectura online (html)
+\item Secciones de libros aptas para publicacion
+\end{itemize}
+\end{frame}
+
+
+\end{document}
