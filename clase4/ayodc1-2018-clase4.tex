@@ -5,6 +5,9 @@
 
 \usepackage{listings}
 
+\usepackage{fancyvrb}
+%\usepackage[scaled]{beramono} %sets the beramono font. Just comment this line to get the default font back
+
 \usepackage{tikz}
 \newcommand<>{\hover}[1]{\uncover#2{%
  \begin{tikzpicture}[remember picture,overlay]%
@@ -79,36 +82,65 @@
 
 
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Tipos de Instrucciones}
 \begin{center}\textbf{Instrucciones aritméticas en MIPS}\end{center}
 \begin{itemize}
-\item Aritméticas
-\begin{itemize}
-\item Enteros
-\item Punto Flotante
+\item Las instrucciones aritméticas lógicas más comunes tienen 3 operandos
+\item El orden de los operandos es fijo (el destino primero)
+\item Ejemplo:
 \end{itemize}
-\item Instrucciones de transferencia de datos (memoria)
+
+% \footnotesize
+\begin{verbatim}
+
+  Código C:        a = b + c;
+
+  Código MIPS:     add s0, s1, s2
+
+(el compilador asocia a s0, s1 y s2 a las variables a, b y c)
+
+\end{verbatim}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Instrucciones aritméticas en MIPS}\end{center}
+
+\begin{verbatim}
+
+  Código C:        a = b + c + d;
+                   e = f - a;
+
+  Código MIPS:     add $t0, $s1, $s2
+                   add $s0, $t0, $s3
+                   sub $s4, $s5, $s0
+\end{verbatim}
 \begin{itemize}
-\item Carga y Almacenamiento
-\end{itemize}
-\item Flujo de control
-\begin{itemize}
-\item Salto
-\item Bifurcación condicional
-\item Llamado y Retorno
-\end{itemize}
+\item Los operandos deben estar en registros, y existen sólo 32
+\item Principio de diseño: Más pequeño es más rápido. Porqué? (viaje de las señales)
 \end{itemize}
 \end{frame}
 
 
+
+
+
 \begin{frame}
-\frametitle{Introducción a MIPS}
+\frametitle{Tipos de instrucciones en MIPS}
+\begin{center}\textbf{Registros vs. Memoria}\end{center}
+
+\begin{itemize}
+\item Los operandos deben estar en registros, y existen sólo 32
+\item El compilador asocia variables a registros
+\item ¿Qué sucede con un programa con un montón de variables?
+\end{itemize}
 \begin{center}
 \begin{figure}
 \includegraphics[scale=0.4]{organizacion-mips.jpg} 
-\caption{Diagrama de Bloques de una computadoroa MIPS}
-\label{Diagrama de Bloques de una computadoroa MIPS}
 \end{figure}
 \end{center}
 \end{frame}
@@ -128,21 +160,39 @@
 \end{frame}
 
 
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Registros vs. Memoria}\end{center}
+
+\begin{itemize}
+\item Los operandos deben estar en registros, y existen sólo 32
+\item El compilador asocia variables a registros
+\item ¿Qué sucede con un programa con un montón de variables?
+\end{itemize}
+\end{frame}
 
 
 
-% INDICE: HISTORIA de procesadores y arquitectura (filmina de arquitectura de david), system 360, zseries, 
-% compilacion, ensamblado, codigo maquina
-% ejemplo x86 , uso de longitud variable para instruccciones, instrucciongs con dos operandos, pocos registros, infinidad de modos de direccion2miento para cada operacion. En cada version nuevas instrucciones y compatibilidad. Cientos de instrucciones CISC
-% Microarquitectura : programada (interprete), en hardware
-% grafico inicio de RISC: quitar el interprete, hacer un set sencillo, fijo y de pocos formatos
-% limite de energia, nacimiento de arquitecturas avanzadas 
-%
-% lenguaje ensamblador, figura de compilacion, ejemplo de ensamblador x86, figura de dos arquitecturas x86, system 360, zseries,X , filmina de diferencia entre arquitectura y organizacion, estructura por capas y resumen de los temas a ver en la materia,  memoria, 
-% segunda parte: antes de ver lenguaje ensamblador veremos terminologia importante sobre la organizacion  de la memoria
-% Representación de datos a nivel de máquina. Direccionamiento de memoria: concepto de palabra, ordenamiento de bytes. Registros.} 
-% memori2, direccion, byte, palabra, alineacion, endianess, instrucciones y datos
-% directivas MIPS, etc para el practico
+\begin{frame}[fragile]
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Asignación de Registros}\end{center}
+
+\begin{itemize}
+\item El compilador intenta asociar tantas variables a registros como sea posible
+\item Algunas variables no pueden ser alocadas
+\begin{itemize}
+\item grandes arreglos (vectores)
+\item variables accedidas con diferentes punteros
+\item variables alocadas dinamicamente
+\begin{itemize}
+\item heap
+\item stack
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
 
 \begin{frame}
 \frametitle{Programación de la máquina: lenguaje ensamblador MIPS}
