@@ -486,23 +486,41 @@ Ejemplo:   lui $t0, 0xAAAA
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Formato de  instrucciones en MIPS}
-	\textbf{3 Formatos (fácil decodificación en hardware)}
+\begin{frame}[fragile]
+\frametitle{Modelo de programación MIPS}
+\begin{center}\textbf{Resumen de la arquitectura MIPS}\end{center}
+\begin{itemize}
+\item Instrucciones sencillas de 32-bits de ancho
+\item Muy estructurado, no hay necesidad de grandes variaciones
+\item Confía en el compilador para ganar performance
+\item Hay que ayudar al compilador cuando sea necesario
+\item Únicamente 3 formatos de instrucciones
 	\begin{center}
-\includegraphics[scale=0.5]{formato.jpg} 
+\includegraphics[scale=0.3]{formato2.jpg} 
 	\end{center}
+\item ¿Cómo programar mejor? (cantidad de variables, constantes)
+\end{itemize}
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Formato de instrucciones en MIPS}
-	\textbf{Un ejemplo completo de traducción al lenguaje de la máquina}
-	\begin{center}
-\includegraphics[scale=0.4]{below2.jpg} 
-	\end{center}
+\begin{frame}[fragile]
+\frametitle{Modos de direccionamiento}
+\begin{itemize}
+\item Los modos de direccionamiento son las diferentes formas de especificar un operando dentro de una instrucción (a nivel código máquina).
+\item Es el CÓMO se especifican e interpretan las direcciones de memoria según las instrucciones
+\item NO CONFUNDIR modos de direccionamiento con los formatos de direccionamiento permitidos al programar en lenguaje ensamblador
+\item Absoluto, Inmediato, Directo por registro suelen ser los mas importantes
+\end{itemize}
 \end{frame}
 
+
+\begin{frame}[fragile]
+\frametitle{Modos de direccionamiento}
+\begin{center}\textbf{Modos de direccionamiento en MIPS}\end{center}
+	\begin{center}
+\includegraphics[scale=0.3]{modos-de-direccionamiento.jpg} 
+	\end{center}
+\end{frame}
 
 \begin{frame}
  \frametitle{Consejos y preguntas}
