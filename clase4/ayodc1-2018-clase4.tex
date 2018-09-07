@@ -449,9 +449,9 @@ Ejemplo:   lui $t0, 0xAAAA
 \item Es mucho más sencillo que programar escribiendo números
 \item Por ejemplo: el destino de una operación va primero
 \end{itemize}
-\item El lenguaje máquina es la verdadera realidad
+\item El lenguaje máquina es el código real interpretado por el hw
 \begin{itemize}
-\item Por ejemplo: el destino ya no es lo primero que aparece en una operación va primero
+\item Por ejemplo: el destino ya no es lo primero que aparece en una operación
 \end{itemize}
 \item El lenguaje ensamblador puede proveer \textbf{pseudoinstrucciones}
 \begin{itemize}
@@ -494,12 +494,14 @@ Ejemplo:   lui $t0, 0xAAAA
 \item Instrucciones sencillas de 32-bits de ancho
 \item Muy estructurado, no hay necesidad de grandes variaciones
 \item Confía en el compilador para ganar performance
-\item Hay que ayudar al compilador cuando sea necesario
 \item Únicamente 3 formatos de instrucciones
 	\begin{center}
 \includegraphics[scale=0.3]{formato2.jpg} 
 	\end{center}
 \item ¿Cómo programar mejor? (cantidad de variables, constantes)
+\begin{itemize}
+\item Hay que ayudar al compilador cuando sea necesario
+\end{itemize}
 \end{itemize}
 \end{frame}
 
