@@ -416,7 +416,131 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Relojes}\end{center}
+\begin{itemize}
+\item Los relojes son necesarios en la lógica secuencial, para decidir cuando un elemento que contiene un estado debe ser actualizado.
+\item Terminología: tiempo del ciclo (período), frecuencia del reloj.
+\item Metodología : edge-triggered clocking (reloj disparado por flanco)
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{reloj.jpg} 
+\end{figure}
+\end{frame}
 
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Relojes}\end{center}
+\begin{itemize}
+\item Sistemas síncronos
+\item edge-triggered clocking posibilita un proceso instantáneo
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{reloj-estado-combinacional.jpg} 
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{itemize}
+\item Set-Reset Latch
+\item Elemento básico para almacenar un bit. Contiene un Loop en su diseño.
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{latch-s-r.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{itemize}
+\item D-Latch
+\item Elemento básico para almacenar un bit. Contiene un Loop en su diseño
+\item Sus entradas son el bit a almacenar y la señal de reloj
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{latch-d.jpg} 
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{itemize}
+\item D-Latch
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{latch-d-tiempo.jpg} 
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{itemize}
+\item D Flip-Flop : utilizados en la construcción de REGISTROS
+\item Elemento básico para almacenar un bit. Contiene un Loop en su diseño
+\item Sus entradas son el bit a almacenar y la señal de reloj
+\item Se sincroniza (actualiza) en el flanco de reloj
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{flip-flop-d.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{itemize}
+\item D Flip-Flop
+el estado interno del flip-flop no cambia. Eso lo distingue de un latch.
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{flip-flop-d-tiempo.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{itemize}
+\item D Flip-Flop
+\item Si la señal D cambia cuando la señal de reloj está baja (desacertada)
+el estado interno del flip-flop no cambia. Eso lo distingue de un latch.
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{flip-flop-d.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Diseño de ALU y Registros}\end{center}
+\begin{itemize}
+\item Elementos de estado, multiplexores, decodificadores, ALU
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{leer-registro.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Diseño digital}
+\begin{center}\textbf{Diseño de ALU y Registros}\end{center}
+\begin{itemize}
+\item Elementos de estado, multiplexores, decodificadores, ALU
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{escribir-registro.jpg} 
+\end{figure}
+\end{frame}
 
 
 \begin{frame}
