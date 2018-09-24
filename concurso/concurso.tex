@@ -301,10 +301,10 @@ Año tras año ...
         \textbf{Memorias}
         \end{center}
 \begin{itemize}
-\item En una computadora de propósito general (PC, tablet, smartphone) se cuenta con:
+\item En una computadora de propósito general se cuenta con:
 \begin{itemize}
 \item Memoria con Firmware de arranque
-\item Memoria RAM (volatil, estática y dinámica)
+\item Memoria RAM (volatil, estática y dinámica/DRAM y caché)
 \item Disco rígido o memoria flash
 \item Disco de estado sólido
 \item DVD y CD
@@ -322,10 +322,10 @@ Año tras año ...
         \textbf{Memorias}
         \end{center}
 \begin{itemize}
-\item En una computadora de propósito general (PC, tablet, smartphone) se cuenta con:
+\item En una computadora de propósito general se cuenta con:
 \begin{itemize}
 \item Memoria con Firmware de arranque
-\item Memoria RAM (volatil, estática y dinámica)
+\item Memoria RAM (volatil, estática y dinámica/DRAM y caché)
 \item Disco rígido o memoria flash
 \item Disco de estado sólido
 \item DVD y CD
@@ -340,17 +340,47 @@ Año tras año ...
 \end{frame}
 
 
+
+
 \begin{frame}
 \frametitle{Jerarqu\'ia de Memoria}
         \begin{center}
-        \textbf{Resumen}
+        \textbf{Memorias}
         \end{center}
-
+ \textbf{¿Por qué necesitamos tantos tipos de memoria?}
 \begin{itemize}
-\item \textbf{Jerarqu\'ia de Memoria}: Organización de la memoria de una computadora que permita obtener el \textbf{rendimiento} de una memoria de gran velocidad al \textbf{costo} (precio) de las memorias mas lentas.
+\item Memoria ideal: ilimitada (siempre suficiente), veloz, densa (tamaño físico), de bajo consumo, robusta, barata, persistente. Pero, la tecnología es insuficiente.
 \end{itemize}
 
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.6]{tecnologias.jpg} 
+\end{figure}
+\end{center}
 \end{frame}
+
+
+\begin{frame}
+\frametitle{Jerarqu\'ia de Memoria}
+        \begin{center}
+        \textbf{Memorias}
+        \end{center}
+ \textbf{¿Por qué necesitamos tantos tipos de memoria?}
+\begin{itemize}
+\item Memoria ideal: ilimitada (siempre suficiente), veloz, densa (tamaño físico), de bajo consumo, robusta, barata, persistente. Pero, la tecnología es insuficiente.
+\end{itemize}
+
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.5]{tecnologias.jpg} 
+\end{figure}
+\end{center}
+\begin{itemize}
+\item \textbf{IDEA 1}: Exponer todos los tipos de memoria y que el programador la utilice con el mejor rendimiento posible.
+\end{itemize}
+\end{frame}
+
+
 
 
 
@@ -360,11 +390,44 @@ Año tras año ...
         \textbf{Localidad de las Referencias}
         \end{center}
 \begin{itemize}
-\item \textbf{Comportamiento de los programas}: si se observa un intervalo corto de tiempo se utiliza una pequeña fracción del total de la memoria.
-\item Este comportamiento de acceso ha sido llamado principio de localidad de las referencias[DENN68], o simplemente principio de localidad.
+\item \textbf{IDEA 2}: mantener los datos más frecuentemente utilizados por el procesador en una pequeña pero veloz memoria SRAM (cercana a la CPU) de manera transparente.
+\item Hacer referencia a la memoria principal unicamente de vez en cuando.
+\begin{itemize}
+\item Esta idea libera al programador
+\item ¿Qué hace posible esta idea?
+\end{itemize}
 \end{itemize}
 
 \end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Jerarqu\'ia de Memoria}
+        \begin{center}
+        \textbf{Localidad de las Referencias}
+        \end{center}
+\begin{itemize}
+\item \textbf{IDEA 2}: mantener los datos más frecuentemente utilizados por el procesador en una pequeña pero veloz memoria SRAM (cercana a la CPU) de manera transparente.
+\item Hacer referencia a la memoria principal unicamente de vez en cuando.
+\begin{itemize}
+\item Esta idea libera al programador
+\item ¿Qué hace posible esta idea?
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item \textbf{Comportamiento de los programas}: si se observa un intervalo corto de tiempo se utiliza una pequeña fracción del total de la memoria.
+\item Este comportamiento de acceso ha sido llamado principio de localidad de las referencias[DENN68], o simplemente \textbf{principio de localidad}.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
 
 \begin{frame}
 \frametitle{Jerarqu\'ia de Memoria}
@@ -420,6 +483,18 @@ Año tras año ...
 \end{frame}
 
 
+
+\begin{frame}
+\frametitle{Jerarqu\'ia de Memoria}
+        \begin{center}
+        \textbf{Resumen}
+        \end{center}
+
+\begin{itemize}
+\item \textbf{Jerarqu\'ia de Memoria}: Organización de la memoria de una computadora que permita obtener el \textbf{rendimiento} de una memoria de gran velocidad al \textbf{costo} (precio) de las memorias mas lentas.
+\end{itemize}
+
+\end{frame}
 
 
 
