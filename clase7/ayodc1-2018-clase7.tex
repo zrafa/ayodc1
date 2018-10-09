@@ -123,27 +123,116 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 \begin{frame}
 \frametitle{Implementación de la Microarquitectura}
 \begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\end{enumerate}
 \begin{figure}
-\includegraphics[scale=0.2]{programa-almacenado.jpg} 
-\end{figure}
-\begin{figure}
-\includegraphics[scale=0.2]{codigo-maquina.jpg} 
+\includegraphics[scale=0.4]{programa-almacenado.jpg} 
 \end{figure}
 \end{frame}
 
-%\begin{frame}
-%\frametitle{Implementación de la Microarquitectura}
-%\begin{center}\textbf{Analizar el conjunto de instrucciones (ISA) \end{center}
-%\begin{figure}
-%\includegraphics[scale=0.4]{programa-almacenado.jpg} 
-%\end{figure}
-%
-%\begin{figure}
-%\includegraphics[scale=0.4]{codigo-maquina.jpg} 
-%\end{figure}
-%
-%\end{frame}
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\end{enumerate}
+\begin{figure}
+\includegraphics[scale=0.4]{codigo-maquina.jpg} 
+\end{figure}
+¿Qué tipos de instrucciones (formato) MIPS son las dos anteriores?
+\end{frame}
 
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\end{enumerate}
+\begin{figure}
+\includegraphics[scale=0.4]{tipos-i.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\end{enumerate}
+\begin{itemize}
+\item Para nuestro diseño contemplaremos un conjunto de instrucciones MIPS reducido:
+\begin{enumerate}
+\item De tipo-R: and, or, add, sub, slt
+\item De carga y almacenamiento (tipo-i): lw, sw
+\item De bifurcación (tipo-i): beq
+\item De salto (tipo-j): j
+\end{enumerate}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Multiple implementaciones para una misma arquitectura}\end{center}
+
+\begin{enumerate}
+\item Camino de datos de un único ciclo
+\begin{itemize}
+\item Cada instrucción se ejecuta en un único ciclo de reloj
+\end{itemize}
+\item Multiciclo
+\begin{itemize}
+\item Cada instrucción es dividida en una serie de pasos más cortos, y cada paso toma un ciclo de reloj
+\end{itemize}
+\item Segmentado (pipelined)
+\begin{itemize}
+\item Cada instrucción es dividida en una serie de pasos, cada paso toma un ciclo de reloj
+\item Multiples instrucciones se ejecutan a la vez
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item \textbf{REQUERIMIENTOS} Analizar el conjunto de instrucciones (ISA)
+\end{enumerate}
+\begin{itemize}
+\item Controlar la memoria
+\begin{itemize}
+\item Leer instrucciones
+\item Leer y escribir datos
+\end{itemize}
+
+\item Controlar el archivo de 32 registros
+\begin{itemize}
+\item Leer el valor de un registro (indicado por el campo rs)
+\item Leer el valor de un registro (indicado por el campo rt)
+\item Escribir un valor en un registro (indicado por el campo rd o rt)
+\end{itemize}
+\item Controlar el PC
+\item Poder extender el signo de un número
+\item Realizar operaciones aritméticas y lógicas
+\item Poder sumar 4 al PC
+\end{itemize}
+
+\end{frame}
 
 
 
