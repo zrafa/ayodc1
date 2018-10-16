@@ -244,7 +244,7 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 \item PC es calculado en la primera etapa
 \end{itemize}
 \begin{figure}
-\includegraphics[scale=0.3]{lw1.jpg} 
+\includegraphics[scale=0.35]{lw1.jpg} 
 \end{figure}
 
 \end{frame}
@@ -259,7 +259,7 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 \item Leer datos del archivo de registros
 \end{itemize}
 \begin{figure}
-\includegraphics[scale=0.3]{lw2.jpg} 
+\includegraphics[scale=0.35]{lw2.jpg} 
 \end{figure}
 
 \end{frame}
@@ -274,7 +274,7 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 \item Calculo de la dirección efectiva
 \end{itemize}
 \begin{figure}
-\includegraphics[scale=0.3]{lw3.jpg} 
+\includegraphics[scale=0.4]{lw3.jpg} 
 \end{figure}
 
 \end{frame}
@@ -286,10 +286,16 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 \item Acceso a la memoria de datos
 \end{itemize}
 \begin{figure}
-\includegraphics[scale=0.3]{lw4.jpg} 
+\includegraphics[scale=0.4]{lw4.jpg} 
 \end{figure}
 
 \end{frame}
+
+
+
+
+
+
 
 \begin{frame}
 \frametitle{Implementación de la Microarquitectura}
@@ -298,12 +304,208 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 \item Escritura del dato en el archivo de registros
 \end{itemize}
 \begin{figure}
-\includegraphics[scale=0.3]{lw5.jpg} 
+\includegraphics[scale=0.4]{lw5.jpg} 
 \end{figure}
 
 \end{frame}
 
 
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo con una única instruccion: lw}\end{center}
+\begin{itemize}
+\item \textbf{¿Cómo pueden llegar las señales del registro destino?}
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{lw5.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo con una única instruccion: lw}\end{center}
+\begin{itemize}
+\item \textbf{¿Cómo pueden llegar las señales del registro destino?}
+\item Utilizando registros de la microarquitectura entre las etapas
+\item Las señales son copiadas entre las etapas
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.3]{sw.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Representación visual del camino segmentado}\end{center}
+\begin{itemize}
+\item Orientado a los recursos utilizados
+\item Diagrama simplificado
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.3]{dosinstrucciones.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Unidad de control: generación de las señales}\end{center}
+\begin{figure}
+\includegraphics[scale=0.35]{control.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{itemize}
+\item lw \$10, 20 (\$1)
+\item sub \$11, \$2, \$3
+\item and \$12, \$4, \$5
+\item or \$13, \$6, \$7
+\item add \$14, \$8, \$9
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling1.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling2.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling3.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling4.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling5.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling6.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling7.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling8.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una secuencia de instrucciones}\end{center}
+
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling9.jpg} 
+\end{figure}
+
+\end{frame}
 
 
 
