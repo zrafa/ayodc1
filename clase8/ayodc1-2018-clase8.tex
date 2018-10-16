@@ -110,8 +110,11 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 \begin{itemize}
 \item Uso de varias unidades al mismo
 \item Compartir elementos entre diferentes instrucciones
+\item \textbf{Paralelismo a nivel de instrucciones}
 \end{itemize}
 \end{frame}
+
+
 
 
 \begin{frame}
@@ -132,11 +135,170 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 \end{frame}
 
 
+
+
 \begin{frame}
 \frametitle{Implementación de la Microarquitectura}
-\begin{center}\textbf{Camino de datos combinado - instrucciones de carga}\end{center}
+\begin{center}\textbf{Ejemplo de la lavandería}\end{center}
+\begin{itemize}
+\item Optimizacion real
+\begin{itemize}
+\item Las unidades operan independientemente
+\item Se pueden utilizar unidades al mismo tiempo
+\item Tiempo promedio por lavado similar al anterior
+\item Tiempo total para n cargas = aprox. (n * tiempo por etapa)
+\end{itemize}
+\end{itemize}
 \begin{figure}
-\includegraphics[scale=0.3]{lw.jpg} 
+\includegraphics[scale=0.4]{lavanderia2.jpg} 
+\end{figure}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Tiempo del camino segmentado}\end{center}
+\begin{itemize}
+\item Ciclo único vs. ejecución segmentada
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.35]{singlevspipelined.jpg} 
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Precondiciones}\end{center}
+\begin{itemize}
+\item Diseño del conjunto de instrucciones
+\begin{itemize}
+\item Instrucciones de ancho fijo (idealmente)
+\item Pocos formatos de instrucciones
+\item Operandos en memoria sólo para instrucciones de carga y almacenamiento
+\item Datos alineados
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Origen de los problemas
+\begin{itemize}
+\item Instrucciones con longitud variable
+\item Datos no alineados
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos de un ciclo}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{single.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos segmentado}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{pipelined.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos segmentado}\end{center}
+\begin{itemize}
+\item Idea clave: aumentar la productividad (no la latencia)
+\item Hardware mas complejo: registros de la microarquitectura
+\item Posibilita un incremento de la frecuencia del reloj
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo con una única instruccion: lw}\end{center}
+\begin{itemize}
+\item PC es calculado en la primera etapa
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.3]{lw1.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo con una única instruccion: lw}\end{center}
+\begin{itemize}
+\item Decodificar la instrucción
+\item Leer datos del archivo de registros
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.3]{lw2.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo con una única instruccion: lw}\end{center}
+\begin{itemize}
+\item Calculo de la dirección efectiva
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.3]{lw3.jpg} 
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo con una única instruccion: lw}\end{center}
+\begin{itemize}
+\item Acceso a la memoria de datos
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.3]{lw4.jpg} 
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo con una única instruccion: lw}\end{center}
+\begin{itemize}
+\item Escritura del dato en el archivo de registros
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.3]{lw5.jpg} 
 \end{figure}
 
 \end{frame}
