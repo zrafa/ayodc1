@@ -509,6 +509,88 @@ Introducción al diseño lógico. Tablas de verdad. Álgebra de Boole.  Circuito
 
 
 
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Problemas de la segmentación (HAZARDS)}\end{center}
+
+\begin{itemize}
+\item Estructurales: dos o más instrucciones intentando utilizar una misma unidad
+\item Datos: dependencias
+\end{itemize}
+
+Formas de tratarlos
+\begin{itemize}
+\item Compilador
+\begin{itemize}
+\item Reordenar instrucciones
+\item Agregar detenciones (instrucciones nop)
+\end{itemize}
+\item Unidad de control
+\begin{itemize}
+\item Detectar el problema (hazard)
+\item Realizar una o más detenciones (stall), o 
+\item Reenvío de señales entre etapas (Forwarding)
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una dependencia de datos (data hazard)}\end{center}
+Secuencia de instrucciones
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling-hazard1.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una dependencia de datos (data hazard)}\end{center}
+Visión del problema en el camino de datos
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling-hazard2.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una dependencia de datos (data hazard)}\end{center}
+Solución 1: Resuelta por el compilador puede demorar algunas instrucciones
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling-hazard3.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Ejemplo de una dependencia de datos (data hazard)}\end{center}
+Solución 1: Unidad de control mas compleja (forwarding)
+\begin{figure}
+\includegraphics[scale=0.35]{pipeling-hazard4.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Hazards: Cuando no puede evitarse la detencción}\end{center}
+\begin{itemize}
+\item Delay slot: Se necesita una solución arquitectural (en MIPS lo soluciona el compilador)
+\item Dependencias inevitables (el dato no está disponible en ninguna etapa)
+\end{itemize}
+
+\end{frame}
 
 
 \begin{frame}
