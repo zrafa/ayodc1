@@ -1,0 +1,264 @@
+% Copyright 2020 by Junwei Wang <i.junwei.wang@gmail.com>
+%
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+
+% \documentclass[aspectratio=169,compress]{beamer}
+\documentclass[aspectratio=169,compress]{beamer}
+
+\usepackage[english]{babel}
+\usepackage{metalogo}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{tikz}
+
+% \usetheme{Nord}
+\usetheme[style=light]{Nord}
+
+
+%\usepackage[spanish, es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+
+
+
+\setmainfont{Yanone Kaffeesatz}
+%\setsansfont{Andika New Basic}
+\setmonofont{DejaVu Sans Mono}
+
+\setbeamerfont{frametitle}{parent=structure,size=\Large}
+
+\AtBeginSection[]
+{
+  \begin{frame}[c,noframenumbering,plain]
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}[c,noframenumbering,plain]
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  \end{frame}
+}
+
+\title{Arquitecturas y Organización de Computadoras I}
+\subtitle{0: Bienvenida}
+\author{Rafael Ignacio Zurita}
+\institute{Depto. Ingeniería de Computadoras}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+  \maketitle
+\end{frame}
+
+
+\section{Bienvenida}
+
+
+\begin{frame}[fragile]
+  \frametitle{Año 2020 - modalidad virtual}
+  Durante la no presencialidad la clase teórica será la siguiente manera:
+
+\bigskip
+\begin{itemize}
+\item La primer hora se dedicará a revisar el material del día:
+\begin{itemize}
+\item Video de la clase
+\item Apunte de uno de los temas conceptuales
+\end{itemize}
+\end{itemize}
+
+\bigskip
+
+\begin{itemize}
+\item Durante la segunda hora se realizará:
+\begin{itemize}
+\item Consultas por chat o audio utilizando el canal de telegram
+\item Consulta y discuciones del tema del día por meet
+\item Exposición espontánea o planificada
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Año 2020 - modalidad virtual}
+  Durante la no presencialidad la clase práctica será la siguiente manera:
+
+\bigskip
+\begin{itemize}
+\item Primera hora: canal de telegram para consultas por audio o chat
+\bigskip
+\item Segunda hora: participación en clase.
+\begin{itemize}
+\item Se expondrá de manera oral la resolución de un ejercicio de la práctica.
+\item La participación puede ser espontánea.
+\item La participación puede ser planificada (la cátedra indica que alumnos deben exponer la resolución).
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{Fonts}
+
+\begin{frame}{Información administrativa}
+  \begin{description}[Snow Storm]
+  \item[Docentes]
+    \textcolor{NordDarkBlack}{NordDarkBlack} \quad \textcolor{NordBlack}{NordBlack}\\
+    \textcolor{NordMediumBlack}{NordMediumBlack} \quad \textcolor{NordBrightBlack}{NordBrightBlack}
+  \item[Snow Storm]
+    \textcolor{NordWhite}{NordWhite} \quad \textcolor{NordBrighterWhite}{NordBrightestWhite}\\
+    \textcolor{NordBrightestWhite}{NordBrightestWhite}
+  \item[Forest]
+    \textcolor{NordCyan}{NordCyan} \quad \textcolor{NordBrightCyan}{NordBrightCyan}\\
+    \textcolor{NordBlue}{NordBlue} \quad \textcolor{NordBrightBlue}{NordBrightBlue}
+  \item[Aurora]
+    \textcolor{NordRed}{NordRed} \quad \textcolor{NordOrange}{NordOrange} \\
+    \textcolor{NordYellow}{NordYellow} \quad \textcolor{NordGreen}{NordGreen} \\
+    \textcolor{NordMagenta}{NordMagenta}
+  \end{description}
+\end{frame}
+
+
+
+\subsection{Blocks}
+
+\begin{frame}
+\begin{block}{Labour Government introduces life saving cancer drug}
+
+    \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-30mm-5mm}
+
+      The labour government this week has made available a new treatment
+      for a rare form of cancer. The usage of
+      Medifix\textsuperscript{\textregistered} in Public hospitals. The
+      new drug is expected to save as many as 20 lives per year.
+
+      \column{30mm}
+      \includegraphics[width=30mm]{dark.png}
+
+    \end{columns}
+  \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}
+
+    \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-60mm-5mm}
+
+      The labour government this week has made available a new treatment
+      for a rare form of cancer. The usage of
+      Medifix\textsuperscript{\textregistered} in Public hospitals. The
+      new drug is expected to save as many as 20 lives per year.
+
+      \column{60mm}
+      \includegraphics[width=60mm]{dark.png}
+
+    \end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Blocks}
+  \begin{block}{This is a Block}
+    \[
+      a^2 + b^2 = c^2
+    \]
+  \end{block}
+  \begin{exampleblock}{This is an Example Block}
+    \[
+      E = m \cdot c^{2}
+    \]
+  \end{exampleblock}
+  \begin{alertblock}{This is an Alert Block}
+    \[
+      e^{i\pi} + 1 = 0
+    \]
+  \end{alertblock}
+
+  \centering
+  \begin{minipage}{1.0\linewidth}
+    \begin{block}{Horizontally-Aligned Block}
+      \[
+        \log xy = \log x + \log y
+      \]
+    \end{block}
+  \end{minipage}
+\end{frame}
+
+\subsection{Items}
+
+\begin{frame}{Items}
+  Itemize
+  \begin{itemize}
+    \item item 1
+    \item item 2
+  \end{itemize}
+
+  \bigskip
+
+  Enumerate
+  \begin{enumerate}
+    \item item 1
+    \item item 2
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Motivation and Real-Wordl Applications}
+  \begin{itemize}
+    \item Why not using secure hardware ?
+  \begin{itemize}
+    \item not always available 
+    \item expensive (to produce, deploy, integrate, update)
+    \item usually has a long lifecycle
+    \item security breach is hard to mitigate
+  \end{itemize}
+  \end{itemize}
+  \begin{itemize}
+    \item Applications
+  \begin{itemize}
+    \item Digital Content Distribution
+    \item Mobile Payment
+    \item Digital Contract Signing
+    \item Blockchains and cryptocurrencies
+  \end{itemize}
+  \end{itemize}
+
+
+\end{frame}
+
+
+
+\subsection{Figures}
+
+\begin{frame}{Figures}
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      \draw [help lines,NordMagenta,very thick] (0,0) grid (5,4);
+    \end{tikzpicture}
+    \caption{Credits to Ti\textit{k}Z}
+  \end{figure}
+\end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-engine: xetex
+%%% End:
