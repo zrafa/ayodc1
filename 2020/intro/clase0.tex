@@ -55,18 +55,18 @@
 \begin{document}
 
 \begin{frame}[plain,noframenumbering]
+\bigskip
   \maketitle
 \end{frame}
 
 \section{Bienvenida}
-\subsection{Equipo de cátedra, horarios, exámenes}
+\subsection{Equipo de cátedra y horarios}
 
 \begin{frame}{Equipo de cátedra y horarios}
   \begin{description}[Snow Storm]
   \item[Docentes]
 \begin{small}
-    Rafael Ignacio Zurita \texttt{\footnotesize<rafa@fi.uncoma.edu.ar>}\\
-\href{mailto:me@example.com}{me@example.com}
+    Rafael Ignacio Zurita \href{mailto:rafa@fi.uncoma.edu.ar}{<rafa@fi.uncoma.edu.ar>}\\
     Rodrigo Cañibano \texttt{\footnotesize<rcañibano@fi.uncoma.edu.ar>}\\
     Leandro Insúa \texttt{\footnotesize<leandro.insua@fi.uncoma.edu.ar>}\\
 \end{small}
@@ -83,7 +83,7 @@
 \end{frame}
 
 
-\subsection{Modalidad}
+\subsection{Modalidad Virtual}
 
 
 \begin{frame}[fragile]
@@ -112,7 +112,6 @@
 
 \end{frame}
 
-
 \begin{frame}[fragile]
   \frametitle{Año 2020 - modalidad virtual}
   Durante la no presencialidad la clase práctica será la siguiente manera:
@@ -131,153 +130,126 @@
 
 \end{frame}
 
+\subsection{¿Por qué (o para qué) se estudia AyOdC?}
 
-\subsection{Fonts}
+\begin{frame}[fragile]
+  \frametitle{¿Por qué (o para qué) se estudia AyOdC?}
+\begin{small}
+\textit{"The next decade will see a Cambrian explosion of novel computer architectures, meaning exciting times for computer architects in academia and in industry."}
+John L. Hennessy y David A. Patterson 
+(A New Golden Age for Computer Architecture, ACM, 2019)
+\end{small}
 
-\begin{frame}{Información administrativa}
-  \begin{description}[Snow Storm]
-  \item[Docentes]
-    \textcolor{NordDarkBlack}{NordDarkBlack} \quad \textcolor{NordBlack}{NordBlack}\\
-    \textcolor{NordMediumBlack}{NordMediumBlack} \quad \textcolor{NordBrightBlack}{NordBrightBlack}
-  \item[Snow Storm]
-    \textcolor{NordWhite}{NordWhite} \quad \textcolor{NordBrighterWhite}{NordBrightestWhite}\\
-    \textcolor{NordBrightestWhite}{NordBrightestWhite}
-  \item[Forest]
-    \textcolor{NordCyan}{NordCyan} \quad \textcolor{NordBrightCyan}{NordBrightCyan}\\
-    \textcolor{NordBlue}{NordBlue} \quad \textcolor{NordBrightBlue}{NordBrightBlue}
-  \item[Aurora]
-    \textcolor{NordRed}{NordRed} \quad \textcolor{NordOrange}{NordOrange} \\
-    \textcolor{NordYellow}{NordYellow} \quad \textcolor{NordGreen}{NordGreen} \\
-    \textcolor{NordMagenta}{NordMagenta}
-  \end{description}
-\end{frame}
+\bigskip
+\begin{small}
+\begin{itemize}
+\item Grandes empresas (como Google, IBM, Intel, Apple, Cisco,...)
+solicitan \\ que los candidatos conozca sobre arquitecturas (ARM/x86/RISCV).\\
+(Entendiendo la arquitectura de una computadora puede ayudar a obtener empleo).
 
+\item Los ingenieros de software con mas experiencia entienden \\ como funciona el hardware debajo de sus programas.
 
+\item Para estudiar conceptos en capas abstractas superiores: \\
+En las materias relativas a lenguajes de programación, sistemas operativos, y programación de sistemas embebidos se requiere conocer arquitecturas de computadoras.
 
-\subsection{Blocks}
-
-\begin{frame}
-\begin{block}{Labour Government introduces life saving cancer drug}
-
-    \begin{columns}[onlytextwidth,T]
-      \column{\dimexpr\linewidth-30mm-5mm}
-
-      The labour government this week has made available a new treatment
-      for a rare form of cancer. The usage of
-      Medifix\textsuperscript{\textregistered} in Public hospitals. The
-      new drug is expected to save as many as 20 lives per year.
-
-      \column{30mm}
-      \includegraphics[width=30mm]{dark.png}
-
-    \end{columns}
-  \end{block}
+\end{itemize}
+\end{small}
 
 \end{frame}
 
 
 
-\begin{frame}
 
-    \begin{columns}[onlytextwidth,T]
-      \column{\dimexpr\linewidth-60mm-5mm}
+\begin{frame}[fragile]
+  \frametitle{¿Por qué (o para qué) se estudia AyOdC?}
 
-      The labour government this week has made available a new treatment
-      for a rare form of cancer. The usage of
-      Medifix\textsuperscript{\textregistered} in Public hospitals. The
-      new drug is expected to save as many as 20 lives per year.
+\begin{small}
+\begin{itemize}
+\item Los empleos para ingenieros de software suelen \\ contar 
+con muchos candidatos (programadores de python/java/go/ruby).
 
-      \column{60mm}
-      \includegraphics[width=60mm]{dark.png}
+\item Los sistemas embebidos son el futuro:
+\begin{itemize}
+\item Redes de sensores
+\item Reproductores multimedia
+\item Smartphones
+\item Smart TVs
+\item Radares
+\item Satélites
+\item Cualquier aparato conectado a internet (iot)
+\end{itemize}
 
-    \end{columns}
+\item Entender la arquitectura de una computadora es clave \\ para programar un sistema embebido.
 
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Blocks}
-  \begin{block}{This is a Block}
-    \[
-      a^2 + b^2 = c^2
-    \]
-  \end{block}
-  \begin{exampleblock}{This is an Example Block}
-    \[
-      E = m \cdot c^{2}
-    \]
-  \end{exampleblock}
-  \begin{alertblock}{This is an Alert Block}
-    \[
-      e^{i\pi} + 1 = 0
-    \]
-  \end{alertblock}
-
-  \centering
-  \begin{minipage}{1.0\linewidth}
-    \begin{block}{Horizontally-Aligned Block}
-      \[
-        \log xy = \log x + \log y
-      \]
-    \end{block}
-  \end{minipage}
-\end{frame}
-
-\subsection{Items}
-
-\begin{frame}{Items}
-  Itemize
-  \begin{itemize}
-    \item item 1
-    \item item 2
-  \end{itemize}
-
-  \bigskip
-
-  Enumerate
-  \begin{enumerate}
-    \item item 1
-    \item item 2
-  \end{enumerate}
-\end{frame}
-
-\begin{frame}{Motivation and Real-Wordl Applications}
-  \begin{itemize}
-    \item Why not using secure hardware ?
-  \begin{itemize}
-    \item not always available 
-    \item expensive (to produce, deploy, integrate, update)
-    \item usually has a long lifecycle
-    \item security breach is hard to mitigate
-  \end{itemize}
-  \end{itemize}
-  \begin{itemize}
-    \item Applications
-  \begin{itemize}
-    \item Digital Content Distribution
-    \item Mobile Payment
-    \item Digital Contract Signing
-    \item Blockchains and cryptocurrencies
-  \end{itemize}
-  \end{itemize}
-
+\end{itemize}
+\end{small}
 
 \end{frame}
 
 
 
-\subsection{Figures}
 
-\begin{frame}{Figures}
-  \begin{figure}
-    \centering
-    \begin{tikzpicture}
-      \draw [help lines,NordMagenta,very thick] (0,0) grid (5,4);
-    \end{tikzpicture}
-    \caption{Credits to Ti\textit{k}Z}
-  \end{figure}
+\subsection{No todas son ventajas...}
+
+\begin{frame}[fragile]
+  \frametitle{No todas son ventajas...}
+
+\begin{small}
+\begin{itemize}
+
+\item El hardware no suele ser amigable
+
+\begin{itemize}
+\item Muchísimos detalles de bajo nivel.
+\item A veces es contradictorio.
+\end{itemize}
+
+\item El hardware es complejo
+\begin{itemize}
+\item  El reloj es importante
+\item Un pequeño agregado en la funcionalidad puede \\
+requerir modificaciones o agregados a muchas piezas de hardware.
+\end{itemize}
+\item La temática es tan extensa que no es posible \\
+cubrirlo en una materia.
+\item Es necesario analizar temas de formas nuevas.
+
+\end{itemize}
+\end{small}
+
 \end{frame}
+
+
+\subsection{Recursos}
+
+\begin{frame}[fragile]
+  \frametitle{Recursos de la materia}
+
+\begin{small}
+\begin{itemize}
+
+\item Página web principal: \footnotesize{\texttt http://se.fi.uncoma.edu.ar/ayod1c/}\\
+(se alcanza también desde la materia en PEDCO).
+
+\item El FORO de PEDCO Novedades y Consultas
+\item Canal de telegram para consultas (publicados en la web de la materia)
+\item Google meet para las exposiciones y discuciones temáticas online\\ (se darán los enlaces de encuentros en las clases).
+\item Bibliografía:
+
+\begin{itemize}
+
+\item Andrew S. Tanenbaum (2000), ORGANIZACIÓN DE COMPUTADORAS un enfoque estructurado, Editorial Prentice Hall. (10 copias en biblioteca)
+\item David. Patterson, John L. Hennessy, ORGANIZACIÓN Y DISEÑO DE COMPUTADORES La interfaz hardware/software, McGraw-Hill (8 copias en biblioteca).
+\item Apuntes y artículos en la web de la materia
+\item David. Patterson, John L. Hennessy, Computer Organization and Design RISC-V Edition 1st Edition The Hardware Software Interface. ISBN: 9780128122754
+
+\end{itemize}
+
+\end{itemize}
+\end{small}
+
+\end{frame}
+
 
 \end{document}
 
