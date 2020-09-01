@@ -206,8 +206,9 @@ Instrucciones (ISA)}, es la interfaz entre el hardware y el software.
 	\begin{itemize}
 	\begin{small}
 \bigskip
-  \item[Diseño digital] o diseño lógico, es actuamente realizado utilizando el algebra de Boole (también llamado algebra de switching)
+  \item[Boole] El diseño lógico (o diseño digital), es actuamente realizado utilizando el algebra de Boole (también llamado algebra de switching)
 
+\bigskip
   \item[SFM] Las máquinas de estado finito pueden ser esquematizadas con diseño digital, y permitan diseñar máquinas algoritmicas.
 \bigskip
 
@@ -227,21 +228,24 @@ Instrucciones (ISA)}, es la interfaz entre el hardware y el software.
   \footnotesize{Es el diseño e implementación de la arquitectura (ISA) del microprocesador}
 
   \begin{columns}[onlytextwidth,T]
-      \column{\dimexpr\linewidth-70mm-5mm}
+      \column{\dimexpr\linewidth-60mm-5mm}
 
 	\begin{itemize}
 	\begin{footnotesize}
+\bigskip
 \item[Micro] Hoy en día, a la organización de una computadora se la conoce como su \textbf{microarquitectura}
 
-\item [Familia] Una arquitectura puede tener muchas organizaciones diferentes. \\
+\bigskip
+\item [Familia] Una arquitectura puede tener muchas organizaciones diferentes. 
 
-Los fabricantes de microprocesadores modifican regularmente la microarquitectura de un procesador manteniendo su ISA esencialmente constante
 
+\bigskip
 \item [Ortogonales] La arquitectura y la organización son ortogonales; es decir, son totalmente independientes
 
 
 	\end{footnotesize}
 	\end{itemize}
+\bigskip
 \footnotesize{La \textbf{\textit arquitectura} especifica lo \textbf{\textit que} puede hacer una computadora y la \textbf{\textit organización} especifica \textbf{\textit cómo} lo hace.}
 
       \column{60mm}
@@ -255,29 +259,32 @@ Los fabricantes de microprocesadores modifican regularmente la microarquitectura
 
 \begin{frame}{Arquitectura de una computadora}{La computadora: Un sistema complejo}
 
-  \footnotesize{Es la descripción del lenguaje máquina (arquitectura del conjunto de instrucciones o ISA) \\ de una computadora}
+  \footnotesize{Es la descripción del lenguaje máquina de una computadora \\(arquitectura del conjunto de instrucciones o ISA)}
 
   \begin{columns}[onlytextwidth,T]
-      \column{\dimexpr\linewidth-70mm-5mm}
+      \column{\dimexpr\linewidth-60mm-5mm}
 
 	\begin{itemize}
 	\begin{footnotesize}
 
-\item[Modelo] La arquitectura del conjunto de instrucciones define el modelo de programación de una computadora.
+\bigskip
+\item[Modelo] La arquitectura del conjunto de instrucciones define el modelo de programación.
 
-\item[Abstracción] La arquitectura es una entidad abstracta, porque no considera detalles específicos del diseño o implementación de una computadora.
+\bigskip
+\item[Abstracción] La arquitectura es una entidad abstracta, porque no considera detalles específicos del diseño o implementación.
 
 
-\item[Componentes] La arquitectura (ISA) está compuesta por el conjunto de registros del procesador, el conjunto de instrucciones y los modos de direccionamiento.
+\bigskip
+\item[Componentes] La arquitectura (ISA) está compuesta por el conjunto de registros, el conjunto de instrucciones y los modos de direccionamiento.
 
-\item[Interfaz] El lenguaje ensamblador de una computadora (y el programa ensamblador) es una abstracción de la arquitectura
+\bigskip
+\item[Interfaz] El lenguaje ensamblador de una computadora es una abstracción de la arquitectura
 
 	\end{footnotesize}
 	\end{itemize}
 
       \column{60mm}
-	\bigskip
-    \includegraphics[width=60mm]{images/arquitectura.png}
+    \includegraphics[width=65mm]{images/arquitectura.png}
 
     \end{columns}
 
