@@ -82,13 +82,7 @@
 \section{Abstracciones en la computadora y tecnología}
 
 \subsection{Eras tecnológicas}
-\subsection{Limitaciones tecnológicas}
-\subsection{Tiempo de ejecución (rendimiento)}
-\subsection{Terminología: Arquitectura y Organización de un procesador}
-\subsection{Avances (cuadro)}
-\subsection{MIPS/RISCV ISA (Arquitectura de una computadora real)}
 
-\subsection{Abstracciones en la computadora}
 
 \begin{frame}{La computadora: Un sistema complejo}{CHIP}
 
@@ -150,10 +144,10 @@ Actualmente la densidad es tan grande que existen miles de millones de transisto
 	\begin{itemize}
 	\begin{small}
 \bigskip
-  \item[Compuertas] Con transistores CMOS se fabrican compuertas, que pueden operar digitalmente y realizar una simple función lógica.
+  \item[Compuertas] Con circuitos CMOS se fabrican compuertas, que pueden operar digitalmente y realizar una simple función lógica.
 
 \bigskip
-\item[NOT] Una compuerta NOT se puede fabricar utilizando dos transistores.
+\item[NOT] Una compuerta NOT (circuito básico CMOS) se puede fabricar utilizando dos transistores MOS complementarios.
 
 	\end{small}
 	\end{itemize}
@@ -166,6 +160,7 @@ Actualmente la densidad es tan grande que existen miles de millones de transisto
 
 
 
+\subsection{Abstracciones en la computadora}
 
 
 \begin{frame}{La computadora: Un sistema complejo}
@@ -203,7 +198,7 @@ Instrucciones (ISA)}, es la interfaz entre el hardware y el software.
 
 
 
-\begin{frame}{La computadora: Un sistema complejo}{Diseño lógico}
+\begin{frame} {Diseño lógico} {La computadora: Un sistema complejo}
 
     \begin{columns}[onlytextwidth,T]
       \column{\dimexpr\linewidth-60mm-5mm}
@@ -220,54 +215,80 @@ Instrucciones (ISA)}, es la interfaz entre el hardware y el software.
 	\end{itemize}
 
       \column{60mm}
-    \includegraphics[width=50mm]{images/abstracciones2.png}
+    \includegraphics[width=50mm]{images/dis_logico.png}
 
     \end{columns}
 
 \end{frame}
 
 
+\begin{frame} {Organización de una computadora} {La computadora: Un sistema complejo}
 
-%\begin{frame}{La computadora: Un sistema complejo}
+  \footnotesize{Es el diseño e implementación de la arquitectura (ISA) del microprocesador}
 
-%   \begin{columns}[onlytextwidth,T]
-%   \column{\dimexpr\linewidth-60mm-5mm}
+  \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-70mm-5mm}
+
+	\begin{itemize}
+	\begin{footnotesize}
+\item[Micro] Hoy en día, a la organización de una computadora se la conoce como su \textbf{microarquitectura}
+
+\item [Familia] Una arquitectura puede tener muchas organizaciones diferentes. \\
+
+Los fabricantes de microprocesadores modifican regularmente la microarquitectura de un procesador manteniendo su ISA esencialmente constante
+
+\item [Ortogonales] La arquitectura y la organización son ortogonales; es decir, son totalmente independientes
 
 
-%  \begin{description}[Snow Storm]
-%\begin{frame}{La computadora: Un sistema complejo}
+	\end{footnotesize}
+	\end{itemize}
+\footnotesize{La \textbf{\textit arquitectura} especifica lo \textbf{\textit que} puede hacer una computadora y la \textbf{\textit organización} especifica \textbf{\textit cómo} lo hace.}
 
-%   \begin{columns}[onlytextwidth,T]
-%   \column{\dimexpr\linewidth-60mm-5mm}
+      \column{60mm}
+	\bigskip
+    \includegraphics[width=60mm]{images/microarquitectura.png}
+
+    \end{columns}
+
+\end{frame}
 
 
-%  \begin{description}[Snow Storm]
-%  \begin{small}
-%  \item[Abstracción] El hardware y software de un procesador
-%consiste de una jerarquía en capas, donde cada capa le oculta
-%detalles a la capa superior.
+\begin{frame}{Arquitectura de una computadora}{La computadora: Un sistema complejo}
 
-%\bigskip
+  \footnotesize{Es la descripción del lenguaje máquina (arquitectura del conjunto de instrucciones o ISA) \\ de una computadora}
 
-%\item[Principio] Este principio de abstracción es el que permite
-%a los diseñadores de hardware y software entender la complejidad 
-%de las computadoras.
+  \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-70mm-5mm}
 
-%\bigskip
+	\begin{itemize}
+	\begin{footnotesize}
 
-%\item [Interfaz] EL nivel \textit{Arquitectura del Conjunto de 
-%Instrucciones (ISA)}, es la interfaz entre el hardware y el software.
+\item[Modelo] La arquitectura del conjunto de instrucciones define el modelo de programación de una computadora.
 
-%\end{small}
-%  \end{description}
+\item[Abstracción] La arquitectura es una entidad abstracta, porque no considera detalles específicos del diseño o implementación de una computadora.
 
-%    \column{60mm}
-%    \includegraphics[width=60mm]{images/abstracciones.png}
 
-%    \end{columns}
+\item[Componentes] La arquitectura (ISA) está compuesta por el conjunto de registros del procesador, el conjunto de instrucciones y los modos de direccionamiento.
 
-%\end{frame}
+\item[Interfaz] El lenguaje ensamblador de una computadora (y el programa ensamblador) es una abstracción de la arquitectura
 
+	\end{footnotesize}
+	\end{itemize}
+
+      \column{60mm}
+	\bigskip
+    \includegraphics[width=60mm]{images/arquitectura.png}
+
+    \end{columns}
+
+\end{frame}
+
+\subsection{Terminología: Arquitectura y Organización de un procesador}
+
+
+\subsection{Limitaciones tecnológicas}
+\subsection{Tiempo de ejecución (rendimiento)}
+\subsection{MIPS/RISCV ISA (Arquitectura de una computadora real)}
 
 
 
