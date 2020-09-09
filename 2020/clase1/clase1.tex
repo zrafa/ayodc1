@@ -842,28 +842,136 @@ El programa mem2.c utiliza menos RAM. Esto se debe a que las palabras en memoria
 
 \subsection{MIPS/RISCV ISA (Arquitectura de una computadora real)}
 
+
+
+
 \begin{frame} {Arquitectura MIPS} 
 
     \begin{columns}[onlytextwidth,T]
       \column{\dimexpr\linewidth-50mm-5mm}
 
 	\begin{itemize}
-	\begin{small}
+	\begin{footnotesize}
 
 \bigskip
-  \item[RISC] MIPS es una arquitectura de computadoras utilizada en microprocesadores generalmente de bajo consumoEl incremento de transistores que anualmente pudieron incorporarse en un chip significó una mejora de rendimiento del 23\%.
+  \item[MIPS]Es una arquitectura de computadoras utilizada en microprocesadores generalmente de bajo consumo.
 
 \bigskip
-  \item[Microarquitectura] Los avances en la Organización del procesador han producido grandes mejoras en la performance.
-	\end{small}
+  \item[1980's] Creada en los 80's en en la Universidad de Standford, y luego se produjo comercialmente.
+
+\bigskip
+   \item[RISC] Inició la era de arquitecturas de tipo RISC, lo que predominó el diseño de nuevos microprocesadores desde entonces.
+
+\bigskip
+   \item[Uso] Fue la arquitectura de la Nintendo 64, de algunas versiones de Playstation, de varias computadoras de escritorio en los 2000. En la actualidad se utiliza mucho en la fabricación de routers hogareños.
+	\end{footnotesize}
 	\end{itemize}
 
-      \column{60mm}
-    \includegraphics[width=60mm]{images/mejoras-arq-org.png}
+      \column{50mm}
+    \includegraphics[width=45mm]{images/mips-arq2.jpg}
 
     \end{columns}
 
 \end{frame}
+
+
+
+
+\begin{frame} {Arquitectura MIPS} {Versión de 32bits}
+
+    \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-50mm-5mm}
+
+\textbf{Regularidad:}
+
+	\begin{itemize}
+	\begin{footnotesize}
+
+\bigskip
+  \item[32 registros] La CPU cuenta con 32 registros de propósito general.
+
+\bigskip
+  \item[32 bits] La \textbf{palabra} en MIPS es de 32 bits. Los registros son de 32 bits.
+
+\bigskip
+   \item[R-R] La ALU opera unicamente con valores en registros.
+
+\bigskip
+   \item[Load-Store] Las instrucciones de carga y almacenamiento son las únicas que acceden a memoria.
+
+\bigskip
+   \item[Alineación] Los datos en memoria están alineados (las palabras a direcciones múltiplos de 4, y las medias palabras a direcciones múltiplos de 2).
+
+	\end{footnotesize}
+	\end{itemize}
+
+      \column{50mm}
+    \includegraphics[width=45mm]{images/mips-arq2.jpg}
+
+    \end{columns}
+
+\end{frame}
+
+
+\begin{frame} {Arquitectura MIPS} {Versión de 32 bits}
+
+    \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-50mm-5mm}
+
+	\begin{footnotesize}
+
+\bigskip
+La \textbf{\textit{palabra o word de una arquitectura}} es el tamaño de datos natural con la cual trabaja. 
+
+\bigskip
+\begin{itemize}
+\item En MIPS, la palabra es el tamaño de datos de los operandos que ingresan y salen de la ALU.
+\bigskip
+\item En un procesador MIPS de 32 bits la palabra es de 32 bits.
+
+\bigskip
+\item Por su regularidad, casi todas las características de MIPS tienen el tamaño de la palabra.
+
+\end{itemize}
+
+	\end{footnotesize}
+
+      \column{50mm}
+    \includegraphics[width=45mm]{images/mips-arq2.jpg}
+
+    \end{columns}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame} {Arquitectura MIPS} {Memoria}
+
+
+\textbf{Alineación}
+
+\bigskip
+    \includegraphics[width=150mm]{images/mips-memory.jpg}
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
