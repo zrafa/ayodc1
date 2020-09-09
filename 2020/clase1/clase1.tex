@@ -577,20 +577,54 @@ es la versión original y el progenitor de la plataforma de hardware compatible 
 
 \end{frame}
 
+
+\begin{frame} {Avances tecnológicas} {Aumento del rendimiento}
+
+    \begin{columns}[onlytextwidth,T]
+    \column{\dimexpr\linewidth-40mm-5mm}
+
+	\begin{itemize}
+	\begin{footnotesize}
+
+  \item[Tecnológicos] El incremento de transistores que anualmente pudieron incorporarse en un chip significó una mejora de rendimiento del 23\%.
+
+	\end{footnotesize}
+	\end{itemize}
+\bigskip
+    \includegraphics[width=90mm]{images/spec.jpg}
+
+      \column{60mm}
+	\begin{footnotesize}
+Limitaciones:
+\begin{itemize}
+\item Frecuencia del reloj
+\item Número de transistores
+\item Disipación del calor
+\end{itemize}
+
+	\end{footnotesize}
+
+    \end{columns}
+
+\end{frame}
+
+
+
+
 \begin{frame} {¿Nos sirve estudiar arquitecturas en ciencias de la computación?} 
 
     \begin{columns}[onlytextwidth,T]
       \column{\dimexpr\linewidth-60mm-5mm}
 
 	\begin{itemize}
-	\begin{small}
+	\begin{footnotesize}
 
 \bigskip
   \item[Resuelva 1] ¿Son las dos estructuras de datos idénticas? \\ (¿tienen los mismos elementos?)
 
 \bigskip
   \item[Resuelva 2] Si se ejecutan ambos programas \\ ¿Utilizan la misma cantidad de espacio en memoria? (RAM)\\ ¿Si?/¿No?, ¿Por qué?
-	\end{small}
+	\end{footnotesize}
 	\end{itemize}
 
       \column{60mm}
@@ -604,10 +638,10 @@ es la versión original y el progenitor de la plataforma de hardware compatible 
 \begin{frame} {¿Nos sirve estudiar arquitecturas en ciencias de la computación?} 
 
     \begin{columns}[onlytextwidth,T]
-      \column{\dimexpr\linewidth-60mm-5mm}
+      \column{\dimexpr\linewidth-50mm-5mm}
 
 	\begin{itemize}
-	\begin{small}
+	\begin{footnotesize}
 
 \bigskip
   \item[Ayuda 1] Ambas estructuras de datos son idénticas
@@ -618,11 +652,11 @@ es la versión original y el progenitor de la plataforma de hardware compatible 
 \bigskip
   \item[Probable] Un programador sin experiencia (que no conoce la arquitectura) \\ opina que "da lo mismo" si ambas estructuras son iguales
 
-	\end{small}
+	\end{footnotesize}
 	\end{itemize}
 
       \column{60mm}
-	    \includegraphics[width=50mm]{images/mem.png}
+	    \includegraphics[width=40mm]{images/mem.png}
 
     \end{columns}
 
@@ -630,10 +664,10 @@ es la versión original y el progenitor de la plataforma de hardware compatible 
 \begin{frame} {¿Nos sirve estudiar arquitecturas en ciencias de la computación?} 
 
     \begin{columns}[onlytextwidth,T]
-      \column{\dimexpr\linewidth-60mm-5mm}
+      \column{\dimexpr\linewidth-40mm-5mm}
 
 	\begin{itemize}
-	\begin{small}
+	\begin{footnotesize}
 
 \bigskip
   \item[Respuesta] El programa mem2.c utilza mucho menos memoria RAM
@@ -641,7 +675,7 @@ es la versión original y el progenitor de la plataforma de hardware compatible 
 \bigskip
   \item[¿Por qué?] Respuesta: Aprenda con nosotros sobre arquitecturas :)
 
-	\end{small}
+	\end{footnotesize}
 	\end{itemize}
 
       \column{60mm}
@@ -660,18 +694,21 @@ es la versión original y el progenitor de la plataforma de hardware compatible 
 \begin{frame} {¿Nos sirve estudiar arquitecturas en ciencias de la computación?} 
 
     \begin{columns}[onlytextwidth,T]
-      \column{\dimexpr\linewidth-60mm-5mm}
+      \column{\dimexpr\linewidth-40mm-5mm}
 
 	\begin{itemize}
-	\begin{small}
+	\begin{footnotesize}
 
 \bigskip
   \item[Respuesta] El programa mem2.c utilza mucho menos memoria RAM
 
 \bigskip
-  \item[¿Por qué?] Respuesta: Aprenda con nosotros sobre arquitecturas :) \\ \textbf{POR FAVOOOOORRRRR!!!!! DIGAN LA RESPUESTAAAAAA!!!} 
+  \item[¿Por qué?] Respuesta: Aprenda con nosotros sobre arquitecturas :) 
 
-	\end{small}
+\bigskip
+\textbf{POR FAVOOOOORRRRR!!!!! DIGAN LA RESPUESTAAAAAA!!!} 
+
+	\end{footnotesize}
 	\end{itemize}
 
       \column{60mm}
@@ -679,26 +716,29 @@ es la versión original y el progenitor de la plataforma de hardware compatible 
 
     \end{columns}
 \end{frame}
+
 
 \begin{frame} {¿Nos sirve estudiar arquitecturas en ciencias de la computación?} 
 
     \begin{columns}[onlytextwidth,T]
-      \column{\dimexpr\linewidth-60mm-5mm}
+      \column{\dimexpr\linewidth-40mm-5mm}
 
 	\begin{itemize}
-	\begin{small}
+	\begin{footnotesize}
 
 \bigskip
   \item[Respuesta] El programa mem2.c utilza mucho menos memoria RAM
 
 \bigskip
-  \item[¿Por qué?] Respuesta: Aprenda con nosotros sobre arquitecturas :) \\ \textbf{Bien, Ahí va:} 
-\bigskip 
-\textbf{El programa mem2.c utiliza menos RAM. Esto se debe a que la arquitectura impone que las palabras deben estar alineadas en memoria} 
+  \item[¿Por qué?] Respuesta: Aprenda con nosotros sobre arquitecturas :) 
 
 \bigskip 
-\texttt{Aprender sobre Arquitecturas y Organización aporta conocimiento que ayudan a ser mejores programadores.}
-	\end{small}
+\textbf{Bien, Ahí va: \\
+El programa mem2.c utiliza menos RAM. Esto se debe a que las palabras en memoria deben estar alineadas. Es una imposición de la arquitectura.}
+
+\bigskip 
+\textit{Aprender sobre Arquitecturas y Organización aporta conocimiento que ayudan a ser mejores programadores.}
+	\end{footnotesize}
 	\end{itemize}
 
       \column{60mm}
@@ -706,9 +746,67 @@ es la versión original y el progenitor de la plataforma de hardware compatible 
 
     \end{columns}
 \end{frame}
+
+
+\begin{frame} {¿Nos sirve estudiar arquitecturas en ciencias de la computación?} {Ejemplo 2}
+
+    \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-40mm-5mm}
+
+	\begin{itemize}
+	\begin{footnotesize}
+
+\bigskip
+  \item[Resuelva 1] ¿Son los dos programas idénticos? \\ ̉¿Si?/¿No? ¿Por qué?
+
+\bigskip
+  \item[Resuelva 2] Si ejecutamos ambos programas: \\ ¿Demoran lo mismo?
+
+	\end{footnotesize}
+	\end{itemize}
+
+      \column{60mm}
+	    \includegraphics[width=40mm]{images/img-4k.png}
+
+    \end{columns}
+\end{frame}
+
+
+\begin{frame} {¿Nos sirve estudiar arquitecturas en ciencias de la computación?} {Ejemplo 2}
+
+    \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-40mm-5mm}
+
+	\begin{itemize}
+	\begin{footnotesize}
+
+\bigskip
+  \item[Respuesta 1] Si, son iguales.
+
+\bigskip
+  \item[Respuesta 2] El programa img2-4k se ejecuta mucho mas lento que el otro.
+
+\bigskip
+  \item[¿Por qué?] Respuesta: Aprenda con nosotros sobre arquitecturas :) 
+
+\bigskip
+\textbf{Recorrer una matriz por filas -es decir, todas las columnas de la primer fila, luego todas las columnas de las segunda fila, etc- es más rápido que acceder por columnas.}
+
+\bigskip 
+\textit{Aprender sobre Arquitecturas y Organización aporta conocimiento que ayudan a ser mejores programadores.}
+	\end{footnotesize}
+	\end{itemize}
+
+      \column{60mm}
+	    \includegraphics[width=40mm]{images/img-4k.png}
+
+    \end{columns}
+\end{frame}
+
 
 \subsection{Tiempo de ejecución (rendimiento)}
 \subsection{MIPS/RISCV ISA (Arquitectura de una computadora real)}
+
 
 
 \begin{frame} {Arquitectura MIPS} 
