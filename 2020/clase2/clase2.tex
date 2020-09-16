@@ -47,7 +47,7 @@
 }
 
 \title{Arquitecturas y Organización de Computadoras I}
-\subtitle{1: Abstracciones en la computadora y tecnología}
+\subtitle{2: Análisis de circuitos digitales}
 \author{Rafael Ignacio Zurita}
 \institute{Depto. Ingeniería de Computadoras}
 \date{\today}
@@ -93,8 +93,10 @@
 \begin{itemize}
 \item La electrónica interna de un computador actual 
 utiliza componentes analógicos (como los transistores en un circuito cmos).
+\bigskip
 \item De todas maneras se modela de manera digital para operar con dos niveles de 
 voltaje: un voltaje alto y un voltaje bajo
+\bigskip
 \item El resto de los valores de voltaje son 
 temporales y ocurren durante la transición 
 entre los valores alto y bajo o bajo y alto
@@ -114,8 +116,10 @@ computadores utilizan números binarios, ya
 que un sistema binario se corresponde 
 directamente con la abstracción subyacente a 
 la electrónica
+\bigskip
 \item En las diferentes implementaciones 
 electrónicas los voltajes y sus relaciones difieren,
+\bigskip
 \item Por lo que no se utiliza el valor del voltage sino una indicación de si la señal esta activada o no (verdadera o no, 1 o 0, etc).
 
 \end{itemize}
@@ -371,28 +375,31 @@ inversor que siempre tiene una entrada
 \end{figure}
 \end{frame}
 
+\subsection{Metodología para realizar un diseño lógico/digital}
 
 \begin{frame}{Diseño digital}
 
  \begin{columns}[onlytextwidth,T]
       \column{\dimexpr\linewidth-60mm-5mm}
-\textbf{Metodología para realizar un diseño lógico/digital}
-\begin{itemize}
+\textbf{Metodología para realizar un diseño lógico/digital de un circuito combinacional}
+\bigskip
+\begin{enumerate}
 \item Definir coloquialmente todas las entradas y todas las salidas
 \item Confeccionar una tabla de verdad para todas las combinaciones de valores de entrada y todas las salidas
 \item Describir para cada salida una función lógica en base a la tabla
 \item Confeccionar un diagrama del circuito digital resultante
-\end{itemize}
+\end{enumerate}
 
 	\column{60mm}
 
 \begin{figure}
-\includegraphics[scale=0.2]{images/construcciondigital.jpg} 
+\includegraphics[scale=0.18]{images/construcciondigital.jpg} 
 \end{figure}
   \end{columns}
 \end{frame}
 
 
+\subsection{Circuitos combinacionales comunes}
 
 
 \begin{frame}[fragile]
@@ -483,6 +490,8 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
+\subsection{Relojes}
+
 \begin{frame}[fragile]
 \frametitle{Diseño digital}
 \begin{center}\textbf{Relojes}\end{center}
@@ -509,6 +518,8 @@ inversor que siempre tiene una entrada
 \end{figure}
 \end{frame}
 
+
+\subsection{Circuitos secuenciales}
 
 \begin{frame}[fragile]
 \frametitle{Diseño digital}
@@ -608,6 +619,9 @@ el estado interno del flip-flop no cambia. Eso lo distingue de un latch.
 \includegraphics[scale=0.4]{images/escribir-registro.jpg} 
 \end{figure}
 \end{frame}
+
+
+\subsection{Máquinas de Estado Finito (FSM)}
 
 
 \begin{frame}[fragile]
