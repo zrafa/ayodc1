@@ -47,7 +47,7 @@
 }
 
 \title{Arquitecturas y Organización de Computadoras I}
-\subtitle{1: Abstracciones en la computadora y tecnología}
+\subtitle{2: Arquitectura MIPS - parte 2}
 \author{Rafael Ignacio Zurita}
 \institute{Depto. Ingeniería de Computadoras}
 \date{\today}
@@ -81,10 +81,11 @@
 
 
 
+\section{Arquitectura MIPS}
 
 
 
-\section{Abstracciones en la computadora y tecnología}
+\subsection{Máquina MIPS general}
 
 \begin{footnotesize}
 
@@ -92,27 +93,62 @@
 \frametitle{Introducción a MIPS}
 \begin{center}
 \begin{figure}
-\includegraphics[scale=0.4]{images/organizacion-mips.jpg} 
-\caption{Diagrama de Bloques de una computadoroa MIPS}
-\label{Diagrama de Bloques de una computadoroa MIPS}
+% \includegraphics[scale=0.4]{images/organizacion-mips.jpg} 
+\includegraphics[scale=0.26]{images/mips-arq1.jpg} 
+\caption{Diagrama de Bloques de una computadora MIPS}
+\label{Diagrama de Bloques de una computadora MIPS}
 \end{figure}
 \end{center}
 \end{frame}
 
 
+\subsection{Hardware visible al programador: memoria y registros}
+
 \begin{frame}
-\frametitle{Representación de datos a nivel máquina}
-\textbf{Organización de la Memoria principal en MIPS}
+\frametitle{Organización de la Memoria principal en MIPS}
+
+ \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-60mm-5mm}
+
 \begin{itemize}
-	\item $2^{32}$ bytes, con direcciones 0, 1, 2 ... 
-	\item $2^{30}$ 4-bytes palabras, con direcciones 0, 4, 8 ... 
-	\item Las direcciones de las palabras deben ser múltiplos de 4
+	\item La memoria total máxima posible es de \textbf{4GB}.
+	\item $2^{32}$ La memoria es \textbf{byte direccionable} (cada byte tiene una dirección de memoria 0, 1, 2 ...) 
+	\item $2^{30}$ palabras de 4-bytes, con direcciones 0, 4, 8 ... 
+	\item Las direcciones de datos con tamaño de palabra (word, float) deben ser múltiplos de 4.
+	\item Las direcciones de las medias palabras (half) deben ser múltiplos de 2.
+	\item Las direcciones de las dobles palabras (ej. double) deben ser múltiplos de 8.
 \end{itemize}
-	\begin{center}
-\includegraphics[scale=0.5]{images/memoria-mips.jpg} 
-	\end{center}
+\includegraphics[scale=0.4]{images/memoria-mips.jpg} 
+
+      \column{60mm}
+\includegraphics[scale=0.45]{images/organizacion-mips.jpg} 
+
+    \end{columns}
 \end{frame}
 
+
+\begin{frame}
+\frametitle{Organización de la Memoria principal en MIPS}
+
+ \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-60mm-5mm}
+
+  Un programa en memoria está dividido en segmentos lógicos, para organizar su contenido.
+        \begin{itemize}
+\bigskip
+  \item[Código] En el \textbf{segmento de código} se ubican las instrucciones máquina del programa.
+  \item[Datos] En el \textbf{segmento de datos} se ubican las variables globales del programa.
+  \item[Pila] En el \textbf{segmento de pila} se ubican las variables locales a una función.
+
+        \end{itemize}
+
+      \column{60mm}
+    \includegraphics[width=65mm]{images/memoria-programa.jpg}
+
+    \end{columns}
+
+
+\end{frame}
 
 
 
@@ -129,6 +165,93 @@
 % Representación de datos a nivel de máquina. Direccionamiento de memoria: concepto de palabra, ordenamiento de bytes. Registros.} 
 % memori2, direccion, byte, palabra, alineacion, endianess, instrucciones y datos
 % directivas MIPS, etc para el practico
+
+\begin{frame}
+\frametitle{Registros dentro del procesador}
+ \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-60mm-5mm}
+
+Registros visibles al usuario.
+        \begin{itemize}
+\bigskip
+  \item[32] Existen 32 registros de propósito general.
+  \item[4 bytes] Cada registro tiene el tamaño de la palabra en la arquitectura (32bits/4 bytes).
+  \item[Uso] Se los menciona en lenguaje ensamblador colocando un signo \$ (ej. \$t2, o \$5).
+
+        \end{itemize}
+
+Otros registros.
+        \begin{itemize}
+  \item Existen muchos otros registros, pero son parte de la microarquitectura (buffers, PC, EPC, Cause, etc).
+        \end{itemize}
+      \column{60mm}
+    \includegraphics[width=65mm]{images/convencion.jpg}
+
+    \end{columns}
+
+
+\end{frame}
+
+\subsection{Cuando utilizar lenguaje ensamblador}
+
+\subsection{Conjunto de instrucciones}
+
+
+\begin{frame}
+\frametitle{Tipos de Instrucciones}
+\begin{center}\textbf{Tipos Principales de Instrucciones}\end{center}
+\begin{itemize}
+\item Instrucciones de transferencia de datos (memoria a registro o viceversa)
+\begin{itemize}
+\item Carga y Almacenamiento
+\end{itemize}
+\item Aritméticas y Lógicas
+\begin{itemize}
+\item Enteros
+\item Punto Flotante
+\end{itemize}
+\item Flujo de control
+\begin{itemize}
+\item Salto
+\item Bifurcación condicional
+\item Llamado y Retorno
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Instrucciones de transferencia de datos}
+\begin{itemize}
+\item Permiten transferir datos entre la memoria y los registros del procesador:
+\bigskip
+\begin{itemize}
+\item \textbf{lw}: cargar una palabra desde la memoria a un registro
+\item \textbf{sw}: almacenar una palabra desde un registro a la memoria
+\item \textbf{lb}: cargar un byte desde la memoria a un registro (extendiendo el signo del byte)
+\item \textbf{lbu}: cargar un byte desde la memoria a un registro (sin extender el signo)
+\item \textbf{sb}: almacenar un byte desde un registro a la memoria
+\item \textbf{lh}: cargar media palabra desde la memoria a un registro
+\item \textbf{sh}: almacenar media palabra desde un registro a la memoria
+\end{itemize}
+\bigskip
+\item Formatos posibles (en lenguaje ensamblador):
+
+\includegraphics[scale=0.4]{images/formatos.jpg} 
+
+%\begin{verbatim}
+%lw $3, etiqueta
+%lw $3, etiqueta+23   # etiqueta + constante numérica
+%lw $3, 23($2)   # base (registro) + desplazamiento
+%lw $3, ($2)   # base (registro) sin desplazamiento
+%lw $3, 0x10004   # una dirección directa
+%lw $3, 0x10004   # una dirección directa
+%lw $3, etiqueta+23(\$5)  # base (registro) + etiqueta + constante numérica
+%\end{verbatim}
+
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Programación de la máquina: lenguaje ensamblador MIPS}
@@ -170,31 +293,6 @@
 \end{frame}
 
 
-\begin{frame}
- \frametitle{Consejos y preguntas}
-\begin{center}
-\begin{itemize}
-\item  ¿Preguntas?
-\end{itemize}
-\end{center}
-\end{frame}
-
-
-\begin{frame}
- \frametitle{Bibliografía}
-Libros
-\begin{itemize}
-\item Andrew S. Tanenbaum (2000), ORGANIZACIÓN DE COMPUTADORAS un enfoque estructurado, Editorial Prentice Hall. (10 copias en biblioteca)
-\item David. Patterson John L. Hennessy (1995), ORGANIZACIÓN Y DISEÑO DE COMPUTADORES La interfaz hardware/software, McGraw-Hill (8 copias en biblioteca).
-\end{itemize}
-Contenido electrónico
-\begin{itemize}
-	\item \textbf{x86 assembly basis} Una introducción al lenguaje ensamblador x86. Disponible en PEDCO en formato PDF.
-		\url{https://www.nayuki.io/page/a-fundamental-introduction-to-x86-assembly-programming}
-\item Apuntes elaborados por la cátedra, disponibles en PEDCO para impresión (pdf) o lectura online (html)
-\item Secciones de libros aptas para publicacion
-\end{itemize}
-\end{frame}
 
 
 
@@ -231,7 +329,6 @@ Contenido electrónico
 \item Ejemplo:
 \end{itemize}
 
-% \footnotesize
 \begin{verbatim}
 
   Código C:        a = b + c;
@@ -526,7 +623,7 @@ Significado:      if $s1 < $s2 then
         \textbf{Convención de uso de registros en MIPS}
  \\~\\
 
-\includegraphics[scale=0.4]{images/convencion.jpg}
+\includegraphics[scale=0.3]{images/convencion.jpg}
 
         \end{center}
 \end{frame}
@@ -578,28 +675,7 @@ Ejemplo:   lui $t0, 0xAAAA
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Modelo de programación MIPS}
-\begin{center}\textbf{Lenguaje Ensamblador vs. Lenguaje Máquina?}\end{center}
 
-\begin{itemize}
-\item El lenguaje ensamblador provee una representación simbólica conveniente
-\begin{itemize}
-\item Es mucho más sencillo que programar escribiendo números
-\item Por ejemplo: el destino de una operación va primero
-\end{itemize}
-\item El lenguaje máquina es la verdadera realidad
-\begin{itemize}
-\item Por ejemplo: el destino ya no es lo primero que aparece en una operación va primero
-\end{itemize}
-\item El lenguaje ensamblador puede proveer \textbf{pseudoinstrucciones}
-\begin{itemize}
-\item Por ejemplo: \begin{verbatim}move $t0, $t1\end{verbatim}
-\item sería implementadao utilizando:  \begin{verbatim}add $t0, $t1, $zero\end{verbatim}
-\end{itemize}
-\item Cuando se debe considerar la performance se deben contar las instrucciones reales
-\end{itemize}
-\end{frame}
 
 
 
@@ -643,6 +719,8 @@ Ejemplo:   lui $t0, 0xAAAA
 \end{frame}
 
 
+\subsection{Modos de direccionamiento}
+
 \begin{frame}[fragile]
 \frametitle{Modos de direccionamiento}
 \begin{itemize}
@@ -662,14 +740,33 @@ Ejemplo:   lui $t0, 0xAAAA
 	\end{center}
 \end{frame}
 
-\begin{frame}
- \frametitle{Consejos y preguntas}
-\begin{center}
+
+
+\subsection{lenguaje ensamblador vs lenguaje máquina}
+
+\begin{frame}[fragile]
+\frametitle{Modelo de programación MIPS}
+\begin{center}\textbf{Lenguaje Ensamblador vs. Lenguaje Máquina?}\end{center}
+
 \begin{itemize}
-\item  ¿Preguntas?
+\item El lenguaje ensamblador provee una representación simbólica conveniente
+\begin{itemize}
+\item Es mucho más sencillo que programar escribiendo números
+\item Por ejemplo: el destino de una operación va primero
 \end{itemize}
-\end{center}
+\item El lenguaje máquina es la verdadera realidad
+\begin{itemize}
+\item Por ejemplo: el destino ya no es lo primero que aparece en una operación va primero
+\end{itemize}
+\item El lenguaje ensamblador puede proveer \textbf{pseudoinstrucciones}
+\begin{itemize}
+\item Por ejemplo: \begin{verbatim}move $t0, $t1\end{verbatim}
+\item sería implementadao utilizando:  \begin{verbatim}add $t0, $t1, $zero\end{verbatim}
+\end{itemize}
+\item Cuando se debe considerar la performance se deben contar las instrucciones reales
+\end{itemize}
 \end{frame}
+
 
 
 \begin{frame}

@@ -82,17 +82,18 @@
 
 
 
+\begin{footnotesize}
 
 
-\section{Abstracciones en la computadora y tecnología}
+\section{Diseño Lógico - Diseño Digital}
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
-\begin{center}\textbf{Señales digitales}\end{center}
+\subsection{Señales digitales}
+
+\begin{frame}{Señales digitales}
 \begin{itemize}
 \item La electrónica interna de un computador actual 
-es digital
-\item La electrónica digital opera con dos niveles de 
+utiliza componentes analógicos (como los transistores en un circuito cmos).
+\item De todas maneras se modela de manera digital para operar con dos niveles de 
 voltaje: un voltaje alto y un voltaje bajo
 \item El resto de los valores de voltaje son 
 temporales y ocurren durante la transición 
@@ -106,9 +107,7 @@ entre los valores alto y bajo o bajo y alto
 
 
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
-\begin{center}\textbf{Señales digitales}\end{center}
+\begin{frame}{Señales digitales}
 \begin{itemize}
 \item Esta es una razón clave por la que los 
 computadores utilizan números binarios, ya 
@@ -126,9 +125,7 @@ electrónicas los voltajes y sus relaciones difieren,
 
 
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
-\begin{center}\textbf{Señales digitales}\end{center}
+\begin{frame}{Señales digitales}
 \begin{itemize}
 \item Por eso hablamos de señales que son:
 \begin{itemize}
@@ -145,33 +142,64 @@ complementarios o inversos
 \end{frame}
 
 
+\subsection{Análisis de Circuitos Digitales}
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
-\begin{center}\textbf{Diseño digital}\end{center}
-\begin{itemize}
-\item Los bloques lógicos 
-(circuitos digitales o lógicos)
- se 
+\begin{frame}{Diseño lógico o digital}
+
+\bigskip
+
+ \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-60mm-5mm}
+
+Los bloques lógicos (circuitos digitales o lógicos) se 
 clasifican en dos tipos:
 \begin{itemize}
-\item circuitos combinacionales
+\item \textbf{circuitos combinacionales}
 \begin{itemize}
 \item Sus salidas dependen sólo de las entradas
 \end{itemize}
-\item circuitos secuenciales
+\item \textbf{circuitos secuenciales}
 
 \begin{itemize}
 \item Mantienen un estado interno. Sus salidas pueden 
 depender tanto de las entradas actuales como
 del valor almacenado en memoria, conocido 
 como estado del bloque
+\item Permiten modelar memorias y \textbf{máquinas de estados finitos}
+\item Las máquinas de estado finito permiten modelar \textbf{máquinas algoritmicas} (por ej. una CPU)
 \end{itemize}
 
 \end{itemize}
-\end{itemize}
+
+      \column{60mm}
+\includegraphics[scale=0.2]{images/abstraccion-logico.jpg} 
+
+    \end{columns}
 \end{frame}
 
+
+
+\begin{frame}{Análisis de Circuitos Digitales}{Diseño lógico o digital}
+
+\bigskip
+
+ \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-60mm-5mm}
+
+Orígenes de la teoría de análisis y diseño de circuitos lógicos
+o digitales:
+\begin{itemize}
+\item[Booleano] En 1854 George Boole define un algebra que utiliza sólo dos valores.
+\item[Switching] En 1938 Claude Shannon demuestra que el algebra de boole puede ser utilizado para analizar y modelar circuitos digitales.
+\end{itemize}
+
+\bigskip
+\includegraphics[scale=0.3]{images/boole-shannon.jpg} 
+      \column{60mm}
+\includegraphics[scale=0.2]{images/abstraccion-logico.jpg} 
+
+    \end{columns}
+\end{frame}
 
 
 
@@ -344,12 +372,24 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
-\begin{center}\textbf{Construcción de diseño lógico/digital}\end{center}
+\begin{frame}{Diseño digital}
+
+ \begin{columns}[onlytextwidth,T]
+      \column{\dimexpr\linewidth-60mm-5mm}
+\textbf{Metodología para realizar un diseño lógico/digital}
+\begin{itemize}
+\item Definir coloquialmente todas las entradas y todas las salidas
+\item Confeccionar una tabla de verdad para todas las combinaciones de valores de entrada y todas las salidas
+\item Describir para cada salida una función lógica en base a la tabla
+\item Confeccionar un diagrama del circuito digital resultante
+\end{itemize}
+
+	\column{60mm}
+
 \begin{figure}
 \includegraphics[scale=0.2]{images/construcciondigital.jpg} 
 \end{figure}
+  \end{columns}
 \end{frame}
 
 
@@ -663,6 +703,8 @@ Libros
 \end{itemize}
 \end{frame}
 
+
+\end{footnotesize}
 
 \end{document}
 
