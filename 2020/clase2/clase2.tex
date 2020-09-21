@@ -169,7 +169,7 @@ clasifican en dos tipos:
 depender tanto de las entradas actuales como
 del valor almacenado en memoria, conocido 
 como estado del bloque
-\item Permiten modelar memorias y \textbf{máquinas de estados finitos}
+\item Permiten modelar memorias (\textbf{registros}) y \textbf{máquinas de estados finitos}
 \item Las máquinas de estado finito permiten modelar \textbf{máquinas algoritmicas} (por ej. una CPU)
 \end{itemize}
 
@@ -182,6 +182,7 @@ como estado del bloque
 \end{frame}
 
 
+\subsection{Algebra de Boole}
 
 \begin{frame}{Análisis de Circuitos Digitales}{Diseño lógico o digital}
 
@@ -208,8 +209,10 @@ o digitales:
 
 
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
+\begin{frame} {Circuitos Combinacionales} {Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
+\bigskip
+\textbf{Circuito combinacional:} La función lógica (salida) depende únicamente de las señales de entrada.
+\bigskip
 \begin{center}\textbf{Tablas de Verdad}\end{center}
 \begin{itemize}
 \item Debido a que un bloque de lógica combinatoria 
@@ -228,8 +231,7 @@ tabla de verdad
 
 
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
+\begin{frame} {Circuitos Combinacionales} {Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
 \begin{center}\textbf{Tablas de Verdad}\end{center}
 \begin{itemize}
 \item Para un bloque lógico con n entradas, existen   2 n posiciones en la tabla de verdad, puesto que 
@@ -268,8 +270,7 @@ puede dificultar su comprensión
 
 
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
+\begin{frame} {Circuitos Combinacionales} {Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
 \begin{center}\textbf{Algebra de Boole}\end{center}
 \begin{itemize}
 \item Todas la variable tienen valores 0 ó 1
@@ -305,8 +306,7 @@ una inversión o negación de dicho valor
 
 
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
+\begin{frame} {Circuitos Combinacionales} {Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
 \begin{center}\textbf{Álgebra de Boole - Leyes y Teoremas}\end{center}
 \begin{figure}
 \includegraphics[scale=0.2]{images/leyes.jpg} 
@@ -319,8 +319,7 @@ una inversión o negación de dicho valor
 
 
 
-\begin{frame}
-\frametitle{Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
+\begin{frame} {Circuitos Combinacionales} {Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
 \begin{center}\textbf{Álgebra de Boole - Leyes y Teoremas}\end{center}
 \begin{itemize}
 \item Cualquier función lógica puede ser reescrita como una ecuación, 
@@ -337,8 +336,7 @@ de las variables de entrada utilizando las operaciones del álgebra a la derecha
 
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
 \begin{center}\textbf{Compuertas/Puertas (Gates)}\end{center}
 \begin{itemize}
 \item Los bloques lógicos se construyen a partir de 
@@ -358,8 +356,7 @@ inversor que siempre tiene una entrada
 
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
 \begin{center}\textbf{Compuertas/Puertas (Gates)}\end{center}
 \begin{figure}
 \includegraphics[scale=0.2]{images/compuertas.jpg} 
@@ -367,8 +364,7 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Compuertas, Tablas de Verdad, Ecuaciones Lógicas}
 \begin{center}\textbf{Compuertas/Puertas (Gates)}\end{center}
 \begin{figure}
 \includegraphics[scale=0.2]{images/compuertasx.jpg} 
@@ -377,7 +373,7 @@ inversor que siempre tiene una entrada
 
 \subsection{Metodología para realizar un diseño lógico/digital}
 
-\begin{frame}{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 
  \begin{columns}[onlytextwidth,T]
       \column{\dimexpr\linewidth-60mm-5mm}
@@ -402,8 +398,7 @@ inversor que siempre tiene una entrada
 \subsection{Circuitos combinacionales comunes}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Construcción de diseño lógico/digital: Decoder}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/decoder.jpg} 
@@ -411,8 +406,7 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Construcción de diseño lógico/digital: Multiplexor}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/multiplexor.jpg} 
@@ -421,8 +415,7 @@ inversor que siempre tiene una entrada
 
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Construcción de diseño lógico/digital: Multiplexor 32 bits}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/multiplexor32bits.jpg} 
@@ -432,8 +425,7 @@ inversor que siempre tiene una entrada
 
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Diseño de ALU de un bit}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/alu1bit.jpg} 
@@ -443,8 +435,7 @@ inversor que siempre tiene una entrada
 
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Diseño de ALU de un bit}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/alu1bit-2.jpg} 
@@ -454,8 +445,7 @@ inversor que siempre tiene una entrada
 
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Diseño de ALU de un bit}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/alu1bit-3.jpg} 
@@ -463,8 +453,7 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Diseño de ALU de un bit}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/alu1bit-4.jpg} 
@@ -472,8 +461,7 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Diseño de ALU de 32 bits}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/alu1bit-5.jpg} 
@@ -481,8 +469,7 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame} {Circuitos Combinacionales} {Diseño digital}
 \begin{center}\textbf{Diseño de una unidad de control}\end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{images/control.jpg} 
@@ -492,8 +479,7 @@ inversor que siempre tiene una entrada
 
 \subsection{Relojes}
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame}{Relojes}{Diseño digital}
 \begin{center}\textbf{Relojes}\end{center}
 \begin{itemize}
 \item Los relojes son necesarios en la lógica secuencial, para decidir cuando un elemento que contiene un estado debe ser actualizado.
@@ -506,8 +492,7 @@ inversor que siempre tiene una entrada
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
+\begin{frame}{Relojes}{Diseño digital}
 \begin{center}\textbf{Relojes}\end{center}
 \begin{itemize}
 \item Sistemas síncronos
@@ -521,78 +506,65 @@ inversor que siempre tiene una entrada
 
 \subsection{Circuitos secuenciales}
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
-\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{frame}{Circuitos secuenciales}{Diseño digital}
+\bigskip
+\textbf{Elementos de memoria: Set-Reset Latch}
 \begin{itemize}
-\item Set-Reset Latch
 \item Elemento básico para almacenar un bit. Contiene un Loop en su diseño.
 \end{itemize}
+\bigskip
 \begin{figure}
 \includegraphics[scale=0.4]{images/latch-s-r.jpg} 
 \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
-\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{frame}{Circuitos secuenciales}{Diseño digital}
+\bigskip
+\textbf{Elementos de memoria: D Latch}
 \begin{itemize}
-\item D-Latch
 \item Elemento básico para almacenar un bit. Contiene un Loop en su diseño
 \item Sus entradas son el bit a almacenar y la señal de reloj
 \end{itemize}
+\bigskip
 \begin{figure}
 \includegraphics[scale=0.4]{images/latch-d.jpg} 
 \end{figure}
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
-\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
-\begin{itemize}
-\item D-Latch
-\end{itemize}
+\begin{frame}{Circuitos secuenciales}{Diseño digital}
+\bigskip
+\textbf{Elementos de memoria: D Latch}
+\bigskip
 \begin{figure}
 \includegraphics[scale=0.4]{images/latch-d-tiempo.jpg} 
 \end{figure}
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
-\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{frame}{Circuitos secuenciales}{Diseño digital}
+\bigskip
+\textbf{Elementos de memoria: D Flip-Flop}
 \begin{itemize}
 \item D Flip-Flop : utilizados en la construcción de REGISTROS
 \item Elemento básico para almacenar un bit. Contiene un Loop en su diseño
 \item Sus entradas son el bit a almacenar y la señal de reloj
 \item Se sincroniza (actualiza) en el flanco de reloj
 \end{itemize}
+\bigskip
 \begin{figure}
 \includegraphics[scale=0.4]{images/flip-flop-d.jpg} 
 \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
-\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
+\begin{frame}{Circuitos secuenciales}{Diseño digital}
+\bigskip
+\textbf{Elementos de memoria: D Flip-Flop}
 \begin{itemize}
-\item D Flip-Flop
-el estado interno del flip-flop no cambia. Eso lo distingue de un latch.
-\end{itemize}
-\begin{figure}
-\includegraphics[scale=0.4]{images/flip-flop-d-tiempo.jpg} 
-\end{figure}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Diseño digital}
-\begin{center}\textbf{Elementos de memoria (circuitos secuenciales)}\end{center}
-\begin{itemize}
-\item D Flip-Flop
 \item Si la señal D cambia cuando la señal de reloj está baja (desacertada)
 el estado interno del flip-flop no cambia. Eso lo distingue de un latch.
 \end{itemize}
+\bigskip
 \begin{figure}
 \includegraphics[scale=0.4]{images/flip-flop-d.jpg} 
 \end{figure}
