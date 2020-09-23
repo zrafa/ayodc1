@@ -47,7 +47,7 @@
 }
 
 \title{Arquitecturas y Organización de Computadoras I}
-\subtitle{2: Arquitectura MIPS - parte 2}
+\subtitle{2: Arquitectura MIPS}
 \author{Rafael Ignacio Zurita}
 \institute{Depto. Ingeniería de Computadoras}
 \date{\today}
@@ -101,6 +101,80 @@
 \end{center}
 \end{frame}
 
+
+\begin{frame}{MIPS (RISC) vs x86 (CISC)}{Comparativa}
+\begin{footnotesize}
+ \begin{columns}[onlytextwidth,T]
+%      \column{\dimexpr\linewidth-60mm-5mm}
+
+      \column{70mm}
+\bigskip
+\begin{center}\textbf{Arquitectura MIPS}\end{center}
+\begin{itemize}
+\item Muchos registros: 32 registros de 32bits (muchos registros)
+\item Instrucciones de tamaño fijo (32bits)
+\item Pocos formatos de instrucciones
+\item Pocos modos de direccionamiento
+\item ALU opera con 3 operandos en registros (registro-registro)
+\item Conjunto de instrucciones reducido
+\item \textbf{Objetivo: Simplicidad para hacer eficiente en hardware el caso mas común}
+\end{itemize}
+
+      \column{80mm}
+
+\bigskip
+\begin{center}\textbf{Arquitectura AMD64 (x86 de 64bits)}\end{center}
+\begin{itemize}
+\item Pocos registros: 16 registros de 64bits (la versión 32bits tiene sólo 8 registros)
+\item Instrucciones de tamaño variable
+\item Muchos formatos de instrucciones
+\item Muchos modos de direccionamiento
+\item La ALU puede operar con registros, o memoria (registro-memoria)
+\item Conjunto de instrucciones complejo
+\item \textbf{Objetivo: Compatibilidad con procesadores anteriores de Intel de 16bits y 8bits}
+\end{itemize}
+    \end{columns}
+\end{footnotesize}
+\end{frame}
+
+
+
+\begin{frame}{MIPS (RISC) vs x86 (CISC)}{Comparativa}
+
+ \begin{columns}[onlytextwidth,T]
+%      \column{\dimexpr\linewidth-60mm-5mm}
+
+      \column{90mm}
+
+\begin{center}\textbf{Arquitectura AMD64 (x86 de 64bits)}\end{center}
+
+\begin{itemize}
+\begin{scriptsize}
+\item Intel y AMD fabrican microarquitecturas AMD64 en chips de alto rendimiento
+\item Su performance suele ser mucho mayor a un procesador MIPS
+\item Una razón es que MIPS se ha dedicado a procesadores de bajo consumo
+\item Otra razón es debido a que los ingenieros de Intel y AMD han incorporado casi todas las mejoras de los últimos 40 años a nivel microarquitectura:
+\end{scriptsize}
+
+\begin{itemize}
+\begin{tiny}
+\item Ejecución especulativa: ejecutar en paralelo instrucciones
+\item Renombramiento de registros: Los chips de Intel y AMD incorporan de registros
+\item Superscalar y multiples threads
+\item Varios cores (CPUs) en el mismo chip
+\item Ejecución de cada instrucción máquina a través de microinstrucciones RISC
+\item .
+\end{tiny}
+\end{itemize}
+
+\end{itemize}
+      \column{60mm}
+\bigskip
+\bigskip
+\bigskip
+\includegraphics[scale=0.25]{images/intelvsamd.png} 
+    \end{columns}
+\end{frame}
 
 \subsection{Hardware visible al programador: memoria y registros}
 
@@ -725,11 +799,119 @@ Ejemplo:   lui $t0, 0xAAAA
 \frametitle{Modos de direccionamiento}
 \begin{itemize}
 \item Los modos de direccionamiento son las diferentes formas de especificar un operando dentro de una instrucción (a nivel código máquina).
-\item Es el CÓMO se especifican e interpretan las direcciones de memoria según las instrucciones
-\item NO CONFUNDIR modos de direccionamiento con los formatos de direccionamiento permitidos al programar en lenguaje ensamblador
-\item Absoluto, Inmediato, Directo por registro suelen ser los mas importantes
+\item \textbf{NO CONFUNDIR modos de direccionamiento con los formatos de direccionamiento} permitidos al programar en lenguaje ensamblador
+\item La literatura los clasifica en: Inmediato, Directo, Indirecto, Registro, Indirecto por registro, Basado-indexado (base+desplazamiento), Pila.
 \end{itemize}
 \end{frame}
+
+
+\begin{frame}{Modos de direccionamiento}
+\begin{center}\textbf{Inmediato (constante)}\end{center}
+El operando se encuentra en la instrucción.
+
+Ejemplo: \texttt{addi \$s0, \$s1, 87} 
+
+	\begin{center}
+\includegraphics[scale=0.3]{images/dir-inmediato.jpg} 
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{Modos de direccionamiento}
+\begin{center}\textbf{Registro}\end{center}
+
+\begin{itemize}
+\item El operando se encuentra en un registro.
+\item La instrucción máquina indica el registro.
+\item Ejemplo: \texttt{add \$s0, \$s1, \$s4} 
+
+\end{itemize}
+
+	\begin{center}
+\includegraphics[scale=0.3]{images/dir-registro.jpg} 
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{Modos de direccionamiento}
+\begin{center}\textbf{Indirecto}\end{center}
+
+\begin{itemize}
+\item El operando se encuentra en memoria.
+\item La instrucción máquina indica una dirección de memoria, que apunta a la dirección de memoria (dirección efectiva) del operando.
+\item Ejemplo: No existe en MIPS
+\item Es útil en lenguajes de alto nivel como C para los arreglos y punteros.
+
+\end{itemize}
+
+	\begin{center}
+\includegraphics[scale=0.3]{images/dir-indirecto.jpg} 
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{Modos de direccionamiento}
+\begin{center}\textbf{Indirecto por registro}\end{center}
+
+\begin{itemize}
+\item El operando se encuentra en memoria.
+\item La instrucción máquina indica un registro, que apunta a (contiene) la dirección de memoria (dirección efectiva) del operando.
+\item Ejemplo: En MIPS existe, pero lleva siempre un desplazamiento que podría ser cero (base + desplazamiento). \texttt{lw \$s0, 0(\$s1)}
+\item Es útil en lenguajes de alto nivel como C para los arreglos y punteros.
+
+\end{itemize}
+
+	\begin{center}
+\includegraphics[scale=0.3]{images/dir-indirecto-por-registro.jpg} 
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{Modos de direccionamiento}
+\begin{center}\textbf{Base mas desplazamiento (indexado)}\end{center}
+
+\begin{itemize}
+\item El operando se encuentra en memoria.
+\item La instrucción máquina indica un registro más una constante. Sumando el contenido del registro, mas la constante, se logra la dirección efectiva.
+\item Ejemplo: \texttt{lw \$s0, 33(\$s1)}
+\item Es útil en lenguajes de alto nivel como C para estructuras de datos. El compilador puede colocar la dirección base de la estructura en el registro, y generar los desplazamientos a cada miembro, ya que son de distancia fija.
+
+\end{itemize}
+
+	\begin{center}
+\includegraphics[scale=0.18]{images/dir-base-desplazamiento.jpg} 
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{Modos de direccionamiento}
+\begin{center}\textbf{Basado Indexado}\end{center}
+
+\begin{itemize}
+\item El operando se encuentra en memoria.
+\item La instrucción máquina indica dos registros. Se suman los contenidos de ambos registros, y se logra la dirección efectiva del operando.
+\item Ejemplo: En MIPS no existe. Podría ser: \\ \texttt{load  A, B, C  \# cargar en A el operando en la dirección efectiva B+C}
+\item Es útil en lenguajes de alto nivel como C para arreglos de estructuras.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Modos de direccionamiento}
+\begin{center}\textbf{Pila}\end{center}
+
+\begin{itemize}
+\item El operando se encuentra en la pila.
+\item La instrucción máquina SÓLO indica la operación (por ejemplo: add). Los operandos son implícitos (el tope de la pila).
+\item Ejemplo: En MIPS no existe. 
+\item En una arquitectura de pila la instrucción podría ser \textbf{add}, y la CPU desapila dos elementos del tope de la pila, los suma, y coloca el resultado en el tope de la pila.
+\item Es útil en arquitecturas donde las instrucciones deban ocupar poco espacio.
+
+\end{itemize}
+
+\end{frame}
+
+
 
 
 \begin{frame}[fragile]
