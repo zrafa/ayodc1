@@ -672,14 +672,89 @@ Existen dos clasificaciones teóricas:
 \end{figure}
 \end{frame}
 
-
-\begin{frame}
- \frametitle{Consejos y preguntas}
-\begin{center}
+\begin{frame}{Sistema de climatización digital}{Máquinas de Estado Finito (FSM)}
+\begin{columns}[onlytextwidth,T]
+\column{\dimexpr\linewidth-60mm-5mm}
+\bigskip
+\bigskip
 \begin{itemize}
-\item  ¿Preguntas?
+\item El sistema cuenta con tres entradas: 
+\begin{itemize}
+\item pulsador Up (subir temperatura)
+\item pulsador Down (bajar temperatura)
+\item termostato
 \end{itemize}
-\end{center}
+\item La salida es el control de temperatura y el display
+\bigskip
+\item Una implementación es a través de 5 estados: mín. temp., frío, templado, caluroso, max. temp.
+\end{itemize}
+       \column{60mm}
+\includegraphics[scale=0.2]{images/temp.jpg} 
+    \end{columns}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Máquina Algorítmica de Multiplicación}
+\begin{columns}[onlytextwidth,T]
+\column{\dimexpr\linewidth-70mm-5mm}
+\bigskip
+\bigskip
+
+\begin{footnotesize}
+\begin{itemize}
+\item Implementa un algoritmos de multiplicación en hardware
+\item Control en este caso es una máquina de estado finito
+\begin{footnotesize}
+\begin{itemize}
+\item Contiene memoria (registro) para conocer en qué etapa de la multipiclación se encuentra
+\bigskip
+\item Si write y shift se hacen en ciclos de reloj distintos, entonces existen dos estados en cada iteración de la multiplicación
+\end{itemize}
+\end{footnotesize}
+\bigskip
+\end{itemize}
+\end{footnotesize}
+
+       \column{60mm}
+\includegraphics[scale=0.25]{images/maq-alg-mult.jpg} 
+
+\includegraphics[scale=0.25]{images/alg.jpg} 
+    \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Máquina Algorítmica de Multiplicación}
+\begin{columns}[onlytextwidth,T]
+\column{\dimexpr\linewidth-70mm-5mm}
+\bigskip
+\bigskip
+
+\begin{footnotesize}
+\begin{itemize}
+\item Implementa un algoritmos de multiplicación en hardware
+\item Tarea:
+\begin{footnotesize}
+\begin{itemize}
+\item Multiplicar dos números de 4 bits utilizando la máquina algorítmica descripta.
+\bigskip
+\item Por ejemplo: 3 (0011) x 5 (0101)
+\bigskip
+\item Entender el funcionamiento de la máquina verificando los resultados parciales de las sumas del registro producto.
+\end{itemize}
+\end{footnotesize}
+\bigskip
+\end{itemize}
+\end{footnotesize}
+
+       \column{60mm}
+\includegraphics[scale=0.25]{images/maq-alg-mult.jpg} 
+
+\includegraphics[scale=0.25]{images/alg.jpg} 
+    \end{columns}
 \end{frame}
 
 
@@ -687,6 +762,7 @@ Existen dos clasificaciones teóricas:
  \frametitle{Bibliografía}
 Libros
 \begin{itemize}
+\item Apunte Diseño Lógico (disponible en la web de la materia)
 \item David. Patterson John L. Hennessy (1995), ORGANIZACIÓN Y DISEÑO DE COMPUTADORES La interfaz hardware/software, McGraw-Hill (8 copias en biblioteca).
 \end{itemize}
 \end{frame}
