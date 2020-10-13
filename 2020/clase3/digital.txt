@@ -1,0 +1,80 @@
+
+Los sistemas y dispositivos analogicos procesan señales variantes en 
+el tiempo, las cuales pueden tomar cualquier valor a través de un rango
+de valores continuo. La señal puede ser voltaje, corriente o cualquier
+otra cantidad física.
+COmo los sistemas y dispossitivos digitales están confeccionados
+por componentes analógicos entonces también procesan señales variantes
+en el tiempo. La diferencia radica en que los circuitos digitales
+están modelados para que en cualquier momento, esté representando
+sólo uno de dos valores discretos: 0 o 1, o bajo o alto, o verdadero
+o falso, o desacertado / acertado, etc. A esta señal se la denomina
+digital.
+
+De esta manera, los circuitos digitales, al ocultar los detalles
+del mundo analógico en un modelo de solamente dos valores (un modelo
+binario), puede ser diseñado y analizado funcionalmente, usando
+algebra de conmutación, tablas u otros mecanismos abstractos que
+describan la operación del circuito en ceros y unos.
+
+Cuando se traten temas relativos a circuitos logicos electrónicos,
+como los circuitos cmos, los diseñadores digitales usualmente utilzan
+las palabras alto y bajo, en vez de uno y cero. Esto lo hacen para recordar
+que están en realidad trabajando con circuitos reales, no abstractos.
+
+LOW o bajo es una señal en el rango algebraico de voltages bajos,
+y se interpretan como un cero generalmente en logica positiva.
+
+HIGH o alto es una señal en el rango algebraico de voltages altos,
+y se interpretan como un 1 en lógica positiva.
+
+
+Existen 3 tipos de circuitos que nos interesan..
+
+
+
+circuitos combinacionales
+Su comportamiento puede ser descripto completamente por una tabla 
+de verdad, la cual contiene todas las combinaciones de los
+valores de entrada, y los valores de salidas por cada combinación.
+
+circuitos secuenciales: son circuitos con memoria, en los cuales sus
+señales digitales de salida dependen de las entradas y de la secuencia
+de entradas pasadas. 
+Estos circuitos permiten modelar memorias, y tambien máquinas
+de estados finito. Su comportamiento se describe por una tabla
+de estados, que especifica su salida y el siguiente estado como
+una funcion de su estado actual y de sus entradas.
+
+Las máquinas de estado finito nos permiten modelar circuitos
+que llevan adelantee un algoritmo en hardware, y se las puede
+denominar máquinas algoritmicas. 
+Un procesador es una máquina algoritmica de propósito general, 
+por lo tanto, conociendo sobre circuitos combinacionales, 
+secuencias, y máquinas de estado finito, podemos analizar el
+diseño de un procesador a nivel de análisis de circuitos digitales.
+
+
+
+
+Las técnicas de análisis para circuitos digitales tienen sus
+orígenes en el trabajo de un matemático inglés, George Boole.
+En 1854 George Boole definió un sistema algebraico que utiliza
+unicamente dos valores. Ahora se lo llama algebra de boole, y se
+la utiliza entre otras aplicaciones para expresar leyes de
+razonamiento  en un lenguaje simbólico.
+
+Casi 100 años mas tarde, un ingeniero electricista y matemático
+Claude Shannon, estaba en los laboratorios Bell, 
+tratando 21 años de simplificar
+centrales telefónicas, para usar menos relés o ser mas eficientes.
+Estas centrales eran circuitos, y 
+se dió cuenta que el algebra de BOole podía ser utilizado
+en el análisis y síntesis de estos circuitos de conmutación (y por lo tanto
+de los circuitos digitales). Por eso a este análisis se lo conoce
+muchas veces como algebra de switching.
+Shannon demostró en su tesis de maestría que las aplicaciones
+eléctricas del algebra de boole podrían constuir cualquier relación
+numérica lógica, por lo que se lo considera el padre fundador
+de la Teoría de diseño de circuitos digitales.
+

@@ -1,0 +1,648 @@
+% Copyright 2020 by Junwei Wang <i.junwei.wang@gmail.com>
+%
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+
+% \documentclass[aspectratio=169,compress]{beamer}
+\documentclass[aspectratio=169,compress]{beamer}
+
+\usepackage[english]{babel}
+\usepackage{metalogo}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{tikz}
+
+% \usetheme{Nord}
+\usetheme[style=light]{Nord}
+
+
+%\usepackage[spanish, es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+
+
+
+\setmainfont{Yanone Kaffeesatz}
+%\setsansfont{Andika New Basic}
+\setmonofont{DejaVu Sans Mono}
+
+\setbeamerfont{frametitle}{parent=structure,size=\Large}
+
+\AtBeginSection[]
+{
+  \begin{frame}[c,noframenumbering,plain]
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}[c,noframenumbering,plain]
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  \end{frame}
+}
+
+\title{Arquitecturas y Organización de Computadoras I}
+\subtitle{3: Microarquitectura/Organización: El camino de datos}
+\author{Rafael Ignacio Zurita}
+\institute{Depto. Ingeniería de Computadoras}
+\date{\today}
+
+\begin{document} 
+\begin{frame}[plain,noframenumbering]
+\bigskip
+  \maketitle
+\end{frame}
+
+
+
+
+
+\begin{footnotesize}
+
+
+
+
+
+\begin{frame}
+\frametitle{Temario}
+        \begin{center}
+        \textbf{Microarquitectura}
+        \end{center}
+\begin{tabular}{cl}
+
+\begin{tabular}{c}
+\includegraphics[height=6cm, width=4cm]{images/estructura-por-niveles.jpg} 
+
+\end{tabular}
+& \begin{tabular}{l}
+\parbox{0.5\linewidth}{
+        Como implementar una arquitectura en hardware (meta: costo, rendimiento, etc) \\
+        La microarquitectura es construída por circuitos lógicos y elementos de memoria \\
+        Todos los circuitos lógicos y elementos de memoria son implementados físicamente con transistores
+}
+\end{tabular} \\
+
+\end{tabular}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{itemize}
+\item La arquitectura y el compilador definen la cantidad de instrucciones que se ejecutan de un programa
+\item La Organización/Microarquitectura definen:
+\begin{itemize} 
+\item la cantidad de ciclos de reloj por instrucción
+\item el tiempo del período del reloj (y por lo tanto la frecuencia)
+\end{itemize}
+\item Los principios básicos de diseño pueden observarse en la microarquitectura: 
+\begin{itemize} 
+\item Hacer rápido el caso común
+\item La Simplicidad favorece a la Regularidad
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item Obtener los requerimientos del camino de datos
+\end{itemize}
+\item Seleccionar los \textit{componentes} y establecer la \textit{metodología} del reloj
+\item Componer el \textit{camino de datos} para cumplir los requerimientos
+\item Determinar las \textit{señales de control} para cada instrucción
+\item Componer la \textit{lógica de control (unidad de control)} para generar las señales de control
+\end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\item Seleccionar los \textit{componentes} y establecer la \textit{metodología} del reloj
+\item Componer el \textit{camino de datos} para cumplir los requerimientos
+\item Determinar las \textit{señales de control} para cada instrucción
+\item Componer la \textit{lógica de control (unidad de control)} para generar las señales de control
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\end{enumerate}
+\begin{figure}
+\includegraphics[scale=0.4]{images/programa-almacenado.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\end{enumerate}
+\begin{figure}
+\includegraphics[scale=0.4]{images/codigo-maquina.jpg} 
+\end{figure}
+¿Qué tipos de instrucciones (formato) MIPS son las dos anteriores?
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\end{enumerate}
+\begin{figure}
+\includegraphics[scale=0.4]{images/tipos-i.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item \textbf{Obtener los requerimientos del camino de datos}
+\end{itemize}
+\end{enumerate}
+\begin{itemize}
+\item Para nuestro diseño contemplaremos un conjunto de instrucciones MIPS reducido:
+\begin{enumerate}
+\item De tipo-R: and, or, add, sub, slt
+\item De carga y almacenamiento (tipo-i): lw, sw
+\item De bifurcación (tipo-i): beq
+\item De salto (tipo-j): j
+\end{enumerate}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Multiple implementaciones para una misma arquitectura}\end{center}
+
+\begin{enumerate}
+\item Camino de datos de un único ciclo
+\begin{itemize}
+\item Cada instrucción se ejecuta en un único ciclo de reloj
+\end{itemize}
+\item Multiciclo
+\begin{itemize}
+\item Cada instrucción es dividida en una serie de pasos más cortos, y cada paso toma un ciclo de reloj
+\end{itemize}
+\item Segmentado (pipelined)
+\begin{itemize}
+\item Cada instrucción es dividida en una serie de pasos, cada paso toma un ciclo de reloj
+\item Multiples instrucciones se ejecutan a la vez
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{itemize}
+\item \textbf{REQUERIMIENTOS} Analizar el conjunto de instrucciones (ISA)
+\end{itemize}
+\begin{itemize}
+\item Controlar la memoria
+\begin{itemize}
+\item Leer instrucciones
+\item Leer y escribir datos
+\end{itemize}
+
+\item Controlar el archivo de 32 registros
+\begin{itemize}
+\item Leer el valor de un registro (indicado por el campo rs)
+\item Leer el valor de un registro (indicado por el campo rt)
+\item Escribir un valor en un registro (indicado por el campo rd o rt)
+\end{itemize}
+\item Controlar el PC
+\item Poder extender el signo de un número
+\item Realizar operaciones aritméticas y lógicas
+\item Poder sumar 4 al PC
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item Obtener los requerimientos del camino de datos
+\end{itemize}
+\item \textbf{Seleccionar los \textit{componentes} y establecer la \textit{metodología} del reloj}
+\item Componer el \textit{camino de datos} para cumplir los requerimientos
+\item Determinar las \textit{señales de control} para cada instrucción
+\item Componer la \textit{lógica de control (unidad de control)} para generar las señales de control
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{itemize}
+\item \textbf{Seleccionar los \textit{componentes}}
+\end{itemize}
+\begin{itemize}
+\item Componentes combinacionales
+\begin{itemize}
+\item Sumador
+\item ALU
+\item Multiplexores
+\item Extensor de signo
+\end{itemize}
+
+\item Elementos de memoria
+\begin{itemize}
+\item Registros de la microarquitectura
+\item Archivo de registros 
+\item Memoria
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{itemize}
+\item \textbf{Componentes Combinacionales}
+\end{itemize}
+
+\begin{figure}
+\includegraphics[scale=0.3]{images/elementos-combinacionales.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{itemize}
+\item \textbf{Elementos de Memoria}
+\end{itemize}
+
+\begin{figure}
+\includegraphics[scale=0.4]{images/elementos-de-estado.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{itemize}
+\item \textbf{Metodología del Reloj}
+\end{itemize}
+
+\begin{figure}
+\includegraphics[scale=0.4]{images/reloj.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{itemize}
+\item \textbf{Metodología del Reloj}
+\end{itemize}
+
+\begin{figure}
+\includegraphics[scale=0.3]{images/reloj-uniciclo.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{enumerate}
+\item Analizar el conjunto de instrucciones (ISA)
+\begin{itemize}
+\item Obtener los requerimientos del camino de datos
+\end{itemize}
+\item Seleccionar los \textit{componentes} y establecer la \textit{metodología} del reloj
+\item \textbf{Componer el \textit{camino de datos} para cumplir los requerimientos}
+\item Determinar las \textit{señales de control} para cada instrucción
+\item Componer la \textit{lógica de control (unidad de control)} para generar las señales de control
+\end{enumerate}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Diseño de la Microarquitectura (diseño del procesador)}\end{center}
+\begin{itemize}
+\item \textbf{Componer el \textit{camino de datos} para cumplir los requerimientos}
+\end{itemize}
+
+\begin{itemize}
+\item Tareas del procesador que se deben implementar
+\begin{enumerate}
+\item Leer una instrucción desde la memoria
+\item Decodificar la instrucción y leer los valores de los registros involucrados
+\item Incrementar el PC
+\item Si es necesario, realizar una operación con la ALU
+\item Si se calcula una dirección efectiva, realizar una operación de carga y almacenamiento
+\item Escribir los resultados en el archivo de registros (si es necesario)
+\item Escribir el nuevo valor del PC en el registro PC
+\end{enumerate}
+\item ¿Cómo implementar estas tareas con un camino de datos hardware?
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos para leer una instrucción desde la memoria}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/fetch.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos ejecutar una operación de tipo R}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/tipo-r.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos ejecutar una operación de carga y almacenamiento}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/tipo-i.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos ejecutar una operación de carga y almacenamiento}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/tipo-i-sw.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos ejecutar una operación de bifurcacion}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/tipo-i-beq.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Juntando todos los caminos de las diferentes instrucciones}\end{center}
+
+\begin{itemize}
+\item Meta: unificar los caminos y componentes para cada función
+\begin{itemize}
+\item Leer instrucción
+\item Instrucciones de tipo R
+\item Instrucciones de carga y almacenamiento
+\item Instrucciones de bifurcacion
+\end{itemize}
+\item Se deben agregar multiplexores para seleccionar el dato correcto
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos combinado - tipo R}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/add.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos combinado - instrucciones de carga}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/lw.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos combinado - instrucciones de almacenamiento}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/sw.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos combinado - instrucciones de bifurcacion}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/beq.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos combinado - instrucciones de bifurcacion}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/beq.jpg} 
+\end{figure}
+\begin{center}
+\textbf{¿Qué falta en este camino de datos?}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos completo - unidad de control}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/cpu-completa.jpg} 
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Unidad de control - señales hacia ALU}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/alu-signals.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos completo - ¿instrucción j?}\end{center}
+¿Qué modificaciones puede hacerse para agregar el tipo de instrucción j?
+\begin{figure}
+\includegraphics[scale=0.3]{images/cpu-completa.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos completo - ¿instrucción j?}\end{center}
+¿Qué modificaciones puede hacerse para agregar el tipo de instrucción j?
+\begin{figure}
+\includegraphics[scale=0.3]{images/j.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Camino de datos completo - unidad de control}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/cpu-signals-2.jpg} 
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Microarquitectura multiciclo}\end{center}
+\begin{figure}
+\includegraphics[scale=0.2]{images/cpu-signals-2.jpg} 
+\end{figure}
+\begin{center}
+\textbf{¿Cuál es el problema en la microarquitectura de un único ciclo?}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Microarquitectura multiciclo}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/cpu-multiciclo.jpg} 
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementación de la Microarquitectura}
+\begin{center}\textbf{Microarquitectura multiciclo}\end{center}
+\begin{figure}
+\includegraphics[scale=0.3]{images/cpu-multiciclo-fsm.jpg} 
+\end{figure}
+\end{frame}
+
+
+
+
+\begin{frame}
+ \frametitle{Consejos y preguntas}
+\begin{center}
+\begin{itemize}
+\item  ¿Preguntas?
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Bibliografía}
+Libros
+\begin{itemize}
+\item David. Patterson John L. Hennessy (1995), ORGANIZACIÓN Y DISEÑO DE COMPUTADORES La interfaz hardware/software, McGraw-Hill (8 copias en biblioteca).
+\end{itemize}
+\end{frame}
+
+\end{footnotesize}
+
+\end{document}
