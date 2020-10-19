@@ -266,6 +266,46 @@ Otros registros.
 
 \end{frame}
 
+
+
+\begin{frame}{Registros vs. Memoria}
+
+\begin{itemize}
+\item Los operandos deben estar en registros, y existen sólo 32
+\item El compilador asocia variables a registros
+\item ¿Qué sucede con un programa con un montón de variables?
+\end{itemize}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.4]{images/organizacion-mips.jpg} 
+\end{figure}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{Registros vs. Memoria}
+\begin{center}\textbf{Asignación de Registros}\end{center}
+
+\begin{itemize}
+\item El compilador intenta asociar tantas variables a registros como sea posible
+\item Algunas variables no pueden ser alocadas
+\begin{itemize}
+\item grandes arreglos (vectores)
+\item variables accedidas con diferentes punteros
+\item variables alocadas dinamicamente
+\begin{itemize}
+\item heap
+\item stack
+\end{itemize}
+\end{itemize}
+\item El compilador podría quedarse sin registros : \textbf{spilling}
+\end{itemize}
+\end{frame}
+
+
+
+
 \subsection{Cuando utilizar lenguaje ensamblador}
 
 \subsection{Conjunto de instrucciones}
@@ -275,7 +315,7 @@ Otros registros.
 \frametitle{Tipos de Instrucciones}
 \begin{center}\textbf{Tipos Principales de Instrucciones}\end{center}
 \begin{itemize}
-\item Instrucciones de transferencia de datos (memoria a registro o viceversa)
+\item Instrucciones de carga y almacenamiento (transferencia de datos: memoria a registro o viceversa)
 \begin{itemize}
 \item Carga y Almacenamiento
 \end{itemize}
@@ -294,8 +334,7 @@ Otros registros.
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Instrucciones de transferencia de datos}
+\begin{frame}{Instrucciones de carga y almacenamiento}{transferencia de datos: memoria a registro o viceversa}
 \begin{itemize}
 \item Permiten transferir datos entre la memoria y los registros del procesador:
 \bigskip
@@ -327,6 +366,28 @@ Otros registros.
 \end{frame}
 
 
+\begin{frame}[fragile]{Instrucciones de carga y almacenamiento}{transferencia de datos: memoria a registro o viceversa}
+
+\begin{itemize}
+\item Instrucciones de \textbf{Carga} y \textbf{Almacenamiento}
+\item Ejemplo:
+\end{itemize}
+\begin{verbatim}
+
+  Código C:        a[8] = h + a[8];
+
+  Código MIPS:     lw  $t0, 32($s3)
+                   add $t0, $s2, $t0
+                   sw  $t0, 32($s3)
+\end{verbatim}
+\begin{itemize}
+\item Las operaciones de carga y almacenamiento no tienen operandos destino (registro)
+\item Recuerde: las operaciones aritméticas y lógicas operan sobre registros, no sobre elementos en la memoria!
+\end{itemize}
+\end{frame}
+
+
+
 \begin{frame}
 \frametitle{Programación de la máquina: lenguaje ensamblador MIPS}
         \begin{center}
@@ -349,22 +410,13 @@ Otros registros.
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Formato de  instrucciones en MIPS}
-	\textbf{3 Formatos (fácil decodificación en hardware)}
-	\begin{center}
-\includegraphics[scale=0.5]{images/formato.jpg} 
-	\end{center}
-\end{frame}
 
 
-\begin{frame}
-\frametitle{Formato de instrucciones en MIPS}
-	\textbf{Un ejemplo completo de traducción al lenguaje de la máquina}
-	\begin{center}
-\includegraphics[scale=0.4]{images/below2.jpg} 
-	\end{center}
-\end{frame}
+
+
+
+
+
 
 
 
@@ -393,6 +445,7 @@ Otros registros.
 \end{frame}
 
 
+\subsection{Aritméticas y Lógicas}
 
 \begin{frame}[fragile]
 \frametitle{Tipos de Instrucciones}
@@ -438,113 +491,6 @@ Otros registros.
 
 
 
-
-
-\begin{frame}
-\frametitle{Tipos de instrucciones en MIPS}
-\begin{center}\textbf{Registros vs. Memoria}\end{center}
-
-\begin{itemize}
-\item Los operandos deben estar en registros, y existen sólo 32
-\item El compilador asocia variables a registros
-\item ¿Qué sucede con un programa con un montón de variables?
-\end{itemize}
-\begin{center}
-\begin{figure}
-\includegraphics[scale=0.4]{images/organizacion-mips.jpg} 
-\end{figure}
-\end{center}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Representación de datos a nivel máquina}
-\textbf{Organización de la Memoria principal en MIPS}
-\begin{itemize}
-	\item $2^{32}$ bytes, con direcciones 0, 1, 2 ... 
-	\item $2^{30}$ 4-bytes palabras, con direcciones 0, 4, 8 ... 
-	\item Las direcciones de las palabras deben ser múltiplos de 4
-\end{itemize}
-	\begin{center}
-\includegraphics[scale=0.5]{images/memoria-mips.jpg} 
-	\end{center}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Tipos de Instrucciones}
-\begin{center}\textbf{Registros vs. Memoria}\end{center}
-
-\begin{itemize}
-\item Los operandos deben estar en registros, y existen sólo 32
-\item El compilador asocia variables a registros
-\item ¿Qué sucede con un programa con un montón de variables?
-\end{itemize}
-\end{frame}
-
-
-
-\begin{frame}[fragile]
-\frametitle{Tipos de Instrucciones}
-\begin{center}\textbf{Asignación de Registros}\end{center}
-
-\begin{itemize}
-\item El compilador intenta asociar tantas variables a registros como sea posible
-\item Algunas variables no pueden ser alocadas
-\begin{itemize}
-\item grandes arreglos (vectores)
-\item variables accedidas con diferentes punteros
-\item variables alocadas dinamicamente
-\begin{itemize}
-\item heap
-\item stack
-\end{itemize}
-\end{itemize}
-\item El compilador podría quedarse sin registros : \textbf{spilling}
-\end{itemize}
-\end{frame}
-
-
-
-\begin{frame}[fragile]
-\frametitle{Tipos de Instrucciones}
-\begin{center}\textbf{Instrucciones de transferencia de datos}\end{center}
-
-\begin{itemize}
-\item Instrucciones de \textbf{Carga} y \textbf{Almacenamiento}
-\item Ejemplo:
-\end{itemize}
-\begin{verbatim}
-
-  Código C:        a[8] = h + a[8];
-
-  Código MIPS:     lw  $t0, 32($s3)
-                   add $t0, $s2, $t0
-                   sw  $t0, 32($s3)
-\end{verbatim}
-\begin{itemize}
-\item Las operaciones de carga y almacenamiento no tienen operandos destino (registro)
-\item Recuerde: las operaciones aritméticas y lógicas operan sobre registros, no sobre elementos en la memoria!
-\end{itemize}
-\end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{Formato de instrucciones en MIPS}
-\begin{center}\textbf{Un ejemplo completo de traducción de C al lenguaje de la máquina}\end{center}
-\begin{itemize}
-\item ¿Puede interpretar la asignación de variables y el por qué del código en lenguaje ensamblador?
-\end{itemize}
-	\begin{center}
-\includegraphics[scale=0.4]{images/below2.jpg} 
-	\end{center}
-\end{frame}
-
-
-
-
 \begin{frame}[fragile]
 \frametitle{Tipos de Instrucciones}
 \begin{center}\textbf{Repaso}\end{center}
@@ -568,24 +514,34 @@ Otros registros.
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Lenguaje Máquina}
-\begin{center}\textbf{Formato de Instrucciones en MIPS}\end{center}
-\begin{itemize}
-\item Las instruccciones, como los registros y la palabra, son de 32-bits
-\begin{itemize}
-\item Los registros están numerados en el código máquina: del 0 al 31
-\end{itemize}
-\end{itemize}
-	\begin{center}
-\includegraphics[scale=0.7]{images/formato.jpg} 
-	\end{center}
-\end{frame}
 
 
 
-\begin{frame}[fragile]
-\frametitle{Tipos de Instrucciones}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Instrucciones de salto incondicional}
+
+
+\begin{frame}[fragile]{Instrucciones de salto incondicional}{Tipos de Instrucciones}
 \begin{center}\textbf{Instrucciones de transferencia de Control}\end{center}
 
 \begin{itemize}
@@ -613,8 +569,7 @@ Otros registros.
 
 
 
-\begin{frame}[fragile]
-\frametitle{Tipos de Instrucciones}
+\begin{frame}[fragile]{Instrucciones de salto incondicional}{Tipos de Instrucciones}
 \begin{center}\textbf{Instrucciones de transferencia de Control}\end{center}
 
 \begin{itemize}
@@ -662,9 +617,9 @@ j Etiqueta             Próx. instr. está en Etiqueta
 \end{verbatim}
 \end{frame}
 
+\subsection{Instrucciones de salto condicional}
 
-\begin{frame}[fragile]
-\frametitle{Tipos de Instrucciones}
+\begin{frame}[fragile]{Instrucciones de salto condicional}{Tipos de Instrucciones}
 \begin{center}\textbf{Instrucciones de transferencia de Control}\end{center}
 
 \begin{itemize}
@@ -690,17 +645,6 @@ Significado:      if $s1 < $s2 then
 \end{itemize}
 \end{frame}
 
-
-\begin{frame}
-\frametitle{Modelo de programación MIPS}
-        \begin{center}
-        \textbf{Convención de uso de registros en MIPS}
- \\~\\
-
-\includegraphics[scale=0.3]{images/convencion.jpg}
-
-        \end{center}
-\end{frame}
 
 
 \begin{frame}[fragile]
@@ -754,11 +698,37 @@ Ejemplo:   lui $t0, 0xAAAA
 
 
 
-\begin{frame}
-\frametitle{Programación de la máquina: lenguaje ensamblador MIPS}
-        \begin{center}
-        \textbf{Conjunto básico de instrucciones MIPS}
-        \end{center}
+
+
+
+
+
+
+
+
+\begin{frame}[fragile]{Resumen de la arquitectura MIPS}
+\begin{itemize}
+\item Instrucciones sencillas de 32-bits de ancho
+\item Muy estructurado, no hay necesidad de grandes variaciones
+\item Confía en el compilador para ganar performance
+\item Hay que ayudar al compilador cuando sea necesario
+\item Únicamente 3 formatos de instrucciones
+	\begin{center}
+\includegraphics[scale=0.3]{images/formato2.jpg} 
+	\end{center}
+\item ¿Cómo programar mejor? (cantidad de variables, constantes)
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Resumen de la arquitectura MIPS}
+
+\begin{center}
+ \textbf{Conjunto básico de instrucciones MIPS}
+\end{center}
+\begin{center}
 \begin{tabular}{cl}
 
 \begin{tabular}{c}
@@ -773,23 +743,61 @@ Ejemplo:   lui $t0, 0xAAAA
 \end{tabular} \\
 
 \end{tabular}
+\end{center}
 \end{frame}
 
 
-\begin{frame}[fragile]
+\begin{frame}
 \frametitle{Modelo de programación MIPS}
-\begin{center}\textbf{Resumen de la arquitectura MIPS}\end{center}
+        \begin{center}
+        \textbf{Convención de uso de registros en MIPS}
+ \\~\\
+
+\includegraphics[scale=0.3]{images/convencion.jpg}
+
+        \end{center}
+\end{frame}
+
+
+
+\subsection{Formatos de instrucciones en MIPS}
+
+
+\begin{frame}{Formatos de instrucciones en MIPS}
+
 \begin{itemize}
-\item Instrucciones sencillas de 32-bits de ancho
-\item Muy estructurado, no hay necesidad de grandes variaciones
-\item Confía en el compilador para ganar performance
-\item Hay que ayudar al compilador cuando sea necesario
-\item Únicamente 3 formatos de instrucciones
-	\begin{center}
-\includegraphics[scale=0.3]{images/formato2.jpg} 
-	\end{center}
-\item ¿Cómo programar mejor? (cantidad de variables, constantes)
+	\item \textbf{3 Formatos (fácil decodificación en hardware)}
+	\item Las instrucciones que usan 3 registros son de tipo R (ejemplo: add, sub, and, or)
+	\item Las instrucciones que usan 2 registros y una constante son de tipo I (ejemplo: lw, sw, addi, ori, beq)
+	\item La instruccion j es de tipo J
 \end{itemize}
+
+	\begin{center}
+\includegraphics[scale=0.7]{images/formato.jpg} 
+	\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Formatos de instrucciones en MIPS}
+	\textbf{Un ejemplo completo de traducción al lenguaje de la máquina}
+	\begin{center}
+\includegraphics[scale=0.4]{images/below2.jpg} 
+	\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Formatos de instrucciones en MIPS}
+\begin{center}\textbf{Un ejemplo completo de traducción de C al lenguaje de la máquina}\end{center}
+\begin{itemize}
+\item ¿Puede interpretar la asignación de variables y el por qué del código en lenguaje ensamblador?
+\end{itemize}
+	\begin{center}
+\includegraphics[scale=0.4]{images/below2.jpg} 
+	\end{center}
 \end{frame}
 
 
@@ -829,6 +837,22 @@ Ejemplo: \texttt{addi \$s0, \$s1, 87}
 
 	\begin{center}
 \includegraphics[scale=0.3]{images/dir-registro.jpg} 
+	\end{center}
+\end{frame}
+
+\begin{frame}{Modos de direccionamiento}
+\begin{center}\textbf{Directo}\end{center}
+
+\begin{itemize}
+\item El operando se encuentra en memoria.
+\item La instrucción máquina indica la dirección efectiva de memoria del operando.
+\item Ejemplo: No existe en MIPS
+\item Si el direccionamiento es amplio, las instrucciones máquinas ocuparán mucho espacio en memoria.
+
+\end{itemize}
+
+	\begin{center}
+\includegraphics[scale=0.3]{images/dir-directo.jpg} 
 	\end{center}
 \end{frame}
 
