@@ -5,9 +5,12 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 110%;
 }
+
 img{
-        width:80%;
-        max-width:40em;
+    min-width:25%;
+    max-width:100%;
+    display: block;
+    margin: auto;
 }
 code,pre{
     background-color: #000000;
