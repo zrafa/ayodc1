@@ -1,0 +1,83 @@
+COMO PREPARAR EL FINAL
+======================
+
+https://se.fi.uncoma.edu.ar/ayodc1/
+Ahí estan todos los pdfs en la sección APUNTES. Para estudiar para el final.
+
+Voy a intentar resumir lo que si o sí debe conocerse para estar preparados:
+
+Unidad Central de Proceso (diseño lógico/digital. camino de datos):
+saber como diseñar un circuito combinacional. Conocer los diseños
+secuenciales latch set-reset, latch-D, flip-flop.
+Conocer para que se usan. Conocer la maquina algoritmica de
+multiplicar (diseño, explicar como funciona, las señales).
+
+Camino de datos: conocer el camino de datos segmentado de 5 etapas de
+MIPS completo (paralelismo a nivel de instrucciones).
+Entender los formatos de instrucción de MIPS. Explicar como funciona
+el hw (el camino de datos) para ejecutar alguna instrucción del ISA.
+Explicar las señales en el camino de datos, tambien los registros
+buffer. Las señales de control (cuando se generan, como viajan, que
+valores tienen).
+Conocer qué problemas puede tener un diseño segmentado, y como se
+puede solucionar por software (ej: compilador) o por hw (o si no se
+puede solucionar explicar que hacer).
+
+Explicar la ecuación de tiempo de ejecución. Explicar cómo es que un
+diseño segmentado mejora esa ecuación (que factor, por qué).
+
+Conocer el paralelismo a nivel de instrucciones superscalar. Explicar
+cómo es que un diseño superscalar mejora esa ecuación (que factor, por
+qué).
+
+Memoria: conocer la diferencia entre la tecnología Static RAM (SRAM) y
+Dynamic RAM. Conocer donde se usan (caché, memoria principal, etc).
+Conocer claramente que es el principio de la localidad de las
+referencias a memoria. Entender por qué.
+Explicar cuál sería la memoria ideal de la computadora.
+Explicar la jerarquía de memoria de las computadoras actuales, y por
+qué o cómo cada tecnología ofrece "algo" de la memoria ideal.
+Conocer la diferencia entre "velocidad de acceso o latencia" de cada
+nivel (ej: conocer cuanto mas lento es un disco rígido a la memoria
+principal, o la memoria principal con respecto a caché).
+Entender qué componentes del camino de datos segmentado es memoria caché.
+Conocer la organización de memoria caché: asociativa por conjuntos,
+completamente asociativa, mapeo directo. Saber a qué entrada de la
+caché accede la CPU cuando accede a una dirección.
+
+Conocer la ecuación de tiempo de acceso medio a memoria, y poder calcularla.
+
+Poder explicar todo lo de memoria con respecto al principio de
+localidad de las referencias.
+
+
+Entrada/Salida:
+
+Conocer qué es un dispositivo de E/S, para que sirve, etc. Conocer que
+es la controladora de un dispositivo de E/S, y que es su interfaz. Que
+esa interfaz de E/S tiene registros. Tipos de registros.
+Acceso de bajo nivel (por software/hw) a los registros de la interfaz:
+E/S aislada y E/S mapeada al direccionamiento de memoria.
+Programación de la E/S: polling (por consulta/encuesta). Basado en
+interrupciones. DMA.
+Interrupciones: qué es una interrupción de E/S. Qué es una excepción.
+Conocer que es la tabla de vectores, donde está, que contiene. Qué
+sucede ante una interrupción. Cómo la CPU accede a la tabla de
+vectores. Que es la rutina de atención de interrupciones. Quién la
+desarrolla.
+
+Introducción a la materia: tecnologías en la historia: cuándo se acuñó
+el concepto de arquitectura de computadoras. Qué es la organización.
+El modelo Von Neumann. Por qué ciertas computadoras fueron
+importantes: ibm 360, apple II, el procesador Intel 4004, la Cray 1.
+Clementina en Argentina. La era PC. Post PC era. Sistemas embebidos.
+Sistemas servicores. Sistemas HPC. Problemas en la historia con la
+tecnología: Dennard scaling, Ley de Moore. El muro de Potencia. El
+muro de memoria.
+
+
+Bueno, tal vez me olvidé de algo. Pero estoy seguro que lo anterior
+sería  para un 10 :-)
+
+Abrazo!,
+Rafa
