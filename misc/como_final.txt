@@ -9,7 +9,10 @@ Voy a intentar resumir lo que si o sí debe conocerse para estar preparados:
 Unidad Central de Proceso (diseño lógico/digital. camino de datos):
 saber como diseñar un circuito combinacional. Conocer los diseños
 secuenciales latch set-reset, latch-D, flip-flop.
-Conocer para que se usan. Conocer la maquina algoritmica de
+Conocer como se utilizan.
+Reloj, que hace, y por qué se utiliza en los circuitos secuenciales.
+Que relacion tiene el reloj con la frecuencia de la CPU.
+Conocer la maquina algoritmica de
 multiplicar (diseño, explicar como funciona, las señales).
 
 Camino de datos: conocer el camino de datos segmentado de 5 etapas de
@@ -22,6 +25,9 @@ valores tienen).
 Conocer qué problemas puede tener un diseño segmentado, y como se
 puede solucionar por software (ej: compilador) o por hw (o si no se
 puede solucionar explicar que hacer).
+
+Camino de datos monociclo o multiciclo. Diferencias con el 
+camino de datos segmentado.
 
 Explicar la ecuación de tiempo de ejecución. Explicar cómo es que un
 diseño segmentado mejora esa ecuación (que factor, por qué).
@@ -50,9 +56,7 @@ Conocer la ecuación de tiempo de acceso medio a memoria, y poder calcularla.
 Poder explicar todo lo de memoria con respecto al principio de
 localidad de las referencias.
 
-
 Entrada/Salida:
-
 Conocer qué es un dispositivo de E/S, para que sirve, etc. Conocer que
 es la controladora de un dispositivo de E/S, y que es su interfaz. Que
 esa interfaz de E/S tiene registros. Tipos de registros.
@@ -76,8 +80,27 @@ tecnología: Dennard scaling, Ley de Moore. El muro de Potencia. El
 muro de memoria.
 
 
-Bueno, tal vez me olvidé de algo. Pero estoy seguro que lo anterior
-sería  para un 10 :-)
+En la primera parte de la materia se habla de el muro de potencia,
+del muro de memoria, del fin de Dennard Scaling. De algunas computadoras
+famosas y de la evolución de la tecnología. Todo relacionado.
 
-Abrazo!,
-Rafa
+
+DE DONDE ESTUDIAR
+
+Se puede estudiar de cualquier lado. Pero la verdad está en los libros
+(extracto de los mismos para todos los temas en PDF en la sección APUNTES).
+
+Respuestas "de memoria" sacadas de chatGPT (o similar), o de las transparen-
+cias, se ignoran.
+
+Ejemplo: 
+
+Pregunta - explique el principio de la localidad de las referencias.
+
+Respuesta de transparecia - "que si se accedió a un dato se accederá. 
+Existen dos tipos, espacial, temporal"
+
+Respuesta de chatGPT: "El principio de localidad de las referencias a memoria es un concepto clave en la arquitectura de sistemas de computación que describe cómo los programas tienden a acceder a una pequeña cantidad de direcciones de memoria en un corto periodo de tiempo, lo que permite optimizar el rendimiento de la memoria mediante técnicas como la caché. Este principio se basa en dos patrones principales: la localidad temporal, que establece que si una dirección de memoria se ha accedido recientemente, es probable que vuelva a ser accedida en un futuro cercano, y la localidad espacial, que sugiere que si se accede a una dirección de memoria, es probable que las direcciones cercanas también sean accedidas pronto. Estos patrones permiten que las arquitecturas de computadoras y sus sistemas de almacenamiento optimicen la disposición y el acceso a la memoria, reduciendo los tiempos de espera y mejorando la eficiencia general del sistema"
+
+
+
