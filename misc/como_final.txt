@@ -75,7 +75,7 @@ el concepto de arquitectura de computadoras. Qué es la organización.
 El modelo Von Neumann. Por qué ciertas computadoras fueron
 importantes: ibm 360, apple II, el procesador Intel 4004, la Cray 1.
 Clementina en Argentina. La era PC. Post PC era. Sistemas embebidos.
-Sistemas servicores. Sistemas HPC. Problemas en la historia con la
+Problemas en la historia con la
 tecnología: Dennard scaling, Ley de Moore. El muro de Potencia. El
 muro de memoria.
 
@@ -97,7 +97,7 @@ Ejemplo:
 
 Pregunta - explique el principio de la localidad de las referencias.
 
-Respuesta de transparecia - "que si se accedió a un dato se accederá. 
+Respuesta de transparencia - "que si se accedió a un dato se accederá. 
 Existen dos tipos, espacial, temporal"
 
 Respuesta de chatGPT: "El principio de localidad de las referencias a memoria es un concepto clave en la arquitectura de sistemas de computación que describe cómo los programas tienden a acceder a una pequeña cantidad de direcciones de memoria en un corto periodo de tiempo, lo que permite optimizar el rendimiento de la memoria mediante técnicas como la caché. Este principio se basa en dos patrones principales: la localidad temporal, que establece que si una dirección de memoria se ha accedido recientemente, es probable que vuelva a ser accedida en un futuro cercano, y la localidad espacial, que sugiere que si se accede a una dirección de memoria, es probable que las direcciones cercanas también sean accedidas pronto. Estos patrones permiten que las arquitecturas de computadoras y sus sistemas de almacenamiento optimicen la disposición y el acceso a la memoria, reduciendo los tiempos de espera y mejorando la eficiencia general del sistema"
