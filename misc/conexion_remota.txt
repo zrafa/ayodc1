@@ -1,0 +1,47 @@
+
+Si estás en un Debian en un laboratorio de la facultad, simplemnte:
+Abrimos una terminal (Aplicaciones -> Herramientas del sistema -> terminal de mate)
+
+y en la terminal:
+
+/export/home/extras/mipsx/mipsx.sh
+
+FORMAS REMOTAS
+==============
+
+Linuxeros valientes
+-------------------
+
+por ssh:
+
+ssh -p 12222 -X -C usuario@debianmips.fi.uncoma.edu.ar
+
+una vez loggeado:
+
+/export/home/extras/mipsx/mipsx.sh
+
+
+Linuxeros que deseen todo el entorno gráfico
+--------------------------------------------
+
+
+rdesktop -u usuario aularemota.fi.uncoma.edu.ar:1199
+
+Luego, abren una terminal (Aplicaciones -> Herramientas del sistema -> terminal de mate)
+
+y en la terminal:
+
+/export/home/extras/mipsx/mipsx.sh
+
+
+En Windows
+----------
+
+https://www.youtube.com/watch?v=8QupM9q819w
+
+Luego, abren una terminal (Aplicaciones -> Herramientas del sistema -> terminal de mate)
+
+y en la terminal:
+
+/export/home/extras/mipsx/mipsx.sh
+
