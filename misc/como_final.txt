@@ -9,11 +9,12 @@ Voy a intentar resumir lo que si o sí debe conocerse para estar preparados:
 Unidad Central de Proceso (diseño lógico/digital. camino de datos):
 saber como diseñar un circuito combinacional. Conocer los diseños
 secuenciales latch set-reset, latch-D, flip-flop.
-Conocer como se utilizan.
+Conocer como funcionan internamente, como se utilizan.
 Reloj, que hace, y por qué se utiliza en los circuitos secuenciales.
 Que relacion tiene el reloj con la frecuencia de la CPU.
 Conocer la maquina algoritmica de
 multiplicar (diseño, explicar como funciona, las señales).
+Poder diseñar unidades de control de cualquier máquina.
 
 Camino de datos: conocer el camino de datos segmentado de 5 etapas de
 MIPS completo (paralelismo a nivel de instrucciones).
@@ -39,13 +40,16 @@ qué).
 Memoria: conocer la diferencia entre la tecnología Static RAM (SRAM) y
 Dynamic RAM. Conocer donde se usan (caché, memoria principal, etc).
 Conocer claramente que es el principio de la localidad de las
-referencias a memoria. Entender por qué.
+referencias a memoria. Entender por qué está intimamente relacionado
+con la jerarquía de memoria.
 Explicar cuál sería la memoria ideal de la computadora.
 Explicar la jerarquía de memoria de las computadoras actuales, y por
 qué o cómo cada tecnología ofrece "algo" de la memoria ideal.
 Conocer la diferencia entre "velocidad de acceso o latencia" de cada
 nivel (ej: conocer cuanto mas lento es un disco rígido a la memoria
 principal, o la memoria principal con respecto a caché).
+Entender el tiempo de acceso medio a memoria, y como afecta al 
+tiempo de ejecución.
 Entender qué componentes del camino de datos segmentado es memoria caché.
 Conocer la organización de memoria caché: asociativa por conjuntos,
 completamente asociativa, mapeo directo. Saber a qué entrada de la
@@ -78,7 +82,13 @@ Clementina en Argentina. La era PC. Post PC era. Sistemas embebidos.
 Problemas en la historia con la
 tecnología: Dennard scaling, Ley de Moore. El muro de Potencia. El
 muro de memoria.
+Por qué AMD64 tiene una arquitectura considerada "no ideal"
+actualmente, en cuanto a un diseño apropiado/elegante para el diseño 
+digital (microarquitectura).
 
+
+Que es RISC-V. Como se compara con MIPS, ARM, AMD64.
+Por qué es importante para el futuro. Cómo se llegó a RISC-V.
 
 En la primera parte de la materia se habla de el muro de potencia,
 del muro de memoria, del fin de Dennard Scaling. De algunas computadoras
