@@ -1,37 +1,23 @@
+Para ejecutar el programa mipsx
+===============================
 
-Si estás en un Debian en un laboratorio de la facultad, simplemnte:
-Abrimos una terminal (Aplicaciones -> Herramientas del sistema -> terminal de mate)
+Si estás en una PC Debian de un laboratorio de la facultad, simplemente:
 
-y en la terminal:
-
-/export/home/extras/mipsx/mipsx.sh
+Menú Aplicaciones -> Programación -> MIPSX Entorno MIPS
 
 FORMAS REMOTAS
 ==============
 
-Linuxeros valientes
--------------------
-
-por ssh:
-
-ssh -p 12222 -X -C usuario@debianmips.fi.uncoma.edu.ar
-
-una vez loggeado:
-
-/export/home/extras/mipsx/mipsx.sh
-
-
 Linuxeros que deseen todo el entorno gráfico
 --------------------------------------------
 
+xfreerdp    /v:aularemota.fi.uncoma.edu.ar:1199 /u:usuario /size:1280x720
 
-rdesktop -u usuario aularemota.fi.uncoma.edu.ar:1199
+NOTA: cambiar 'usuario' por el nombre de usuario que utilice en los laboratorios
 
-Luego, abren una terminal (Aplicaciones -> Herramientas del sistema -> terminal de mate)
+Luego, 
 
-y en la terminal:
-
-/export/home/extras/mipsx/mipsx.sh
+Menú Aplicaciones -> Programación -> MIPSX Entorno MIPS
 
 
 En Windows
@@ -39,9 +25,7 @@ En Windows
 
 https://www.youtube.com/watch?v=8QupM9q819w
 
-Luego, abren una terminal (Aplicaciones -> Herramientas del sistema -> terminal de mate)
+Luego,
 
-y en la terminal:
-
-/export/home/extras/mipsx/mipsx.sh
+Menú Aplicaciones -> Programación -> MIPSX Entorno MIPS
 
