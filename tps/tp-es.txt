@@ -1,0 +1,25 @@
+
+Trabajo Práctico de E/S programada
+==================================
+
+1. Encuentre y descargue el manual (datasheet) del chip con CPU MIPS Atheros ar9331.
+
+2. Encentre la dirección física de los registros del dispositivo de comunicaciones UART en página 55.
+
+3. a. Lea la documentación del registro DATA. Observe que ciertos bits son de ESTADO.
+   b. Apunte qué bits indican si se puede o no enviar bytes.
+
+4. Complete el programa uart.s
+
+5. ensamblar y vincular con :
+
+./lede-sdk-17.01.1-ar71xx-generic_gcc-5.4.0_musl-1.1.16.Linux-x86_64/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl-1.1.16/bin/mips-openwrt-linux-as     -o uart.o uart.s
+
+./lede-sdk-17.01.1-ar71xx-generic_gcc-5.4.0_musl-1.1.16.Linux-x86_64/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl-1.1.16/bin/mips-openwrt-linux-ld    -static   -o   uart.bin  uart.o
+
+6. Copie el ejecutable uart.bin a un pendrive o medio y solicite a la 
+   cátedra copiar y ejecutar en el HW MIPS el binario uart.bin
+
+
+
+
