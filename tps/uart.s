@@ -18,12 +18,11 @@
 
 
         .data
+
 devmem: .asciz "/dev/mem"
 
+# COMPLETAR con la dirección del Registros de E/S del UART (AR933x) ----
 
-
-
-# ---- Registros de E/S del UART (AR933x) ----
 	uart_data:  .word       # COMPLETAR CON UART_PHYS: dir del registro DATA desplazado >> 12 
 	uart_mascara: .word     # mascara podría ser util 
 
